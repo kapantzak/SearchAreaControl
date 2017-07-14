@@ -1,0 +1,194 @@
+.sac-popup-overlay {
+    position: fixed;        
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 9995;
+    background-color: rgba(0,0,0,0.8);    
+}
+
+.sac-popup {
+    position: fixed;    
+    top:100px;
+    padding: 15px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+    border-radius: 4px;
+    z-index: 9999;
+    background-color: #fafafa;
+}
+
+.sac-popup.sac-popup-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.sac-header-holder {
+    width:100%;   
+    margin-bottom: 15px; 
+}
+
+.sac-header-h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Input area */
+.sac-input-holder {
+    width: 100%;    
+    margin-bottom: 15px;
+}
+
+.sac-input-elem {
+    width:200px;
+    height: 32px;
+    border: 1px solid #d8d8d8;            
+    padding: 5px;
+}
+
+.sac-input-elem-last {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.sac-seacrh-combo-type {
+    height: 32px;
+    border: 1px solid #d8d8d8;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-right: none;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+/* List area */
+.sac-popup .sac-ul {
+    margin: 0;
+    padding: 0;
+}
+
+.sac-popup .sac-ul > li {
+    list-style: none;   
+    padding-left: 5px;
+}
+
+.sac-cols-holder {
+    width: 100%;
+    float: left;
+    overflow-y: auto;
+    padding: 15px 5px;
+    max-height: 500px;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+}
+
+.sac-popup .sac-column-div > .sac-ul { 
+    width:100%;
+    float: left;
+}
+
+.sac-popup .sac-column-div > .sac-ul > li {
+    width: 100%;
+    float: left;    
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.sa_holder:not(.sac-searching) > .sac-ul > li {
+    display: inline-block;
+}
+
+.sac-popup .sac-column-div > .sac-ul > li > .sac-node-name { 
+    font-weight: bold;    
+}
+
+.sac-popup .sac-column-div > .sac-ul { font-size: 18px }
+.sac-ul { font-size: 0.85em; line-height: 1.5 }
+
+.sac-node-name {
+    padding: 5px 10px;  
+    position:relative;
+    cursor:pointer;    
+}
+
+ul:not(.sac-ul-top) .sac-node-name:hover { text-decoration:underline }
+ul:not(.sac-ul-top) .sac-node-name.sa-selected-item:before {
+    content: "\e013";
+    font-family: 'Glyphicons Halflings';
+    position:absolute;
+    left:-10px;
+    color:#13a562;
+}
+
+.sac-custom-numSpan {
+    height:32px;
+    display: inline-block;
+    padding:5px 10px;        
+    border: 1px solid #d8d8d8;
+    border-left: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.sac-custom-numSpan-num {
+    display: inline-block;
+    width:50px;    
+    padding-left: 5px;
+    font-weight:bold;
+    text-align: center;
+}
+
+.multiSelectMaxItemsMsg { display:none }
+.modalSelectedItemsMax .multiSelectMaxItemsMsg { display:block }
+
+/* Selected node --------------------------------------------------------------- */
+
+.sac-node-selected:before {
+    content: "\e013";
+    font-family: 'Glyphicons Halflings';
+    position:absolute;
+    left:-10px;
+    color:#13a562;
+}
+
+/* Disabled node --------------------------------------------------------------- */
+
+.sac-node-name.sac-node-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Footer ---------------------------------------------------------------------- */
+
+.sac-footer {
+    width:100%;
+    float: left;
+    margin-top: 25px;
+}
+
+.sac-footer button {
+    margin-right: 5px;
+}
+
+/* Searching classes ----------------------------------------------------------- */
+
+.sac-found-item > span { background-color: yellowgreen }
+.sac-searching.sac-searching-hide-not-found li { display: none }
+.sac-searching.sac-searching-hide-not-found .sac-found-category, 
+.sac-searching.sac-searching-hide-not-found .sac-found-category li { display: block }
+
+/* Helpers --------------------------------------------------------------------- */
+.sac-pull-left { float: left }
+
+.sac-noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
