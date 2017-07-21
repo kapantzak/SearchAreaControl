@@ -1,7 +1,7 @@
 
 SearchAreaControl
 =================
-SearchAreaControl is a complete jQuery plugin that let's you **display**, **search** and **select** multiple items.
+SearchAreaControl is a complete jQuery plugin that let's you **display**, **search** and **select** multiple items of a tree data structure.
 
 Dependencies
 ------------
@@ -27,8 +27,31 @@ You can pass a variety of options in order to customize the behaviour and appear
 		multiSelect: false
     });
 
-####The available options are listed bellow
-| OptionName | Type | Default value | Description |
-| :--------- | :--: | :-----------: | :---------- |
-| **data**   | `array` | empty array | Provides the data that are going to be displayed |
-| **multiSelect** | `boolean` | `true` | Set to false if you want to be able to select only one item at time |
+###The available options are listed bellow
+
+####data
+Provides the data that are going to be displayed.
+> Type: `array`
+> Deafult: An empty array
+
+You have to pass an array of objects that have those properties.
+
+    {
+		code: null,
+		group: null,
+		name: 'Item name',
+		attributes: {
+			'data-id': 1
+		},
+		children: [{...}]
+	}
+
+####multiSelect
+Set to false if you want to be able to select only one item at time
+> Type: `boolean`
+> Default: `true`
+
+####columns
+Set the number of columns that the data will be rendered.
+> Type:`number`
+> Default: 2
