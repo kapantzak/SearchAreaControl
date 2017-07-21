@@ -645,10 +645,20 @@ $(document).ready(function() {
         data: data,
         multiSelect: true
     });
+    $('#target2').searchAreaControl({
+      initialText: 'Test select',
+      data: data,
+      multiSelect: true
+    });
 });
 
 $(document).on('click', '#getSelected', function() {
     var selected = $('#target').searchAreaControl('getSelectedNodes');
+    console.log(selected);
+});
+
+$(document).on('click', '#getSelectedByAttribute', function() {
+    var selected = $('#target').searchAreaControl('getSelectedByAttribute','data-id');
     console.log(selected);
 });
 
@@ -666,4 +676,9 @@ $(document).on('click', '#destroy', function() {
 $(document).on('click', '#setSelected', function() {  
     var btn = $('#target');    
     btn.searchAreaControl('setSelectedNodes',false,[1,2]);
+});
+
+$(document).on('click', '#clearSelection', function() {  
+    var btn = $('#target');    
+    btn.searchAreaControl('clearSelection');
 });
