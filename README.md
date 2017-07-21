@@ -48,10 +48,10 @@ You have to pass an array of objects that have those properties.
 
 #### multiSelect
 Set to false if you want to be able to select only one item at time
-> Type: `boolean`
-> Default: `true`
+> - Type: `boolean`
+> - Default: `true`
 
 #### columns
 Set the number of columns that the data will be rendered.
-> Type:`number`
-> Default: 2
+> - Type:`number`
+> - Default: 2
