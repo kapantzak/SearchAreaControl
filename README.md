@@ -27,9 +27,9 @@ You can pass a variety of options in order to customize the behaviour and appear
 		multiSelect: false
     });
 
-###The available options are listed bellow###
+### The available options are listed bellow
 
-####data####
+#### data
 Provides the data that are going to be displayed.
 > Type: `array`
 > Deafult: An empty array
@@ -46,12 +46,12 @@ You have to pass an array of objects that have those properties.
 		children: [{...}]
 	}
 
-####multiSelect####
+#### multiSelect
 Set to false if you want to be able to select only one item at time
 > Type: `boolean`
 > Default: `true`
 
-####columns####
+#### columns
 Set the number of columns that the data will be rendered.
 > Type:`number`
 > Default: 2
