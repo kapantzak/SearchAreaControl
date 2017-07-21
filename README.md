@@ -1,30 +1,34 @@
-# README #
 
-SearchAreaControl is a complete client side control for selecting multiple items
+SearchAreaControl
+=================
+SearchAreaControl is a complete jQuery plugin that let's you **display**, **search** and **select** multiple items.
 
-### Usage ###
+Dependencies
+------------
+In order to start using SearchAreaControl you have to include **jQuery** first.
 
-The simplest initialization:
-```javascript
-$('#myElement').searchAreaControl();
-```
+Installation
+------------
+All you need to do in order to initialize the SearchAreaControl plugin is a simple HTML element (button, span, div or anything):
 
-Initialize passing an options object:
-```javascript
-var options = {
-	multiSelect: false
-}
-$('#myElement').searchAreaControl(options);
-```
+**HTML**
 
-### Methods ###
+    <button id="myButton" type="button" />
 
-There is a number of methods that you can use to perform various actions.
+**jQuery**
 
-You can call a method like this:
-````javascript
-$('#myElement').searchAreaControl('methodName'[,arguments]);
-````
+    $('#myButton').searchAreaControl();
 
-####getData####
-Call **getData** to get the current datasource object.
+Options
+-------
+You can pass a variety of options in order to customize the behaviour and appearance of the control like this:
+
+    $('#myButton').searchAreaControl({
+		multiSelect: false
+    });
+
+####The available options are listed bellow
+| OptionName | Type | Default value | Description |
+| :--------- | :--: | :-----------: | :---------- |
+| **data**   | `array` | empty array | Provides the data that are going to be displayed |
+| **multiSelect** | `boolean` | `true` | Set to false if you want to be able to select only one item at time |
