@@ -7,7 +7,7 @@ Dependencies
 ------------
 In order to start using SearchAreaControl you have to include **jQuery** first.
 
-Installation
+Initialization
 ------------
 All you need to do in order to initialize the SearchAreaControl plugin is a simple HTML element (button, span, div or anything):
 
