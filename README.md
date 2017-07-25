@@ -9,6 +9,18 @@ In order to start using SearchAreaControl you have to include **jQuery** first.
 
 Installation
 ------------
+Include the `.css` and `.js` file and you're ready to use it!
+
+**CSS**
+
+    <link rel="stylesheet" href="path-to-plugin-folder/css/sac-style.css" />
+    
+**jQuery**
+
+    <script src="path-to-plugin-folder/searchAreaControl.js"></script>
+
+Initialization
+------------
 All you need to do in order to initialize the SearchAreaControl plugin is a simple HTML element (button, span, div or anything):
 
 **HTML**

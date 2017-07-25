@@ -5,7 +5,7 @@
     function Plugin(element, options) {
         this.el = element;
         this.$el = $(element);
-        this.opt = $.extend({}, $.fn[pluginName].defaults, options);
+        this.opt = $.extend(true, $.fn[pluginName].defaults, options);
         this.rootClassName = 'elem-searchAreaControl';
         this.popupID = null;
         this.init();
