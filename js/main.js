@@ -643,13 +643,11 @@ $(document).ready(function() {
     $('#target').searchAreaControl({
         initialText: 'Test select',
         data: data,
-        multiSelect: true
-    });
-    $('#target2').searchAreaControl({
-      initialText: 'Test select',
-      data: data,
-      multiSelect: true
-    });
+        multiSelect: true,
+        mainButton: {            
+            defaultNoneText: 'No one'            
+        }
+    });    
 });
 
 $(document).on('click', '#getSelected', function() {
