@@ -1,13 +1,13 @@
 
-#SearchAreaControl
+# SearchAreaControl
 
 SearchAreaControl is a complete jQuery plugin that let's you **display**, **search** and **select** multiple items of a tree data structure.
 
-##Dependencies
+## Dependencies
 
 In order to start using SearchAreaControl you have to include **jQuery** first.
 
-##Installation
+## Installation
 
 Include the `.css` and `.js` file and you're ready to use it!
 
@@ -19,7 +19,7 @@ Include the `.css` and `.js` file and you're ready to use it!
 
     <script src="path-to-plugin-folder/searchAreaControl.js"></script>
 
-##Initialization
+## Initialization
 
 All you need to do in order to initialize the SearchAreaControl plugin is a simple HTML element (button, span, div or anything):
 
@@ -31,7 +31,7 @@ All you need to do in order to initialize the SearchAreaControl plugin is a simp
 
     $('#myButton').searchAreaControl();
 
-##Options
+## Options
 
 You can pass a variety of options in order to customize the behaviour and appearance of the control like this:
 
