@@ -703,9 +703,8 @@
         /**
          * Get disabled state of main button
          */
-        getDisabled: function () {
-            var test = this.$el.is(':disabled');
-            return test;
+        getDisabled: function () {            
+            return this.$el.is(':disabled');
         },
 
         /**

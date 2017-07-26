@@ -1,14 +1,14 @@
 
-SearchAreaControl
-=================
+#SearchAreaControl
+
 SearchAreaControl is a complete jQuery plugin that let's you **display**, **search** and **select** multiple items of a tree data structure.
 
-Dependencies
-------------
+##Dependencies
+
 In order to start using SearchAreaControl you have to include **jQuery** first.
 
-Installation
-------------
+##Installation
+
 Include the `.css` and `.js` file and you're ready to use it!
 
 **CSS**
@@ -19,8 +19,8 @@ Include the `.css` and `.js` file and you're ready to use it!
 
     <script src="path-to-plugin-folder/searchAreaControl.js"></script>
 
-Initialization
-------------
+##Initialization
+
 All you need to do in order to initialize the SearchAreaControl plugin is a simple HTML element (button, span, div or anything):
 
 **HTML**
@@ -31,8 +31,8 @@ All you need to do in order to initialize the SearchAreaControl plugin is a simp
 
     $('#myButton').searchAreaControl();
 
-Options
--------
+##Options
+
 You can pass a variety of options in order to customize the behaviour and appearance of the control like this:
 
     $('#myButton').searchAreaControl({
@@ -222,3 +222,163 @@ If `true`, show the `defaultAllText` if all items are selected.
 Each time the user selects an item, the plugin updates main button's text with the selected items descriptions. Set the maximum number of selected items you want to display as text.
 > - Type: `number`
 > - Default: `1`
+
+### popupButtons
+This option controls the modal buttons appearance and behaviour.
+
+#### popupButtons.selectAll
+Set options for `Select all` button.
+
+##### popupButtons.selectAll.text
+Set the button text
+> - Type:`string`
+> - Default:`'Select all'`
+
+##### popupButtons.selectAll.className
+Set the button class name (Bootstrap classes by default)
+> - Type:`string`
+> - Default:`'btn btn-success'`
+
+##### popupButtons.selectAll.visible
+Set the visibility of the button
+> - Type:`boolean`
+> - Default:`true`
+
+##### popupButtons.selectAll.callback
+Provide an optional function name to call on button `click`
+> - Type:`function'
+> - Default:`null`
+
+#### popupButtons.diselectAll
+Set options for `Diselect all` button.
+
+##### popupButtons.diselectAll.text
+Set the button text
+> - Type:`string`
+> - Default:`'Diselect all'`
+
+##### popupButtons.diselectAll.className
+Set the button class name (Bootstrap classes by default)
+> - Type:`string`
+> - Default:`'btn btn-default'`
+
+##### popupButtons.diselectAll.visible
+Set the visibility of the button
+> - Type:`boolean`
+> - Default:`true`
+
+##### popupButtons.diselectAll.callback
+Provide an optional function name to call on button `click`
+> - Type:`function'
+> - Default:`null`
+
+#### popupButtons.invertSelection
+Set options for `Invert selection` button.
+
+##### popupButtons.invertSelection.text
+Set the button text
+> - Type:`string`
+> - Default:`'Invert selection'`
+
+##### popupButtons.invertSelection.className
+Set the button class name (Bootstrap classes by default)
+> - Type:`string`
+> - Default:`'btn btn-default'`
+
+##### popupButtons.invertSelection.visible
+Set the visibility of the button
+> - Type:`boolean`
+> - Default:`true`
+
+##### popupButtons.invertSelection.callback
+Provide an optional function name to call on button `click`
+> - Type:`function'
+> - Default:`null`
+
+#### popupButtons.close
+Set options for `Invert selection` button.
+
+##### popupButtons.close.text
+Set the button text
+> - Type:`string`
+> - Default:`'Close'`
+
+##### popupButtons.close.className
+Set the button class name (Bootstrap classes by default)
+> - Type:`string`
+> - Default:`'btn btn-default'`
+
+##### popupButtons.close.visible
+Set the visibility of the button
+> - Type:`boolean`
+> - Default:`true`
+
+##### popupButtons.close.callback
+Provide an optional function name to call on button `click`
+> - Type:`function'
+> - Default:`null`
+
+## Methods
+
+**SearchAreaControl** provides a set of usefull methods to call. 
+
+You can call a method like this:
+
+    elem.searchAreaControl('methodName'[,parameters])
+
+### getData()
+Get the control's datasource object (array).
+> - Parameters: `none`
+> - Returns: `array`
+
+### setSelectedNodes(allSelected,collection)
+Provide a collection of attributes (`selectionByAttribute`) to be selected, or set `allSelected` to `true` to select all available items.
+> - Parameters: `allSelected [boolean]`, `collection [array]`
+> - Returns: `void`
+
+### clearSelection()
+Clear selected items.
+> - Parameters: `none`
+> - Returns: `void`
+
+### getSelectedNodes()
+Get an object with two properties, `selectedAll` (`boolean`: All items are selected) and `selectedNodes` (`array`: Array of selected objects)
+> - Parameters: `none`
+> - Returns: `object`
+
+### getSelectedByAttribute("attributeName")
+Get an array of specific attribute values of the selected items
+> - Parameters: `attributeName [string]`
+> - Returns: `array`
+
+### getDisabled()
+Get disabled state of main button
+> - Parameters: `none`
+> - Returns: `boolean`
+
+### setDisabled(disable)
+Toggle main button disabled state
+> - Parameters: `disable [boolean]`
+> - Returns: `void`
+
+### updateDatasource(data)
+Update the datasource
+> - Parameters: `data [object]`
+> - Returns: `void`
+
+### destroy()
+Destroy the plugin instance
+> - Parameters: `none`
+> - Returns: `void`
+
+## Examples
+
+### Call setSelectedNodes() method
+
+Let's say you want to select the items (nodes) that have the `selectionByAttribute` attribute equal to `1` or `2`:
+
+    elem.searchAreaControl('setSelectedNodes', false, [1,2]);
+
+If you wanted to select all items:
+
+    elem.searchAreaControl('setSelectedNodes', true, null);
