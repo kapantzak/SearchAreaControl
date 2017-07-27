@@ -16,6 +16,11 @@ p {
 }
 
 .marginLeft-sm { margin-left:5px }
+.marginLeft-md { margin-left:15px }
+
+#mainLogo {
+    height:45px;
+}
 
 #gitHub {
     position: relative;
