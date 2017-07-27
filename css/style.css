@@ -1,0 +1,49 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.custom-text-info {
+    font-size: 0.9em;
+}
+
+.marginLeft-sm { margin-left:5px }
+
+#gitHub {
+    position: relative;
+    top:5px;    
+}
+
+.demo-panel,
+.table-panel {
+    margin: 30px 0;
+}
+
+.demo-panel-title {
+    color:#777;
+}
+
+#footer {
+    position: relative;
+    background-color: #333;
+    color:#fafafa;
+    margin-top: 40px;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#kapa_logo {
+    position: absolute;
+    height: 36px;
+    right: 10px;
+    top: 50%;
+    margin-top: -18px;
+}

@@ -2,51 +2,82 @@ var data = [
   {
     "code": null,
     "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
+    "name": "Economy car",
+    "attributes": {
+      "data-id": "1"
+    },
     "children": [
       {
         "code": null,
         "group": null,
-        "name": "Ford Mondeo 1.8",
+        "name": "Microcar",
         "attributes": {
-          "data-id": "1"
+          "data-id": "11"
         },
         "children": null
       },
       {
         "code": null,
         "group": null,
-        "name": "C2 Κλούβα",
+        "name": "Hatchbacks",
         "attributes": {
-          "data-id": "2"
+          "data-id": "12"
+        },
+        "children": [
+          {
+            "code": null,
+            "group": null,
+            "name": "Ultracompact car",
+            "attributes": {
+              "data-id": "121"
+            },
+            "children": null
+          },
+          {
+            "code": null,
+            "group": null,
+            "name": "City car",
+            "attributes": {
+              "data-id": "122"
+            },
+            "children": null
+          },
+          {
+            "code": null,
+            "group": null,
+            "name": "Supermini/subcompact car",
+            "attributes": {
+              "data-id": "123"
+            },
+            "children": null
+          }
+        ]
+      }      
+    ]
+  },
+  {
+    "code": null,
+    "group": null,
+    "name": "Family car",
+    "attributes": {
+      "data-id": "2"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Small family car/compact car",
+        "attributes": {
+          "data-id": "21"
         },
         "children": null
       },
       {
         "code": null,
         "group": null,
-        "name": "tes descr",
+        "name": "	Large family / mid-size",
         "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
-        "attributes": {
-          "data-id": "41"
+          "data-id": "22"
         },
         "children": null
       }
@@ -55,40 +86,33 @@ var data = [
   {
     "code": null,
     "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
+    "name": "Saloons / sedans",
+    "attributes": {
+      "data-id": "3"
+    },
     "children": [
       {
         "code": null,
         "group": null,
-        "name": "Alpha test",
+        "name": "Large family / mid-size",
         "attributes": {
-          "data-id": "1"
+          "data-id": "31"
         },
         "children": null
       },
       {
         "code": null,
         "group": null,
-        "name": "Beta test",
+        "name": "Full size / large",
         "attributes": {
-          "data-id": "2"
+          "data-id": "32"
         },
         "children": null
       },
-      {
+{
         "code": null,
         "group": null,
-        "name": "Gama test",
-        "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "Delta test",
+        "name": "Crossover SUV",
         "attributes": {
           "data-id": "33"
         },
@@ -97,9 +121,9 @@ var data = [
       {
         "code": null,
         "group": null,
-        "name": "Epsilon test",
+        "name": "Minivans / MPVs",
         "attributes": {
-          "data-id": "41"
+          "data-id": "34"
         },
         "children": null
       }
@@ -108,106 +132,44 @@ var data = [
   {
     "code": null,
     "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
+    "name": "Luxury vehicle",
+    "attributes": {
+      "data-id": "4"
+    },
     "children": [
       {
         "code": null,
         "group": null,
-        "name": "Ford Mondeo 1.8",
-        "attributes": {
-          "data-id": "1"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "C2 Κλούβα",
-        "attributes": {
-          "data-id": "2"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "tes descr",
-        "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
+        "name": "Compact executive",
         "attributes": {
           "data-id": "41"
         },
         "children": null
-      }
-    ]
-  }  
-];
-var bigData = [
-  {
-    "code": null,
-    "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
-    "children": [
+      },
       {
         "code": null,
         "group": null,
-        "name": "Ford Mondeo 1.8",
+        "name": "Executive / mid-luxury",
         "attributes": {
-          "data-id": "1"
+          "data-id": "42"
         },
         "children": null
       },
       {
         "code": null,
         "group": null,
-        "name": "C2 Κλούβα",
+        "name": "Full-size luxury / Grand saloon",
         "attributes": {
-          "data-id": "2"
+          "data-id": "43"
         },
         "children": null
       },
       {
         "code": null,
         "group": null,
-        "name": "tes descr",
+        "name": "Estate cars / station wagons",
         "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
-        "attributes": {
-          "data-id": "41"
+          "data-id": "44"
         },
         "children": null
       }
@@ -216,51 +178,80 @@ var bigData = [
   {
     "code": null,
     "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
+    "name": "Sports cars",
+    "attributes": {
+      "data-id": "5"
+    },
     "children": [
       {
         "code": null,
         "group": null,
-        "name": "Alpha test",
+        "name": "Hot hatch",
         "attributes": {
-          "data-id": "1"
+          "data-id": "51"
         },
         "children": null
       },
       {
         "code": null,
         "group": null,
-        "name": "Beta test",
+        "name": "Sports saloon / sports sedan",
         "attributes": {
-          "data-id": "2"
+          "data-id": "52"
         },
         "children": null
       },
       {
         "code": null,
         "group": null,
-        "name": "Gama test",
+        "name": "Sports car",
         "attributes": {
-          "data-id": "9"
+          "data-id": "53"
         },
         "children": null
       },
       {
         "code": null,
         "group": null,
-        "name": "Delta test",
+        "name": "Grand tourer",
         "attributes": {
-          "data-id": "33"
+          "data-id": "54"
         },
         "children": null
       },
       {
         "code": null,
         "group": null,
-        "name": "Epsilon test",
+        "name": "Supercar",
         "attributes": {
-          "data-id": "41"
+          "data-id": "55"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Muscle car",
+        "attributes": {
+          "data-id": "56"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Pony car",
+        "attributes": {
+          "data-id": "57"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Convertible",
+        "attributes": {
+          "data-id": "58"
         },
         "children": null
       }
@@ -269,51 +260,17 @@ var bigData = [
   {
     "code": null,
     "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
+    "name": "Off-roaders",
+    "attributes": {
+      "data-id": "6"
+    },
     "children": [
       {
         "code": null,
         "group": null,
-        "name": "Ford Mondeo 1.8",
+        "name": "Sport utility vehicle",
         "attributes": {
-          "data-id": "1"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "C2 Κλούβα",
-        "attributes": {
-          "data-id": "2"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "tes descr",
-        "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
-        "attributes": {
-          "data-id": "41"
+          "data-id": "61"
         },
         "children": null
       }
@@ -322,316 +279,17 @@ var bigData = [
   {
     "code": null,
     "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
+    "name": "Commercial vehicle",
+    "attributes": {
+      "data-id": "7"
+    },
     "children": [
       {
         "code": null,
         "group": null,
-        "name": "Ford Mondeo 1.8",
+        "name": "Van",
         "attributes": {
-          "data-id": "1"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "C2 Κλούβα",
-        "attributes": {
-          "data-id": "2"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "tes descr",
-        "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
-        "attributes": {
-          "data-id": "41"
-        },
-        "children": null
-      }
-    ]
-  },
-  {
-    "code": null,
-    "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
-    "children": [
-      {
-        "code": null,
-        "group": null,
-        "name": "Ford Mondeo 1.8",
-        "attributes": {
-          "data-id": "1"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "C2 Κλούβα",
-        "attributes": {
-          "data-id": "2"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "tes descr",
-        "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
-        "attributes": {
-          "data-id": "41"
-        },
-        "children": null
-      }
-    ]
-  },
-  {
-    "code": null,
-    "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
-    "children": [
-      {
-        "code": null,
-        "group": null,
-        "name": "Ford Mondeo 1.8",
-        "attributes": {
-          "data-id": "1"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "C2 Κλούβα",
-        "attributes": {
-          "data-id": "2"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "tes descr",
-        "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
-        "attributes": {
-          "data-id": "41"
-        },
-        "children": null
-      }
-    ]
-  },
-  {
-    "code": null,
-    "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
-    "children": [
-      {
-        "code": null,
-        "group": null,
-        "name": "Ford Mondeo 1.8",
-        "attributes": {
-          "data-id": "1"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "C2 Κλούβα",
-        "attributes": {
-          "data-id": "2"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "tes descr",
-        "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
-        "attributes": {
-          "data-id": "41"
-        },
-        "children": null
-      }
-    ]
-  },
-  {
-    "code": null,
-    "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
-    "children": [
-      {
-        "code": null,
-        "group": null,
-        "name": "Ford Mondeo 1.8",
-        "attributes": {
-          "data-id": "1"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "C2 Κλούβα",
-        "attributes": {
-          "data-id": "2"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "tes descr",
-        "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
-        "attributes": {
-          "data-id": "41"
-        },
-        "children": null
-      }
-    ]
-  },
-  {
-    "code": null,
-    "group": null,
-    "name": "lbResBookCld_SelectResource",
-    "attributes": null,
-    "children": [
-      {
-        "code": null,
-        "group": null,
-        "name": "Ford Mondeo 1.8",
-        "attributes": {
-          "data-id": "1"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "C2 Κλούβα",
-        "attributes": {
-          "data-id": "2"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "tes descr",
-        "attributes": {
-          "data-id": "9"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "test26 descr",
-        "attributes": {
-          "data-id": "33"
-        },
-        "children": null
-      },
-      {
-        "code": null,
-        "group": null,
-        "name": "sdafasdf",
-        "attributes": {
-          "data-id": "41"
+          "data-id": "71"
         },
         "children": null
       }
@@ -640,43 +298,87 @@ var bigData = [
 ];
 
 $(document).ready(function() {
-    $('#target').searchAreaControl({
-        initialText: 'Test select',
+  
+    $('#myButton').searchAreaControl({        
         data: data,
-        multiSelect: true,
-        mainButton: {            
-            defaultNoneText: 'No one'            
+        mainButton: {
+            defaultText: 'Cars'
         }
-    });    
+    });
+      
+    var btn2 = $('#myButton2');
+    btn2.searchAreaControl({        
+        data: data,
+        mainButton: {
+            defaultText: 'Cars'
+        }
+    });
+    btn2.searchAreaControl('setSelectedNodes', false, [55]);
+        
+    $('#myButton3').searchAreaControl({        
+        data: data,
+        mainButton: {
+            defaultText: 'Cars'
+        }
+    });
+
+    $('#myButton4').searchAreaControl({        
+        data: data,
+        mainButton: {
+            defaultText: 'Cars'
+        }
+    });
+
+    $('#myButton5').searchAreaControl({        
+        data: data,
+        mainButton: {
+            defaultText: 'Cars'
+        }
+    });
 });
 
-$(document).on('click', '#getSelected', function() {
-    var selected = $('#target').searchAreaControl('getSelectedNodes');
-    console.log(selected);
+$(document).on('click', '#selectPony', function() {      
+    $('#myButton3').searchAreaControl('setSelectedNodes',false,[57]);
 });
 
 $(document).on('click', '#getSelectedByAttribute', function() {
-    var selected = $('#target').searchAreaControl('getSelectedByAttribute','data-id');
-    console.log(selected);
+    var selected = $('#myButton4').searchAreaControl('getSelectedByAttribute','data-id');
+    var result = (selected.length > 0) ? '[' + selected.join(',') + ']' : '[]';
+    $('#getSelectedByAttribute_result').html(result);
 });
 
-$(document).on('click', '#setDisabled', function() {  
-    var btn = $('#target');
-    var isDisabled = btn.searchAreaControl('getDisabled');
-    btn.searchAreaControl('setDisabled',!isDisabled);
+$(document).on('click', '#setDisabled', function() {      
+    $('#myButton5').searchAreaControl('setDisabled',true);
 });
 
-$(document).on('click', '#destroy', function() {  
-    var btn = $('#target');    
-    btn.searchAreaControl('destroy');
+$(document).on('click', '#setEnabled', function() {      
+    $('#myButton5').searchAreaControl('setDisabled',false);
 });
 
-$(document).on('click', '#setSelected', function() {  
-    var btn = $('#target');    
-    btn.searchAreaControl('setSelectedNodes',false,[1,2]);
-});
+// $(document).on('click', '#getSelected', function() {
+//     var selected = $('#target').searchAreaControl('getSelectedNodes');
+//     console.log(selected);
+// });
 
-$(document).on('click', '#clearSelection', function() {  
-    var btn = $('#target');    
-    btn.searchAreaControl('clearSelection');
-});
+
+
+// $(document).on('click', '#setDisabled', function() {  
+//     var btn = $('#target');
+//     var isDisabled = btn.searchAreaControl('getDisabled');
+//     btn.searchAreaControl('setDisabled',!isDisabled);
+// });
+
+// $(document).on('click', '#destroy', function() {  
+//     var btn = $('#target');    
+//     btn.searchAreaControl('destroy');
+// });
+
+// $(document).on('click', '#setSelected', function() {  
+//     var btn = $('#target');    
+//     btn.searchAreaControl('setSelectedNodes',false,[1,2]);
+// });
+
+// $(document).on('click', '#clearSelection', function() {  
+//     var btn = $('#target');    
+//     btn.searchAreaControl('clearSelection');
+// });

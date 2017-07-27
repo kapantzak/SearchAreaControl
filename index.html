@@ -7,36 +7,556 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link rel="stylesheet" href="searchAreaControl/css/sac-style.css" />
 
     </head>
     <body>
 
         <div class="container-fluid">
+            <div class="row">                
+                <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 col-xs-12">
 
-            <h1>SearchAreaControl</h1>
+                    <div class="page-header">
+                        <h1>SearchAreaControl <small>jQuery plugin</small><a id="gitHub" href="https://github.com/kapantzak/SearchAreaControl" class="btn btn-primary pull-right"><i class="fa fa-github"></i><span class="marginLeft-sm">Github</span></a></h1>
+                    </div>                    
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <button id="target" class="btn btn-success" type="button" />                    
-                </div>                
-            </div>
+                    <p><strong>SearchAreaControl</strong> is a complete jQuery plugin that let's you <mark>display</mark>, <mark>search</mark> and <mark>select</mark> multiple items of a tree data structure.</p>
+                    <p>In order to user <strong>SearchAreaControl</strong> plugin you have to include jQuery before the plugin's script. Then, you can initialize the plugin provideing the appropriate data and any custom options.</p>
+                    <p>The plugin accepts a specific format of data. It actually accepts an array of <strong>nested</strong> objects (every object can hold an array of children objects) that produce a group of <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)" target="_blank">tree data structures</a>.</p>
+                    
+                    <div class="panel-group demo-panel" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-code"></i><span class="marginLeft-sm">View the data used for this demo</span></a></h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <p>
+                                        <pre>var myData = [
+  {
+    "code": null,
+    "group": null,
+    "name": "Economy car",
+    "attributes": {
+      "data-id": "1"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Microcar",
+        "attributes": {
+          "data-id": "11"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Hatchbacks",
+        "attributes": {
+          "data-id": "12"
+        },
+        "children": [
+          {
+            "code": null,
+            "group": null,
+            "name": "Ultracompact car",
+            "attributes": {
+              "data-id": "121"
+            },
+            "children": null
+          },
+          {
+            "code": null,
+            "group": null,
+            "name": "City car",
+            "attributes": {
+              "data-id": "122"
+            },
+            "children": null
+          },
+          {
+            "code": null,
+            "group": null,
+            "name": "Supermini/subcompact car",
+            "attributes": {
+              "data-id": "123"
+            },
+            "children": null
+          }
+        ]
+      }      
+    ]
+  },
+  {
+    "code": null,
+    "group": null,
+    "name": "Family car",
+    "attributes": {
+      "data-id": "2"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Small family car/compact car",
+        "attributes": {
+          "data-id": "21"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "	Large family / mid-size",
+        "attributes": {
+          "data-id": "22"
+        },
+        "children": null
+      }
+    ]
+  },
+  {
+    "code": null,
+    "group": null,
+    "name": "Saloons / sedans",
+    "attributes": {
+      "data-id": "3"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Large family / mid-size",
+        "attributes": {
+          "data-id": "31"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Full size / large",
+        "attributes": {
+          "data-id": "32"
+        },
+        "children": null
+      },
+{
+        "code": null,
+        "group": null,
+        "name": "Crossover SUV",
+        "attributes": {
+          "data-id": "33"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Minivans / MPVs",
+        "attributes": {
+          "data-id": "34"
+        },
+        "children": null
+      }
+    ]
+  },
+  {
+    "code": null,
+    "group": null,
+    "name": "Luxury vehicle",
+    "attributes": {
+      "data-id": "4"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Compact executive",
+        "attributes": {
+          "data-id": "41"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Executive / mid-luxury",
+        "attributes": {
+          "data-id": "42"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Full-size luxury / Grand saloon",
+        "attributes": {
+          "data-id": "43"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Estate cars / station wagons",
+        "attributes": {
+          "data-id": "44"
+        },
+        "children": null
+      }
+    ]
+  },
+  {
+    "code": null,
+    "group": null,
+    "name": "Sports cars",
+    "attributes": {
+      "data-id": "5"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Hot hatch",
+        "attributes": {
+          "data-id": "51"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Sports saloon / sports sedan",
+        "attributes": {
+          "data-id": "52"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Sports car",
+        "attributes": {
+          "data-id": "53"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Grand tourer",
+        "attributes": {
+          "data-id": "54"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Supercar",
+        "attributes": {
+          "data-id": "55"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Muscle car",
+        "attributes": {
+          "data-id": "56"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Pony car",
+        "attributes": {
+          "data-id": "57"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Convertible",
+        "attributes": {
+          "data-id": "58"
+        },
+        "children": null
+      }
+    ]
+  },
+  {
+    "code": null,
+    "group": null,
+    "name": "Off-roaders",
+    "attributes": {
+      "data-id": "6"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Sport utility vehicle",
+        "attributes": {
+          "data-id": "61"
+        },
+        "children": null
+      }
+    ]
+  },
+  {
+    "code": null,
+    "group": null,
+    "name": "Commercial vehicle",
+    "attributes": {
+      "data-id": "7"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Van",
+        "attributes": {
+          "data-id": "71"
+        },
+        "children": null
+      }
+    ]
+  }
+];</pre>
+                                    </p>
+                                    <p class="custom-text-info"><em>Source: <a href="https://en.wikipedia.org/wiki/Car_classification#Microcar" target="_blank">https://en.wikipedia.org/wiki/Car_classification#Microcar</a></em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <button id="getSelected" class="btn btn-default" type="button">Get selected</button>
-                    <button id="getSelectedByAttribute" class="btn btn-default" type="button">Get selected by attribute</button>
-                    <button id="setDisabled" class="btn btn-default" type="button">Toggle disabled</button>
-                    <button id="setSelected" class="btn btn-default" type="button">Set selected</button>
-                    <button id="clearSelection" class="btn btn-default" type="button">Clear selection</button>
-                    <button id="destroy" class="btn btn-danger" type="button">Destroy</button>                    
-                </div>                
-            </div>
+                    <div class="panel panel-default demo-panel">
+                        <div class="panel-body">
+                            <h5 class="demo-panel-title">Simple usage</h5>
+                            <p>
+<pre>$('#myButton').searchAreaControl({ 
+    data: myData,
+    mainButton: {
+        defaultText: 'Cars'
+    } 
+});</pre>
+                            </p>
+                            <p><button id="myButton" class="btn btn-success" type="button"></button></p>                            
+                        </div>
+                    </div>
+
+                    <p>Now, let's use <code>setSelectedNodes</code> method to initialize the plugin with a selected node. We actually initialize the plugin first, and then call the appropriate method.</p>
+
+                    <div class="panel panel-default demo-panel">
+                        <div class="panel-body">
+                            <h5 class="demo-panel-title">Select node</h5>
+                            <p>
+<pre>var btn = $('#myButton');
+
+// Initialize plugin
+btn.searchAreaControl({ 
+    data: myData,
+    mainButton: {
+        defaultText: 'Cars'
+    } 
+});
+
+// Call "setSelectedNodes" method to select one node by "data-id" attribute
+btn.searchAreaControl('setSelectedNodes', false, [55]);</pre>
+                            </p>
+                            <p>
+                                <button id="myButton2" class="btn btn-success" type="button"></button>                                
+                            </p>                            
+                        </div>
+                    </div>
+
+                    <p>There are several methods available to use in order to perform various tasks.</p>
+
+                    <div class="panel panel-default demo-panel">
+                        <div class="panel-body">
+                            <h5 class="demo-panel-title">Examples</h5>                            
+                            
+                            <!-- setSelectedNodes -->
+                            <div class="panel panel-default">                        
+                                <div class="panel-heading"><code>setSelectedNodes()</code></div>
+                                <div class="panel-body">
+                                    <p>Select one or more nodes.</p>
+                                    <p><button id="myButton3" class="btn btn-success" type="button"></button></p>
+<pre>$(document).on('click', '#setSelectedNodes_button', function() {      
+    $('#myButton').searchAreaControl('setSelectedNodes',false,[57]);
+});</pre>
+                                    <p><button id="selectPony" class="btn btn-default marginLeft-sm" type="button">Select Pony car!</button></p>
+                                </div>
+                            </div>
+
+                            <!-- getSelectedByAttribute -->
+                            <div class="panel panel-default">                        
+                                <div class="panel-heading"><code>getSelectedByAttribute()</code></div>
+                                <div class="panel-body">
+                                    <p>You can use <code>getSelectedByAttribute()</code> method to get the selected nodes by specific attribute. Here, we can use the <code>data-id</code> attribute.</p>
+                                    <p><button id="myButton4" class="btn btn-success" type="button"></button></p>
+<pre>$(document).on('click', '#getSelectedByAttribute_button', function() {      
+    var selected = $('#myButton').searchAreaControl('getSelectedByAttribute','data-id');
+});</pre>
+                                    <p><button id="getSelectedByAttribute" class="btn btn-default marginLeft-sm" type="button">getSelectedByAttribute()</button></p>
+                                    <p>
+                                        <div class="well well-sm">
+                                            <samp id="getSelectedByAttribute_result"></samp>
+                                        </div>                                        
+                                    </p>
+                                </div>
+                            </div> 
+                            
+                            <!-- setDisabled -->
+                            <div class="panel panel-default">                        
+                                <div class="panel-heading"><code>setDisabled()</code></div>
+                                <div class="panel-body">
+                                    <p>You can use <code>setDisabled()</code> to enable or disable the button.</p>
+                                    <p><button id="myButton5" class="btn btn-success" type="button"></button></p>
+<pre>$(document).on('click', '#setDisabled_button', function() {          
+    $('#myButton').searchAreaControl('setDisabled',true);
+});</pre>
+                                    <p>
+                                        <button id="setDisabled" class="btn btn-danger marginLeft-sm" type="button">Disable button</button>
+                                        <button id="setEnabled" class="btn btn-success marginLeft-sm" type="button">Enable button</button>
+                                    </p>                                    
+                                </div>
+                            </div> 
+
+                        </div>
+                    </div>
+
+                    <p>There is a number of options you can provide in order to customize the appearance and behaviour of the plugin.</p>
+                    <p>The following table demonstate some of them. For a complete list of all the available options view the <a href="https://github.com/kapantzak/SearchAreaControl" target="_blank">README</a>.</p>
+
+                    <div class="panel panel-default table-panel">                        
+                        <div class="panel-heading">Options</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Default value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td class="nowrap"><code>object</code></td>
+                                    <td class="nowrap"><code>[]</code></td>
+                                    <td>Provides the data that are going to be displayed</td>
+                                </tr>
+                                <tr>
+                                    <td>multiSelect</td>
+                                    <td class="nowrap"><code>boolean</code></td>
+                                    <td class="nowrap"><code>true</code></td>
+                                    <td>Set to false if you want to be able to select only one item at time</td>
+                                </tr>
+                                <tr>
+                                    <td>columns</td>
+                                    <td class="nowrap"><code>number</code></td>
+                                    <td class="nowrap"><code>2</code></td>
+                                    <td>Set the number of columns that the data will be rendered</td>
+                                </tr>
+                                <tr>
+                                    <td>selectionByAttribute</td>
+                                    <td class="nowrap"><code>string</code></td>
+                                    <td class="nowrap"><code>'data-id'</code></td>
+                                    <td>Set the attribute that you want to select upon. The plugin will search for this attribute to match with the provided search string to filter all the items of the data array</td>
+                                </tr>
+                                <tr>
+                                    <td>modallHeader.text</td>
+                                    <td class="nowrap"><code>string</code></td>
+                                    <td class="nowrap"><code>'Search'</code></td>
+                                    <td>The text that is going to be displayed in the modal header</td>
+                                </tr>
+                                <tr>
+                                    <td>mainButton.defaultText</td>
+                                    <td class="nowrap"><code>string</code></td>
+                                    <td class="nowrap"><code>'Items'</code></td>
+                                    <td>Set the default button text</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>We have already seen some of the available methods in action.</p>
+                    <p>The following table demonstate some of them. For a complete list of all the available methods view the <a href="https://github.com/kapantzak/SearchAreaControl" target="_blank">README</a>.</p>
+
+                    <div class="panel panel-default table-panel">                        
+                        <div class="panel-heading">Methods</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Parameters</th>
+                                    <th>Return</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>getData()</td>
+                                    <td class="nowrap">no</td>
+                                    <td class="nowrap"><code>array</code></td>
+                                    <td>Get the control's datasource object (array)</td>
+                                </tr>
+                                <tr>
+                                    <td>clearSelection()</td>
+                                    <td class="nowrap">no</td>
+                                    <td class="nowrap"><code>void</code></td>
+                                    <td>Clear selected items</td>
+                                </tr>
+                                <tr>
+                                    <td>getSelectedNodes()</td>
+                                    <td class="nowrap">no</td>
+                                    <td class="nowrap"><code>object</code></td>
+                                    <td>Get an object with two properties, <code>selectedAll</code> (boolean: All items are selected) and <code>selectedNodes</code> (array: Array of selected objects)</td>
+                                </tr>
+                                <tr>
+                                    <td>updateDatasource(data)</td>
+                                    <td class="nowrap"><code>data [object]</code></td>
+                                    <td class="nowrap"><code>void</code></td>
+                                    <td>Update the datasource</td>
+                                </tr>
+                                <tr>
+                                    <td>destroy()</td>
+                                    <td class="nowrap">no</td>
+                                    <td class="nowrap"><code>void</code></td>
+                                    <td>Destroy the plugin</td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+       
+            </div>  
             
+            <div id="footer" class="row">
+                <div class="container-fluid">
+                    <img id="kapa_logo" src="img/logo_sm.png" alt="logo">
+                    <i>Developed by <a href="mailto:kapantzak@gmail.com" title="kapantzak@gmail.com">John Kapantzakis</a> (c) 2015</i><br>
+                    <i>Released under the <a href="LICENSE.txt" target="_blank">MIT License</a></i>			
+                </div>
+            </div>
+
         </div>     
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="searchAreaControl/searchAreaControl.js"></script>
         <script src="js/main.js"></script>
     </body>

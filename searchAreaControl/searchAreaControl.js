@@ -217,7 +217,7 @@
                 var selectedNum = popup.find('.sac-custom-numSpan');
                 var selectedNum_w = selectedNum.outerWidth();
                 var searchInput = popup.find('.sac-input-elem');
-                var searchInput_w = inputHolder_w - (searchTypeCombo_w + selectedNum_w);
+                var searchInput_w = inputHolder_w - (searchTypeCombo_w + selectedNum_w) - 2;
                 searchInput.css('width', searchInput_w + 'px');
             }
         },
