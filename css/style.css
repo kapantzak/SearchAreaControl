@@ -52,3 +52,19 @@ p {
     top: 50%;
     margin-top: -18px;
 }
+
+@media (max-width: 768px) {
+    #mainLogo {
+        height: 5vw;
+    }
+    #mainTitleText {
+        font-size: 16px;
+        font-size: 4vw;
+    }    
+}
+
+@media (max-width: 1400px) {    
+    #mainTitleSecondaryText {
+        display: none;
+    }
+}
