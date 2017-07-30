@@ -27,6 +27,16 @@ p {
     top:5px;    
 }
 
+.gif-holder {
+    margin-bottom: 30px;
+    text-align: center; 
+}
+
+.gif-holder img {
+    width:100%;  
+    max-width: 771px;  
+}
+
 .demo-panel,
 .table-panel {
     margin: 30px 0;

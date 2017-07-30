@@ -3,6 +3,8 @@
 
 SearchAreaControl is a complete jQuery plugin that let's you **display**, **search** and **select** multiple items of a tree data structure.
 
+Github **<a href="https://github.com/kapantzak/SearchAreaControl">repo</a>**
+
 Visit the demo page **<a href="https://kapantzak.github.io/SearchAreaControl/">here</a>**
 
 ## Dependencies
