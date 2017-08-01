@@ -297,6 +297,139 @@ var data = [
   }
 ];
 
+var data2 = [
+  {
+    "code": null,
+    "group": null,
+    "name": "Test category 1",
+    "attributes": {
+      "data-id": "1"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Test 11",
+        "attributes": {
+          "data-id": "11"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Test 12",
+        "attributes": {
+          "data-id": "12"
+        },
+        "children": [
+          {
+            "code": null,
+            "group": null,
+            "name": "Test121",
+            "attributes": {
+              "data-id": "121"
+            },
+            "children": null
+          },
+          {
+            "code": null,
+            "group": null,
+            "name": "Test 122",
+            "attributes": {
+              "data-id": "122"
+            },
+            "children": null
+          },
+          {
+            "code": null,
+            "group": null,
+            "name": "Test 123",
+            "attributes": {
+              "data-id": "123"
+            },
+            "children": null
+          }
+        ]
+      }      
+    ]
+  },
+  {
+    "code": null,
+    "group": null,
+    "name": "Test category 2",
+    "attributes": {
+      "data-id": "2"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Test 21",
+        "attributes": {
+          "data-id": "21"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Test 22",
+        "attributes": {
+          "data-id": "22"
+        },
+        "children": null
+      }
+    ]
+  },
+  {
+    "code": null,
+    "group": null,
+    "name": "Test category 3",
+    "attributes": {
+      "data-id": "3"
+    },
+    "children": [
+      {
+        "code": null,
+        "group": null,
+        "name": "Test 31",
+        "attributes": {
+          "data-id": "31"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Test 32",
+        "attributes": {
+          "data-id": "32"
+        },
+        "children": null
+      },
+{
+        "code": null,
+        "group": null,
+        "name": "Test 33",
+        "attributes": {
+          "data-id": "33"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "group": null,
+        "name": "Test 34",
+        "attributes": {
+          "data-id": "34"
+        },
+        "children": null
+      }
+    ]
+  }  
+];
+
 $(document).ready(function() {
   
     $('#myButton').searchAreaControl({        
@@ -335,6 +468,23 @@ $(document).ready(function() {
             defaultText: 'Cars'
         }
     });
+
+
+    // TEST ====================================================== //
+
+    $('#btn1').searchAreaControl({        
+        data: data,
+        mainButton: {
+            defaultText: 'Cars'
+        }
+    });
+
+    $('#btn2').searchAreaControl({        
+        data: data2,
+        mainButton: {
+            defaultText: 'Data 2'
+        }
+    });
 });
 
 $(document).on('click', '#selectPony', function() {      
@@ -355,30 +505,25 @@ $(document).on('click', '#setEnabled', function() {
     $('#myButton5').searchAreaControl('setDisabled',false);
 });
 
-// $(document).on('click', '#getSelected', function() {
-//     var selected = $('#target').searchAreaControl('getSelectedNodes');
-//     console.log(selected);
-// });
 
+// TEST ================================================================================ //
 
+$(document).on('click', '#destroy_btn1', function() {
+  $('#btn1').searchAreaControl('destroy');
+});
 
-// $(document).on('click', '#setDisabled', function() {  
-//     var btn = $('#target');
-//     var isDisabled = btn.searchAreaControl('getDisabled');
-//     btn.searchAreaControl('setDisabled',!isDisabled);
-// });
+$(document).on('click', '#getSelectedByAttribute_btn1', function() {
+    var selected = $('#btn1').searchAreaControl('getSelectedByAttribute','data-id');
+    var result = (selected.length > 0) ? '[' + selected.join(',') + ']' : '[]';
+    alert(result);
+});
 
-// $(document).on('click', '#destroy', function() {  
-//     var btn = $('#target');    
-//     btn.searchAreaControl('destroy');
-// });
+$(document).on('click', '#destroy_btn2', function() {
+  $('#btn2').searchAreaControl('destroy');
+});
 
-// $(document).on('click', '#setSelected', function() {  
-//     var btn = $('#target');    
-//     btn.searchAreaControl('setSelectedNodes',false,[1,2]);
-// });
-
-// $(document).on('click', '#clearSelection', function() {  
-//     var btn = $('#target');    
-//     btn.searchAreaControl('clearSelection');
-// });
+$(document).on('click', '#getSelectedByAttribute_btn2', function() {
+    var selected = $('#btn2').searchAreaControl('getSelectedByAttribute','data-id');
+    var result = (selected.length > 0) ? '[' + selected.join(',') + ']' : '[]';
+    alert(result);
+});
