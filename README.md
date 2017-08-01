@@ -182,22 +182,39 @@ If `true`, this option is loaded as the selected option.
 > - Default: `true`
 
 ### popupDimensions
-This option sets the modal element dimensions and accepts an object with the following properties:
+This option sets the modal element dimensions and accepts an array of objects with the following properties:
 
-#### popupDimensions.width
+#### width
 Set the modal width. Provide a valid css value.
 > - Type: `string`
 > - Default: `700px`
 
-#### popupDimensions.left
+#### left
 Set the modal `left` css rule. Provide a valid css value.
 > - Type: `string`
 > - Default: `50%`
 
-#### popupDimensions.marginLeft
+#### marginLeft
 Set the modal `margin-left` css rule. Provide a valid css value.
 > - Type: `string`
 > - Default: `-350px`
+
+The default dimensions object provides one window width **breakpoint**. This means that, up to `768px`, the popup width will be `95%` of the window width. For window width, greater than 768px, the popup width becomes `700px`.
+
+Feel free to provide your own breakpoints. Just **remember** to provide an object for `max` key.
+
+	popupDimensions: {
+        768: {
+            width: '95%',
+            left: '2.5%',
+            marginLeft: '0'
+        },
+        'max': {
+            width: '700px',
+            left: '50%',
+            marginLeft: '-350px'
+        }            
+    }
 
 ### mainButton
 Control the main button behaviour by providing an object with the following properties:

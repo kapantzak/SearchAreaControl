@@ -48,11 +48,29 @@
          * Get popup dimensions
          */
         _getPopupDimensions: function () {
-            var dimensionsObj = this.opt.popupDimensions;
+            var w = $(window).width();
+            var dimensions = this.opt.popupDimensions;
+            var dimensionsObj = dimensions.max;
+            for (var d in dimensions) {
+                if (!isNaN(d) && w < parseInt(d)) {
+                    dimensionsObj = dimensions[d];
+                }
+            }
             var style = 'width:' + dimensionsObj.width + ';';
             style += 'left:' + dimensionsObj.left + ';';
             style += 'margin-left:' + dimensionsObj.marginLeft + ';';
-            return style;
+            return style;            
+        },
+
+        /**
+         * Recalculate and update popup dimensions
+         */
+        _updatePopupDimensions: function() {
+            var popup = $('#' + this.popupID);
+            if (popup && popup.length > 0) {
+                var dimensions = this._getPopupDimensions();
+                popup.attr('style',dimensions);
+            }
         },
 
         /**
@@ -108,6 +126,7 @@
             if (popup && popup.length > 0) {
                 var overlay = popup.closest('.sac-popup-overlay');
                 if (show === true) {
+                    this._updatePopupDimensions();
                     overlay.show();
                     popup.addClass('sac-popup-visible');
                     this._setSearchBoxDimensions();
@@ -819,9 +838,16 @@
             }
         },
         popupDimensions: {
-            width: '700px',
-            left: '50%',
-            marginLeft: '-350px'
+            768: {
+                width: '95%',
+                left: '2.5%',
+                marginLeft: '0'
+            },
+            'max': {
+                width: '700px',
+                left: '50%',
+                marginLeft: '-350px'
+            }            
         },
         mainButton: {
             defaultText: 'Items',
