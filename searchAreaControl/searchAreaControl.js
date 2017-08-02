@@ -15,23 +15,26 @@
 
         init: function () {
             var $that = this;
+
+            $(document).trigger('searchareacontrol.beforeinit', [{ element: this.$el }]);
+
             this.$el.html(this.opt.mainButton.defaultText);
             this._setData_DataSource(this.opt.data);
 
             // Add class
             this.$el.addClass(this.rootClassName);
 
+            $(document).trigger('searchareacontrol.beforebuildpopup', [{ element: this.$el }]);
             this._buildPopup(pluginName);
+
+            $(document).trigger('searchareacontrol.beforeinitsearcharea', [{ element: this.$el }]);
             this._initSearchArea();
-
-            // EVENT LISTENERS (start) ========================================================== //
-
+            
             this.$el.on('click', function () {
                 $that._togglePopup(true);
             });
 
-            // EVENT LISTENERS (end) ============================================================ // 
-
+            $(document).trigger('searchareacontrol.afterinit', [{ element: this.$el }]);
         },
 
         /**
@@ -130,9 +133,11 @@
                     overlay.show();
                     popup.addClass('sac-popup-visible');
                     this._setSearchBoxDimensions();
+                    $(document).trigger('searchareacontrol.popup.shown', [{ element: this.$el, popup: popup }]);
                 } else {
                     overlay.hide();
                     popup.removeClass('sac-popup-visible');
+                    $(document).trigger('searchareacontrol.popup.hidden', [{ element: this.$el, popup: popup }]);
                 }
             }
         },
@@ -535,6 +540,7 @@
                     if (btn.callback && typeof btn.callback === 'function') {
                         btn.callback();
                     }
+                    $(document).trigger('searchareacontrol.button.click', [{ element: $that.$el, buttonKey: key }]);
                 });
             }
             return button;

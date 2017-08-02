@@ -527,3 +527,23 @@ $(document).on('click', '#getSelectedByAttribute_btn2', function() {
     var result = (selected.length > 0) ? '[' + selected.join(',') + ']' : '[]';
     alert(result);
 });
+
+$(document).on('searchareacontrol.beforeinit', function(e,data) {
+  console.log(data);
+});
+
+$(document).on('searchareacontrol.afterinit', function(e,data) {
+  console.log(data);
+});
+
+$(document).on('searchareacontrol.popup.shown', function(e,data) {
+  console.log(data);
+});
+
+$(document).on('searchareacontrol.popup.hidden', function(e,data) {
+  console.log(data);
+});
+
+$(document).on('searchareacontrol.button.click', function(e,data) {
+  console.log(data);
+});
