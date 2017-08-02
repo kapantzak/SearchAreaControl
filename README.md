@@ -418,7 +418,7 @@ You can listen to any of these custom events like this:
 
 Gets raised before initialization process starts. Returns the target element as parameter.
 
-### searchareacontrol.loaded
+### searchareacontrol.afterinit
 
 Gets raised as soon as the initialization process gets finished. Returns the target element as parameter.
 
