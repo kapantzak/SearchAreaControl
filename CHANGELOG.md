@@ -4,15 +4,17 @@
 
 ### Added
 - CHANGELOG file
+- Custom events
 
-### Fixed
+### Changed
+- README (Added events section)
 
-## v1.3.1
+## v1.3.1 - 2017-08-02
 
 ### Fixed
 - Options: popupDimensions object (multiple window width breakpoints)
 
-## [v1.3.0]
+## [v1.3.0] - 2017-08-01
 
 ### Added
 - Test page (test.html)

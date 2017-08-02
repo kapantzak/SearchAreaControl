@@ -403,3 +403,51 @@ Let's say you want to select the items (nodes) that have the `selectionByAttribu
 If you wanted to select all items:
 
     elem.searchAreaControl('setSelectedNodes', true, null);
+
+## Events
+
+There is a list of useful custom events that get triggered during the plugin lifecycle. Every custom event has the prefix `searchareacontrol` on its name.
+
+You can listen to any of these custom events like this:
+
+    $(document).on('<event_name>', function(event, data) {
+       console.log(data);
+    });
+
+### searchareacontrol.beforeinit
+
+Gets raised before initialization process starts. Returns the target element as parameter.
+
+### searchareacontrol.loaded
+
+Gets raised as soon as the initialization process gets finished. Returns the target element as parameter.
+
+### searchareacontrol.beforebuildpopup
+
+Gets raised before the popup window starts get built. Returns the target element as parameter.
+
+### searchareacontrol.beforeinitsearcharea
+
+Gets raised before the search area starts get built. Returns the target element as parameter.
+
+### searchareacontrol.popup.shown
+
+Gets raised after the popup window is shown. Returns an object with two properties:
+
+    {
+       element: <the target element>,
+       popup: <the popup window>
+    }
+
+### searchareacontrol.popup.hidden
+
+Gets raised when the popup window gets hidden. Returns the same object as `searchareacontrol.popup.shown` does.
+
+### searchareacontrol.button.click
+
+Gets raised on any popup button click. Returns an object with two properties:
+
+    {
+       element: <the target element>,
+       buttonKey: <the button name>
+    }
