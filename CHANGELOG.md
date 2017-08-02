@@ -11,7 +11,7 @@
 
 ## [v1.3.1] - 2017-08-02
 
-### Fixed
+### Changed
 - Options: popupDimensions object (multiple window width breakpoints)
 
 ## [v1.3.0] - 2017-08-01
