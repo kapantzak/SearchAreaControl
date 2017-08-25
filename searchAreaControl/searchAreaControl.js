@@ -745,6 +745,12 @@
         updateDatasource: function (data) {
             this.opt.data = data;
             this._setData_DataSource(data);
+            var popup = $('#' + this.popupID);
+            if (popup && popup.length > 0) {
+                popup.empty();
+                $(document).trigger('searchareacontrol.beforeinitsearcharea', [{ element: this.$el }]);
+                this._initSearchArea();
+            }
         },
 
         /**
