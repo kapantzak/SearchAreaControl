@@ -508,6 +508,10 @@ $(document).on('click', '#setEnabled', function() {
 
 // TEST ================================================================================ //
 
+$(document).on('click', '#updateDatasource_btn1', function() {
+  $('#btn1').searchAreaControl('updateDatasource', data2);
+});
+
 $(document).on('click', '#destroy_btn1', function() {
   $('#btn1').searchAreaControl('destroy');
 });
