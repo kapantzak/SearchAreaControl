@@ -352,9 +352,10 @@ Get the control's datasource object (array).
 > - Parameters: `none`
 > - Returns: `array`
 
-### setSelectedNodes(allSelected,collection)
+### setSelectedNodes(allSelected,collection,byAttribute)
 Provide a collection of attributes (`selectionByAttribute`) to be selected, or set `allSelected` to `true` to select all available items.
-> - Parameters: `allSelected [boolean]`, `collection [array]`
+Provide an optional `byAttribute` parameter to indicate the attribute to select. If not provided, the plugin will try to search `selectionByAttribute` option value.
+> - Parameters: `allSelected [boolean]`, `collection [array]`, `byAttribute [string] Optional`
 > - Returns: `void`
 
 ### clearSelection()
@@ -381,6 +382,11 @@ Get disabled state of main button
 Toggle main button disabled state
 > - Parameters: `disable [boolean]`
 > - Returns: `void`
+
+### getPopup()
+Get the popup jQuery object
+> - Parameters: `none`
+> - Returns: `jQuery object`
 
 ### updateDatasource(data)
 Update the datasource

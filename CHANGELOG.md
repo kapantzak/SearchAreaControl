@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+### Added
+- getPopup() method: Returns the jQuery object instance of the specific popup element
+
+### Changed
+- setSelectedNodes(allSelected, collection, byAttribute): New optional parameter `byAttribute`
+
 ## [v1.3.3] - 2017-08-25
 
 ### Fixed

@@ -683,9 +683,13 @@
 
         /**
          * Set selected nodes
+         * @param {boolean} allSelected
+         * @param {array} collection
+         * @param {string} byAttribute Optional selection by attribute (If not provided, 'selectionByAttribute' option will be selected)
          */
-        setSelectedNodes: function (allSelected, collection) {
+        setSelectedNodes: function (allSelected, collection, byAttribute) {
             var popup = $('#' + this.popupID);
+            var selectByAttribute = (byAttribute) ? byAttribute : this.opt.selectionByAttribute;
             if (popup && popup.length > 0) {
                 var allNodes = popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name');
                 if (allSelected === true) {
@@ -694,7 +698,7 @@
                     // Reset selections
                     this._diselectAll();
                     for (var item in collection) {
-                        allNodes.filter('[' + this.opt.selectionByAttribute + '="' + collection[item] + '"]').addClass('sac-node-selected');
+                        allNodes.filter('[' + selectByAttribute + '="' + collection[item] + '"]').addClass('sac-node-selected');
                     }
                 }
                 this._applySelection();
@@ -737,6 +741,14 @@
          */
         setDisabled: function (disable) {
             this.$el.prop('disabled', disable);
+        },
+
+        /**
+         * Return popup element if exists
+         */
+        getPopup: function () {
+            var popup = $('#' + this.popupID);
+            return (popup && popup.length > 0) ? popup : null;
         },
 
         /**
@@ -816,7 +828,8 @@
     $.fn[pluginName].getters = [
         'getSelectedNodes',
         'getDisabled',
-        'getSelectedByAttribute'
+        'getSelectedByAttribute',
+        'getPopup'
     ];
 
     $.fn[pluginName].defaults = {

@@ -512,6 +512,12 @@ $(document).on('click', '#updateDatasource_btn1', function() {
   $('#btn1').searchAreaControl('updateDatasource', data2);
 });
 
+$(document).on('click', '#getPopup', function() {
+  var popup1 = $('#btn1').searchAreaControl('getPopup');
+  console.log(popup1);
+  //popup1.find('.sac-header-holder').css('border', '1px solid red');
+});
+
 $(document).on('click', '#destroy_btn1', function() {
   $('#btn1').searchAreaControl('destroy');
 });
@@ -524,6 +530,10 @@ $(document).on('click', '#getSelectedByAttribute_btn1', function() {
 
 $(document).on('click', '#destroy_btn2', function() {
   $('#btn2').searchAreaControl('destroy');
+});
+
+$(document).on('click', '#setSelectedNodes2', function() {
+  $('#btn2').searchAreaControl('setSelectedNodes', false, [31,32], 'data-id');
 });
 
 $(document).on('click', '#getSelectedByAttribute_btn2', function() {
