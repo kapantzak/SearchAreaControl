@@ -163,7 +163,8 @@ ul:not(.sac-ul-top) .sac-node-name.sa-selected-item:before {
 
 .sac-node-name.sac-node-disabled {
     cursor: not-allowed;
-    opacity: 0.6;
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 /* Footer ---------------------------------------------------------------------- */

@@ -1,15 +1,13 @@
 var data = [
   {
-    "code": null,
-    "group": null,
+    "code": null,    
     "name": "Economy car",
     "attributes": {
       "data-id": "1"
     },
     "children": [
       {
-        "code": null,
-        "group": null,
+        "code": null,        
         "name": "Microcar",
         "attributes": {
           "data-id": "11"
@@ -17,16 +15,14 @@ var data = [
         "children": null
       },
       {
-        "code": null,
-        "group": null,
+        "code": null,        
         "name": "Hatchbacks",
         "attributes": {
           "data-id": "12"
         },
         "children": [
           {
-            "code": null,
-            "group": null,
+            "code": null,            
             "name": "Ultracompact car",
             "attributes": {
               "data-id": "121"
@@ -34,8 +30,7 @@ var data = [
             "children": null
           },
           {
-            "code": null,
-            "group": null,
+            "code": null,            
             "name": "City car",
             "attributes": {
               "data-id": "122"
@@ -43,8 +38,7 @@ var data = [
             "children": null
           },
           {
-            "code": null,
-            "group": null,
+            "code": null,            
             "name": "Supermini/subcompact car",
             "attributes": {
               "data-id": "123"
@@ -56,16 +50,14 @@ var data = [
     ]
   },
   {
-    "code": null,
-    "group": null,
+    "code": null,    
     "name": "Family car",
     "attributes": {
       "data-id": "2"
     },
     "children": [
       {
-        "code": null,
-        "group": null,
+        "code": null,        
         "name": "Small family car/compact car",
         "attributes": {
           "data-id": "21"
@@ -73,8 +65,7 @@ var data = [
         "children": null
       },
       {
-        "code": null,
-        "group": null,
+        "code": null,        
         "name": "	Large family / mid-size",
         "attributes": {
           "data-id": "22"
@@ -84,16 +75,14 @@ var data = [
     ]
   },
   {
-    "code": null,
-    "group": null,
+    "code": null,    
     "name": "Saloons / sedans",
     "attributes": {
       "data-id": "3"
     },
     "children": [
       {
-        "code": null,
-        "group": null,
+        "code": null,        
         "name": "Large family / mid-size",
         "attributes": {
           "data-id": "31"
@@ -102,16 +91,14 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Full size / large",
         "attributes": {
           "data-id": "32"
         },
         "children": null
       },
-{
+      {
         "code": null,
-        "group": null,
         "name": "Crossover SUV",
         "attributes": {
           "data-id": "33"
@@ -120,7 +107,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Minivans / MPVs",
         "attributes": {
           "data-id": "34"
@@ -131,7 +117,6 @@ var data = [
   },
   {
     "code": null,
-    "group": null,
     "name": "Luxury vehicle",
     "attributes": {
       "data-id": "4"
@@ -139,7 +124,6 @@ var data = [
     "children": [
       {
         "code": null,
-        "group": null,
         "name": "Compact executive",
         "attributes": {
           "data-id": "41"
@@ -148,7 +132,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Executive / mid-luxury",
         "attributes": {
           "data-id": "42"
@@ -157,7 +140,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Full-size luxury / Grand saloon",
         "attributes": {
           "data-id": "43"
@@ -166,7 +148,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Estate cars / station wagons",
         "attributes": {
           "data-id": "44"
@@ -177,7 +158,6 @@ var data = [
   },
   {
     "code": null,
-    "group": null,
     "name": "Sports cars",
     "attributes": {
       "data-id": "5"
@@ -185,7 +165,6 @@ var data = [
     "children": [
       {
         "code": null,
-        "group": null,
         "name": "Hot hatch",
         "attributes": {
           "data-id": "51"
@@ -194,7 +173,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Sports saloon / sports sedan",
         "attributes": {
           "data-id": "52"
@@ -203,7 +181,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Sports car",
         "attributes": {
           "data-id": "53"
@@ -212,7 +189,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Grand tourer",
         "attributes": {
           "data-id": "54"
@@ -221,7 +197,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Supercar",
         "attributes": {
           "data-id": "55"
@@ -230,7 +205,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Muscle car",
         "attributes": {
           "data-id": "56"
@@ -239,7 +213,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Pony car",
         "attributes": {
           "data-id": "57"
@@ -248,7 +221,6 @@ var data = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Convertible",
         "attributes": {
           "data-id": "58"
@@ -259,7 +231,6 @@ var data = [
   },
   {
     "code": null,
-    "group": null,
     "name": "Off-roaders",
     "attributes": {
       "data-id": "6"
@@ -267,7 +238,6 @@ var data = [
     "children": [
       {
         "code": null,
-        "group": null,
         "name": "Sport utility vehicle",
         "attributes": {
           "data-id": "61"
@@ -278,7 +248,6 @@ var data = [
   },
   {
     "code": null,
-    "group": null,
     "name": "Commercial vehicle",
     "attributes": {
       "data-id": "7"
@@ -286,7 +255,6 @@ var data = [
     "children": [
       {
         "code": null,
-        "group": null,
         "name": "Van",
         "attributes": {
           "data-id": "71"
@@ -300,7 +268,6 @@ var data = [
 var data2 = [
   {
     "code": null,
-    "group": null,
     "name": "Test category 1",
     "attributes": {
       "data-id": "1"
@@ -308,7 +275,6 @@ var data2 = [
     "children": [
       {
         "code": null,
-        "group": null,
         "name": "Test 11",
         "attributes": {
           "data-id": "11"
@@ -317,7 +283,6 @@ var data2 = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Test 12",
         "attributes": {
           "data-id": "12"
@@ -325,7 +290,6 @@ var data2 = [
         "children": [
           {
             "code": null,
-            "group": null,
             "name": "Test121",
             "attributes": {
               "data-id": "121"
@@ -334,7 +298,6 @@ var data2 = [
           },
           {
             "code": null,
-            "group": null,
             "name": "Test 122",
             "attributes": {
               "data-id": "122"
@@ -343,7 +306,6 @@ var data2 = [
           },
           {
             "code": null,
-            "group": null,
             "name": "Test 123",
             "attributes": {
               "data-id": "123"
@@ -356,7 +318,6 @@ var data2 = [
   },
   {
     "code": null,
-    "group": null,
     "name": "Test category 2",
     "attributes": {
       "data-id": "2"
@@ -364,7 +325,6 @@ var data2 = [
     "children": [
       {
         "code": null,
-        "group": null,
         "name": "Test 21",
         "attributes": {
           "data-id": "21"
@@ -373,7 +333,6 @@ var data2 = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Test 22",
         "attributes": {
           "data-id": "22"
@@ -384,7 +343,6 @@ var data2 = [
   },
   {
     "code": null,
-    "group": null,
     "name": "Test category 3",
     "attributes": {
       "data-id": "3"
@@ -392,7 +350,6 @@ var data2 = [
     "children": [
       {
         "code": null,
-        "group": null,
         "name": "Test 31",
         "attributes": {
           "data-id": "31"
@@ -401,16 +358,14 @@ var data2 = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Test 32",
         "attributes": {
           "data-id": "32"
         },
         "children": null
       },
-{
+      {
         "code": null,
-        "group": null,
         "name": "Test 33",
         "attributes": {
           "data-id": "33"
@@ -419,7 +374,6 @@ var data2 = [
       },
       {
         "code": null,
-        "group": null,
         "name": "Test 34",
         "attributes": {
           "data-id": "34"
@@ -512,6 +466,20 @@ $(document).on('click', '#updateDatasource_btn1', function() {
   $('#btn1').searchAreaControl('updateDatasource', data2);
 });
 
+$(document).on('click', '#getPopup', function() {
+  var popup1 = $('#btn1').searchAreaControl('getPopup');
+  console.log(popup1);
+  //popup1.find('.sac-header-holder').css('border', '1px solid red');
+});
+
+$(document).on('click', '#setDisbaledNodes', function() {
+  $('#btn1').searchAreaControl('setDisabledNodes', [21,22], true);
+});
+
+$(document).on('click', '#enableAll', function() {
+  $('#btn1').searchAreaControl('enableAllNodes');
+});
+
 $(document).on('click', '#destroy_btn1', function() {
   $('#btn1').searchAreaControl('destroy');
 });
@@ -524,6 +492,10 @@ $(document).on('click', '#getSelectedByAttribute_btn1', function() {
 
 $(document).on('click', '#destroy_btn2', function() {
   $('#btn2').searchAreaControl('destroy');
+});
+
+$(document).on('click', '#setSelectedNodes2', function() {
+  $('#btn2').searchAreaControl('setSelectedNodes', false, [31,32], 'data-id');
 });
 
 $(document).on('click', '#getSelectedByAttribute_btn2', function() {

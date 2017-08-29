@@ -53,11 +53,12 @@ Provides the data that are going to be displayed.
 You have to pass an array of objects that have those properties.
 
     {
-		code: null,
-		group: null,
-		name: 'Item name',
+		code: null,			// If provided, it will be appended before the node's name followed by a dot (code.name)	
+		name: 'Item name',	// The node's name
 		attributes: {
-			'data-id': 1
+			'data-id': 1,	// 'data-id' is the default attribute that the plugin searches in order to find the nodes
+			'data-custom-attribute': 'test',
+			...
 		},
 		children: [{...}]
 	}
@@ -352,9 +353,10 @@ Get the control's datasource object (array).
 > - Parameters: `none`
 > - Returns: `array`
 
-### setSelectedNodes(allSelected,collection)
+### setSelectedNodes(allSelected,collection,byAttribute)
 Provide a collection of attributes (`selectionByAttribute`) to be selected, or set `allSelected` to `true` to select all available items.
-> - Parameters: `allSelected [boolean]`, `collection [array]`
+Provide an optional `byAttribute` parameter to indicate the attribute to select. If not provided, the plugin will try to search `selectionByAttribute` option value.
+> - Parameters: `allSelected [boolean]`, `collection [array]`, `byAttribute [string] Optional`
 > - Returns: `void`
 
 ### clearSelection()
@@ -372,6 +374,23 @@ Get an array of specific attribute values of the selected items
 > - Parameters: `attributeName [string]`
 > - Returns: `array`
 
+### setDisabledNodes(collection,diselectDisabled,byAttribute)
+Set disabled nodes specifying a collection of node attribute values (by default `selectionByAttribute` attribute).
+Set `diselectDisabled` to true if you want to diselect the nodes to be disabled.
+Provide an optional `byAttribute` parameter to indicate the attribute to select. If not provided, the plugin will try to search `selectionByAttribute` option value.
+> - Parameters: `collection [array]`, `diselectDisabled [boolean]` `byAttribute [string] Optional`
+> - Returns: `void`
+
+### enableAllNodes()
+Enable all nodes
+> - Parameters: `none`
+> - Returns: `void`
+
+### disableAllNodes()
+Disable all nodes
+> - Parameters: `none`
+> - Returns: `void`
+
 ### getDisabled()
 Get disabled state of main button
 > - Parameters: `none`
@@ -381,6 +400,11 @@ Get disabled state of main button
 Toggle main button disabled state
 > - Parameters: `disable [boolean]`
 > - Returns: `void`
+
+### getPopup()
+Get the popup jQuery object
+> - Parameters: `none`
+> - Returns: `jQuery object`
 
 ### updateDatasource(data)
 Update the datasource
