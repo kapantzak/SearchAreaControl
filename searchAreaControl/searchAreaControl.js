@@ -393,33 +393,40 @@
             if (popup && popup.length > 0) {
 
                 // Node
-                popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name').on('click', function () {
-                    var thisNode = $(this);
-                    if (!thisNode.hasClass('sac-node-disabled')) {
-                        if ($that.opt.multiSelect === false) {
-                            popup.find('.sac-node-name').not(this).removeClass('sac-node-selected');
+                popup.find('.sac-ul')
+                    .not('.sac-ul-top')
+                    .children('li')
+                    .find('.sac-node-name')
+                    .on('click', function () {                        
+                        var thisNode = $(this);
+                        if (!thisNode.hasClass('sac-node-disabled')) {
+                            if ($that.opt.multiSelect === false) {
+                                popup.find('.sac-node-name').not(this).removeClass('sac-node-selected');
+                            }
+                            thisNode.toggleClass('sac-node-selected');
+                            $that._applySelection();
                         }
-                        thisNode.toggleClass('sac-node-selected');
-                        $that._applySelection();
-                    }
-                });
+                    });
 
                 // Node parent
                 if (this.opt.multiSelect === true) {
-                    popup.find('.sac-ul.sac-ul-top').children('li').children('.sac-node-name').on('click', function () {
-                        var that = $(this);
-                        var par = that.closest('li');
-                        var parChildren = par.find('.sac-node-name').not(that);
-                        var parSelectedChildren = parChildren.filter('.sac-node-selected');
-                        var parChildrenNum = parChildren.length;
-                        var parSelectedChildrenNum = parSelectedChildren.length;
-                        if (parChildrenNum === parSelectedChildrenNum) {
-                            parChildren.removeClass('sac-node-selected');
-                        } else {
-                            parChildren.addClass('sac-node-selected');
-                        }
-                        $that._applySelection();
-                    });
+                    popup.find('.sac-ul.sac-ul-top')
+                        .children('li')
+                        .children('.sac-node-name')                        
+                        .on('click', function () {                            
+                            var that = $(this);
+                            var par = that.closest('li');
+                            var parChildren = par.find('.sac-node-name').not(that).not('.sac-node-disabled');
+                            var parSelectedChildren = parChildren.filter('.sac-node-selected');
+                            var parChildrenNum = parChildren.length;
+                            var parSelectedChildrenNum = parSelectedChildren.length;
+                            if (parChildrenNum === parSelectedChildrenNum) {
+                                parChildren.removeClass('sac-node-selected');
+                            } else {
+                                parChildren.addClass('sac-node-selected');
+                            }
+                            $that._applySelection();
+                        });
                 }
             }
         },
@@ -629,10 +636,11 @@
          * Select all nodes
          */
         _selectAll: function () {
+            var nodes = this._getAllNodes();
             var popup = $('#' + this.popupID);
-            if (popup && popup.length > 0) {
+            if (popup && popup.length > 0 && nodes !== null) {
                 if (this.opt.multiSelect === true) {
-                    popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name').addClass('sac-node-selected');
+                    nodes.not('.sac-node-disabled').addClass('sac-node-selected');
                 } else {
                     console.warn('Unable to perform diselection due to multiSelect option set to false');
                 }
@@ -647,6 +655,21 @@
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0 && nodes !== null) {
                 nodes.removeClass('sac-node-selected');                
+            }
+        },
+
+        /**
+         * Invert selection
+         */
+        _invertSelection: function () {
+            var nodes = this._getAllNodes();
+            var popup = $('#' + this.popupID);
+            if (popup && popup.length > 0) {
+                if (this.opt.multiSelect === true && nodes !== null) {
+                    nodes.not('.sac-node-disabled').toggleClass('sac-node-selected');
+                } else {
+                    console.warn('Unable to perform invertion due to multiSelect option set to false');
+                }
             }
         },
 
@@ -682,21 +705,6 @@
                 nodes = popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name');
             }
             return nodes;
-        },
-
-        /**
-         * Invert selection
-         */
-        _invertSelection: function () {
-            var nodes = this._getAllNodes();
-            var popup = $('#' + this.popupID);
-            if (popup && popup.length > 0) {
-                if (this.opt.multiSelect === true && nodes !== null) {
-                    nodes.toggleClass('sac-node-selected');
-                } else {
-                    console.warn('Unable to perform invertion due to multiSelect option set to false');
-                }
-            }
         },
 
         /**
@@ -897,6 +905,9 @@
         'clearSelection',
         'setDisabled',
         'updateDatasource',
+        'setDisabledNodes',
+        'enableAllNodes',
+        'disableAllNodes',
         'destroy'
     ];
 
