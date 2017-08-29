@@ -53,11 +53,12 @@ Provides the data that are going to be displayed.
 You have to pass an array of objects that have those properties.
 
     {
-		code: null,
-		group: null,
-		name: 'Item name',
+		code: null,			// If provided, it will be appended before the node's name followed by a dot (code.name)	
+		name: 'Item name',	// The node's name
 		attributes: {
-			'data-id': 1
+			'data-id': 1,	// 'data-id' is the default attribute that the plugin searches in order to find the nodes
+			'data-custom-attribute': 'test',
+			...
 		},
 		children: [{...}]
 	}
