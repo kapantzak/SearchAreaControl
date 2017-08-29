@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [v1.3.4] - 2017-08-29
+
 ### Added
 - getPopup() method: Returns the jQuery object instance of the specific popup element
 - setDisabledNodes(collection, diselectDisabled, byAttribute): Disables specified nodes
@@ -41,6 +43,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v1.3.4]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.3...v1.3.4
 [v1.3.3]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.2...v1.3.3
 [v1.3.2]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.1...v1.3.2
 [v1.3.1]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.0...v1.3.1
