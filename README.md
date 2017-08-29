@@ -373,6 +373,23 @@ Get an array of specific attribute values of the selected items
 > - Parameters: `attributeName [string]`
 > - Returns: `array`
 
+### setDisabledNodes(collection,diselectDisabled,byAttribute)
+Set disabled nodes specifying a collection of node attribute values (by default `selectionByAttribute` attribute).
+Set `diselectDisabled` to true if you want to diselect the nodes to be disabled.
+Provide an optional `byAttribute` parameter to indicate the attribute to select. If not provided, the plugin will try to search `selectionByAttribute` option value.
+> - Parameters: `collection [array]`, `diselectDisabled [boolean]` `byAttribute [string] Optional`
+> - Returns: `void`
+
+### enableAllNodes()
+Enable all nodes
+> - Parameters: `none`
+> - Returns: `void`
+
+### disableAllNodes()
+Disable all nodes
+> - Parameters: `none`
+> - Returns: `void`
+
 ### getDisabled()
 Get disabled state of main button
 > - Parameters: `none`

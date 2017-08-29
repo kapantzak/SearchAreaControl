@@ -4,6 +4,9 @@
 
 ### Added
 - getPopup() method: Returns the jQuery object instance of the specific popup element
+- setDisabledNodes(collection, diselectDisabled, byAttribute): Disables specified nodes
+- enableAllNodes(): Enables all nodes
+- disableAllNodes(): Disbales all nodes
 
 ### Changed
 - setSelectedNodes(allSelected, collection, byAttribute): New optional parameter `byAttribute`

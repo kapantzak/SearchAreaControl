@@ -518,6 +518,14 @@ $(document).on('click', '#getPopup', function() {
   //popup1.find('.sac-header-holder').css('border', '1px solid red');
 });
 
+$(document).on('click', '#setDisbaledNodes', function() {
+  $('#btn1').searchAreaControl('setDisabledNodes', [21,22], true);
+});
+
+$(document).on('click', '#enableAll', function() {
+  $('#btn1').searchAreaControl('enableAllNodes');
+});
+
 $(document).on('click', '#destroy_btn1', function() {
   $('#btn1').searchAreaControl('destroy');
 });

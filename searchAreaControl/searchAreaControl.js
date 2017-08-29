@@ -552,8 +552,8 @@
         _getSelectedNodes: function () {
             var selectedNodes = [];
             var popup = $('#' + this.popupID);
-            if (popup && popup.length > 0) {
-                var allNodes = popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name');
+            var allNodes = this._getAllNodes();
+            if (popup && popup.length > 0 && allNodes !== null) {                
                 allNodes.filter('.sac-node-selected').each(function () {
                     var node = $(this);
                     var attributes = {};
@@ -566,7 +566,7 @@
                     });
                 });
             }
-            var selectedAll = allNodes.length === selectedNodes.length
+            var selectedAll = (allNodes !== null) ? allNodes.length === selectedNodes.length : false;
             return {
                 selectedAll: selectedAll,
                 selectedNodes: selectedNodes
@@ -643,20 +643,56 @@
          * Diselect all nodes
          */
         _diselectAll: function () {
+            var nodes = this._getAllNodes();
+            var popup = $('#' + this.popupID);
+            if (popup && popup.length > 0 && nodes !== null) {
+                nodes.removeClass('sac-node-selected');                
+            }
+        },
+
+        /**
+         * Enable all nodes
+         */
+        _enableAll: function () {
+            var nodes = this._getAllNodes();
+            var popup = $('#' + this.popupID);
+            if (popup && popup.length > 0 && nodes !== null) {
+                nodes.removeClass('sac-node-disabled');                
+            }
+        },
+
+        /**
+         * Disable all nodes
+         */
+        _disableAll: function () {
+            var nodes = this._getAllNodes();
+            var popup = $('#' + this.popupID);
+            if (popup && popup.length > 0 && nodes !== null) {
+                nodes.addClass('sac-node-disabled');                
+            }
+        },
+
+        /**
+         * Get all nodes
+         */
+        _getAllNodes: function () {
+            var nodes = null;
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0) {
-                popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name').removeClass('sac-node-selected');                
+                nodes = popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name');
             }
+            return nodes;
         },
 
         /**
          * Invert selection
          */
         _invertSelection: function () {
+            var nodes = this._getAllNodes();
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0) {
-                if (this.opt.multiSelect === true) {
-                    popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name').toggleClass('sac-node-selected');
+                if (this.opt.multiSelect === true && nodes !== null) {
+                    nodes.toggleClass('sac-node-selected');
                 } else {
                     console.warn('Unable to perform invertion due to multiSelect option set to false');
                 }
@@ -690,19 +726,61 @@
         setSelectedNodes: function (allSelected, collection, byAttribute) {
             var popup = $('#' + this.popupID);
             var selectByAttribute = (byAttribute) ? byAttribute : this.opt.selectionByAttribute;
-            if (popup && popup.length > 0) {
-                var allNodes = popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name');
+            var allNodes = this._getAllNodes();
+            if (popup && popup.length > 0 && allNodes !== null) {                
                 if (allSelected === true) {
                     allNodes.addClass('sac-node-selected');
                 } else if (collection && Array.isArray(collection) && collection.length > 0) {
                     // Reset selections
                     this._diselectAll();
                     for (var item in collection) {
-                        allNodes.filter('[' + selectByAttribute + '="' + collection[item] + '"]').addClass('sac-node-selected');
+                        allNodes
+                            .filter('[' + selectByAttribute + '="' + collection[item] + '"]')
+                            .addClass('sac-node-selected');
                     }
                 }
                 this._applySelection();
             }
+        },
+
+        /**
+         * Set disabled nodes
+         * @param {array} collection
+         * @param {boolean} diselectDisabled Diselect nodes to be disabled (if they are selected)
+         * @param {string} byAttribute Optional selection by attribute (If not provided, 'selectionByAttribute' option will be selected)
+         */
+        setDisabledNodes: function (collection, diselectDisabled, byAttribute) {
+            var popup = $('#' + this.popupID);
+            var selectByAttribute = (byAttribute) ? byAttribute : this.opt.selectionByAttribute;
+            var allNodes = this._getAllNodes();
+            if (popup && popup.length > 0 && allNodes !== null) {                
+                if (collection && Array.isArray(collection) && collection.length > 0) {
+                    // Enable all
+                    this._enableAll();
+                    for (var item in collection) {
+                        var nodesToDisable = allNodes.filter('[' + selectByAttribute + '="' + collection[item] + '"]');
+                        if (diselectDisabled === true) {
+                            nodesToDisable.removeClass('sac-node-selected');
+                        }
+                        nodesToDisable.addClass('sac-node-disabled');
+                    }
+                }
+                this._applySelection();
+            }
+        },
+
+        /**
+         * Enable all nodes
+         */
+        enableAllNodes: function () {
+            this._enableAll();
+        },
+
+        /**
+         * Disable all nodes
+         */
+        disableAllNodes: function () {
+            this._disableAll();
         },
 
         /**
