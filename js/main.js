@@ -97,7 +97,7 @@ var data = [
         },
         "children": null
       },
-{
+      {
         "code": null,
         "name": "Crossover SUV",
         "attributes": {
@@ -364,7 +364,7 @@ var data2 = [
         },
         "children": null
       },
-{
+      {
         "code": null,
         "name": "Test 33",
         "attributes": {

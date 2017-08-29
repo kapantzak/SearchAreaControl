@@ -10,6 +10,7 @@
 
 ### Changed
 - setSelectedNodes(allSelected, collection, byAttribute): New optional parameter `byAttribute`
+- Removed 'group' property from plugin data format
 
 ## [v1.3.3] - 2017-08-25
 
