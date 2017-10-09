@@ -215,9 +215,9 @@
                     var numSpan = document.createElement('span');
                     var numSpanTxt = document.createElement('span');
                     var numSpanNum = document.createElement('span');
-                    numSpan.classList = 'sac-custom-numSpan';
-                    numSpanTxt.classList = 'sac-custom-numSpan-txt';
-                    numSpanNum.classList = 'sac-custom-numSpan-num';
+                    numSpannumSpan.style.cssText = 'sac-custom-numSpan';
+                    numSpanTxt.style.cssText = 'sac-custom-numSpan-txt';
+                    numSpanNum.style.cssText = 'sac-custom-numSpan-num';
                     numSpanTxt.innerHTML = this.opt.searchBox.selectedItemsLabelText;
                     numSpanNum.innerHTML = 0;
                     if (this.opt.searchBox.selectedItemsLabelVisible === true) {
