@@ -215,7 +215,7 @@
                     var numSpan = document.createElement('span');
                     var numSpanTxt = document.createElement('span');
                     var numSpanNum = document.createElement('span');
-                    numSpannumSpan.style.cssText = 'sac-custom-numSpan';
+                    numSpan.style.cssText = 'sac-custom-numSpan';
                     numSpanTxt.style.cssText = 'sac-custom-numSpan-txt';
                     numSpanNum.style.cssText = 'sac-custom-numSpan-num';
                     numSpanTxt.innerHTML = this.opt.searchBox.selectedItemsLabelText;
