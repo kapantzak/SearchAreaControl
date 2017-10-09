@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [v1.3.5] - 2017-10-19
+
+### Fixed
+- IE11 Error in 'strict mode': *Assignment to read-only properties is not allowed in strict mode* for `classList` change (=> .style.cssText) 
+
 ## [v1.3.4] - 2017-08-29
 
 ### Added
@@ -43,6 +48,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v1.3.5]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.4...v1.3.5
 [v1.3.4]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.3...v1.3.4
 [v1.3.3]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.2...v1.3.3
 [v1.3.2]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.1...v1.3.2
