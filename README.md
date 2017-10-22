@@ -23,6 +23,12 @@ Include the `.css` and `.js` file and you're ready to use it!
 
     <script src="path-to-plugin-folder/searchAreaControl.js"></script>
 
+### NPM
+You can install SearchAreaControl via npm like this:
+
+    npm install searchareacontrol
+
+
 ## Initialization
 
 All you need to do in order to initialize the SearchAreaControl plugin is a simple HTML element (button, span, div or anything):
@@ -370,8 +376,8 @@ Get an object with two properties, `selectedAll` (`boolean`: All items are selec
 > - Returns: `object`
 
 ### getSelectedByAttribute("attributeName")
-Get an array of specific attribute values of the selected items
-> - Parameters: `attributeName [string]`
+Get an array of specific attribute values of the selected items. If `attributeName` is not provided, the plugin will try to search selected node by `selectionByAttribute` option.
+> - Parameters: `attributeName [string]` Optional
 > - Returns: `array`
 
 ### setDisabledNodes(collection,diselectDisabled,byAttribute)
@@ -474,4 +480,13 @@ Gets raised on any popup button click. Returns an object with two properties:
     {
        element: <the target element>,
        buttonKey: <the button name>
+    }
+
+### searchareacontrol.selectedNodesChanged
+
+Gets raised every time the selection gets changed. Returns an object with two properties:
+
+    {
+       element: <the target element>,
+       selectedNodes: <the selected nodes object>
     }

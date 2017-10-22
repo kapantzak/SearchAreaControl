@@ -16,7 +16,7 @@
         init: function () {
             var $that = this;
 
-            $(document).trigger('searchareacontrol.beforeinit', [{ element: this.$el }]);
+            this.$el.trigger('searchareacontrol.beforeinit', [{ element: this.$el }]);
 
             this.$el.html(this.opt.mainButton.defaultText);
             this._setData_DataSource(this.opt.data);
@@ -24,17 +24,17 @@
             // Add class
             this.$el.addClass(this.rootClassName);
 
-            $(document).trigger('searchareacontrol.beforebuildpopup', [{ element: this.$el }]);
+            this.$el.trigger('searchareacontrol.beforebuildpopup', [{ element: this.$el }]);
             this._buildPopup(pluginName);
 
-            $(document).trigger('searchareacontrol.beforeinitsearcharea', [{ element: this.$el }]);
+            this.$el.trigger('searchareacontrol.beforeinitsearcharea', [{ element: this.$el }]);
             this._initSearchArea();
             
             this.$el.on('click', function () {
                 $that._togglePopup(true);
             });
 
-            $(document).trigger('searchareacontrol.afterinit', [{ element: this.$el }]);
+            this.$el.trigger('searchareacontrol.afterinit', [{ element: this.$el }]);
         },
 
         /**
@@ -133,11 +133,11 @@
                     overlay.show();
                     popup.addClass('sac-popup-visible');
                     this._setSearchBoxDimensions();
-                    $(document).trigger('searchareacontrol.popup.shown', [{ element: this.$el, popup: popup }]);
+                    this.$el.trigger('searchareacontrol.popup.shown', [{ element: this.$el, popup: popup }]);
                 } else {
                     overlay.hide();
                     popup.removeClass('sac-popup-visible');
-                    $(document).trigger('searchareacontrol.popup.hidden', [{ element: this.$el, popup: popup }]);
+                    this.$el.trigger('searchareacontrol.popup.hidden', [{ element: this.$el, popup: popup }]);
                 }
             }
         },
@@ -547,7 +547,7 @@
                     if (btn.callback && typeof btn.callback === 'function') {
                         btn.callback();
                     }
-                    $(document).trigger('searchareacontrol.button.click', [{ element: $that.$el, buttonKey: key }]);
+                    $that.$el.trigger('searchareacontrol.button.click', [{ element: $that.$el, buttonKey: key }]);
                 });
             }
             return button;
@@ -590,6 +590,7 @@
             if (this.opt.searchBox.showSelectedItemsBox === true) {
                 this._updateSelectedItemsNum();
             }
+            this.$el.trigger('searchareacontrol.selectedNodesChanged', [{ element: this.$el, selectedNodes: selectedNodes }]);
         },
 
         /**
@@ -810,8 +811,10 @@
          * Get an array of specific attribute values of the selected nodes
          */
         getSelectedByAttribute: function (attributeName) {
+            var $that = this;
             return this._getData_SelectedNodes().selectedNodes.map(function (node) {
-                return node.attributes[attributeName];
+                var attrSelector = (attributeName) ? attributeName : $that.opt.selectionByAttribute;
+                return node.attributes[attrSelector];
             });
         },
 
@@ -846,7 +849,7 @@
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0) {
                 popup.empty();
-                $(document).trigger('searchareacontrol.beforeinitsearcharea', [{ element: this.$el }]);
+                this.$el.trigger('searchareacontrol.beforeinitsearcharea', [{ element: this.$el }]);
                 this._initSearchArea();
             }
         },
@@ -952,7 +955,7 @@
             }
         },
         popupDimensions: {
-            768: {
+            '768': {
                 width: '95%',
                 left: '2.5%',
                 marginLeft: '0'
