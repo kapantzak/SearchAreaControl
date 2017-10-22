@@ -486,7 +486,7 @@ $(document).on('click', '#destroy_btn1', function() {
 });
 
 $(document).on('click', '#getSelectedByAttribute_btn1', function() {
-    var selected = $('#btn1').searchAreaControl('getSelectedByAttribute','data-id');
+    var selected = $('#btn1').searchAreaControl('getSelectedByAttribute');
     var result = (selected.length > 0) ? '[' + selected.join(',') + ']' : '[]';
     alert(result);
 });
@@ -522,5 +522,9 @@ $(document).on('searchareacontrol.popup.hidden', function(e,data) {
 });
 
 $(document).on('searchareacontrol.button.click', function(e,data) {
+  console.log(data);
+});
+
+$(document).on('searchareacontrol.selectedNodesChanged', function(e,data) {
   console.log(data);
 });
