@@ -8,105 +8,103 @@ export interface SearchAreaControl {
     version: string;
 }
 
-declare namespace SAC {
+export as namespace SAC;
 
-    interface IOptions {
-        modallHeader?: IModalHeader,
-        data?: IData[],
-        multiSelect?: boolean,
-        columns?: number,
-        selectionByAttribute?: string,
-        searchBox?: ISearchBox,
-        popupDimensions?: IPopupDimensionsCollection,
-        mainButton?: IMainButton,
-        popupButtons?: IPopupButtonsCollection
-    }
+export interface IOptions {
+    modallHeader?: IModalHeader,
+    data?: IData[],
+    multiSelect?: boolean,
+    columns?: number,
+    selectionByAttribute?: string,
+    searchBox?: ISearchBox,
+    popupDimensions?: IPopupDimensionsCollection,
+    mainButton?: IMainButton,
+    popupButtons?: IPopupButtonsCollection
+}
 
-    interface IModalHeader {
-        text?: string,
-        className?: string,
-        visible?: boolean
-    }
+export interface IModalHeader {
+    text?: string,
+    className?: string,
+    visible?: boolean
+}
 
-    interface IData {
-        code?: string,
-        name: string,
-        attributes?: IDataAttributes,
-        children?: IData[]
-    }
+export interface IData {
+    code?: string,
+    name: string,
+    attributes?: IDataAttributes,
+    children?: IData[]
+}
 
-    interface IDataAttributes {
-        [key: string]: any
-    }
+export interface IDataAttributes {
+    [key: string]: any
+}
 
-    interface ISearchBox {
-        enabled?: boolean,
-        minCharactersSearch?: number,
-        searchBoxClass?: string,
-        searchBoxPlaceholder?: string,
-        showSelectedItemsBox?: boolean,
-        selectedItemsLabelVisible?: boolean,
-        selectedItemsLabelText?: string,
-        hideNotFound?: boolean,
-        searchType?: ISearchTypeCollection        
-    }
+export interface ISearchBox {
+    enabled?: boolean,
+    minCharactersSearch?: number,
+    searchBoxClass?: string,
+    searchBoxPlaceholder?: string,
+    showSelectedItemsBox?: boolean,
+    selectedItemsLabelVisible?: boolean,
+    selectedItemsLabelText?: string,
+    hideNotFound?: boolean,
+    searchType?: ISearchTypeCollection        
+}
 
-    interface ISearchTypeCollection {
-        startsWith?: ISearchType,
-        existsIn?: ISearchType
-    }
+export interface ISearchTypeCollection {
+    startsWith?: ISearchType,
+    existsIn?: ISearchType
+}
 
-    interface ISearchType {
-        text?: string,
-        selected?: boolean
-    }
+export interface ISearchType {
+    text?: string,
+    selected?: boolean
+}
 
-    interface IPopupDimensionsCollection {
-        [key: string]: IPopupDimensions
-    }
+export interface IPopupDimensionsCollection {
+    [key: string]: IPopupDimensions
+}
 
-    interface IPopupDimensions {
-        width?: string,
-        left?: string,
-        marginLeft?: string
-    }
+export interface IPopupDimensions {
+    width?: string,
+    left?: string,
+    marginLeft?: string
+}
 
-    interface IMainButton {
-        defaultText?: string,
-        defaultNoneText?: string,
-        defaultAllText?: string,
-        showAllText?: boolean,
-        maxSelectedViewText?: number
-    }
+export interface IMainButton {
+    defaultText?: string,
+    defaultNoneText?: string,
+    defaultAllText?: string,
+    showAllText?: boolean,
+    maxSelectedViewText?: number
+}
 
-    interface IPopupButtonsCollection {
-        selectAll?: IPopupButton,
-        diselectAll?: IPopupButton,
-        invertSelection?: IPopupButton,
-        close?: IPopupButton
-    }
+export interface IPopupButtonsCollection {
+    selectAll?: IPopupButton,
+    diselectAll?: IPopupButton,
+    invertSelection?: IPopupButton,
+    close?: IPopupButton
+}
 
-    interface IPopupButton {
-        text?: string,
-        className?: string,
-        visible?: boolean,
-        callback?: any
-    }
+export interface IPopupButton {
+    text?: string,
+    className?: string,
+    visible?: boolean,
+    callback?: any
+}
 
-    interface ISelectedNodesObject {
-        selectedAll: boolean,
-        selectedNodes: ISelectedNodes[]
-    }
+export interface ISelectedNodesObject {
+    selectedAll: boolean,
+    selectedNodes: ISelectedNodes[]
+}
 
-    interface ISelectedNodes {
-        text: string,
-        attributes: INodeAttributes
-    }
+export interface ISelectedNodes {
+    text: string,
+    attributes: INodeAttributes
+}
 
-    interface INodeAttributes {
-        [key: string]: any
-    }
-
+export interface INodeAttributes {
+    [key: string]: any
 }
 
 declare global {
@@ -180,7 +178,7 @@ declare global {
         /**
          * Generic method function
          */
-        searchAreaControl(method: string, arg1: any, arg2: any, arg3: any): void;
+        searchAreaControl(method?: IOptions | string, arg1?: any, arg2?: any, arg3?: any): void;
     }
 
     interface JQueryStatic {
