@@ -212,21 +212,15 @@
 
                 // Selected nodes num
                 if (this.opt.searchBox.showSelectedItemsBox) {
-                    var numSpan = document.createElement('span');
-                    var numSpanTxt = document.createElement('span');
-                    var numSpanNum = document.createElement('span');
-                    numSpan.style.cssText = 'sac-custom-numSpan';
-                    numSpanTxt.style.cssText = 'sac-custom-numSpan-txt';
-                    numSpanNum.style.cssText = 'sac-custom-numSpan-num';
-                    numSpanTxt.innerHTML = this.opt.searchBox.selectedItemsLabelText;
-                    numSpanNum.innerHTML = 0;
-                    if (this.opt.searchBox.selectedItemsLabelVisible === true) {
-                        numSpan.appendChild(numSpanTxt);
-                    }
-                    numSpan.appendChild(numSpanNum);
-                    searchBoxHolder.appendChild(numSpan);
+                    var numSpan = $('<span class="sac-custom-numSpan"></span>');
+                    var numSpanTxt = $('<span class="sac-custom-numSpan-txt">' + this.opt.searchBox.selectedItemsLabelText + '</span>');
+                    var numSpanNum = $('<span class="sac-custom-numSpan-num">0</span>');
+                    if (this.opt.searchBox.selectedItemsLabelVisible === true) {                        
+                        numSpan.append(numSpanTxt);
+                    }                    
+                    numSpan.append(numSpanNum);                    
+                    $(searchBoxHolder).append(numSpan);
                 }
-
                 popup.append($(searchBoxHolder));
             }
         },

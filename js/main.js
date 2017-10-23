@@ -406,7 +406,8 @@ $(document).ready(function() {
     $('#myButton3').searchAreaControl({        
         data: data,
         mainButton: {
-            defaultText: 'Cars'
+            defaultText: 'Cars',
+            showAllText: true
         }
     });
 
