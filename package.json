@@ -1,6 +1,6 @@
 {
   "name": "searchareacontrol",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A jQuery plugin used to display, search and select multiple items",
   "main": "searchAreaControl/searchAreaControl.js",
   "types": "lib/index.d.ts",
@@ -16,6 +16,9 @@
     "ecosystem:jquery",
     "multiselect"
   ],
+  "dependencies": {
+    "@types/jquery": "*"
+  },
   "author": "John Kapantzakis",
   "license": "MIT",
   "bugs": {

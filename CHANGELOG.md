@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [v1.4.1] - 2017-10-23
+
+### Fixed
+- Typescript declaration file
+
 ## [v1.4.0] - 2017-10-22
 
 ### Added
@@ -63,6 +68,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v1.4.1]: https://github.com/kapantzak/SearchAreaControl/compare/v1.4.0...v1.4.1
 [v1.4.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.6...v1.4.0
 [v1.3.6]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.5...v1.3.6
 [v1.3.5]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.4...v1.3.5

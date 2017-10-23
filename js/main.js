@@ -486,6 +486,8 @@ $(document).on('click', '#destroy_btn1', function() {
 });
 
 $(document).on('click', '#getSelectedByAttribute_btn1', function() {
+    var selectedObj = $('#btn1').searchAreaControl('getSelectedNodes');
+    console.log(selectedObj);
     var selected = $('#btn1').searchAreaControl('getSelectedByAttribute');
     var result = (selected.length > 0) ? '[' + selected.join(',') + ']' : '[]';
     alert(result);
