@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Added
+- Regular expression search
+
 ## [v1.4.2] - 2017-10-23
 
 ### Fixed

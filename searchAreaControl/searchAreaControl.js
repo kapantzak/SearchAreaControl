@@ -183,22 +183,33 @@
                 searchBoxHolder.className = 'sac-input-holder';
 
                 // Search type
-                var comboOpts = this.opt.searchBox.searchType;
+                var comboOpts = this.opt.searchBox.searchType;                
                 var combo = document.createElement('select');
                 combo.className = 'sac-seacrh-combo-type';
+
                 var opt_startsWith = document.createElement('option');
                 opt_startsWith.setAttribute('value', '0');
                 opt_startsWith.innerHTML = comboOpts.startsWith.text;
+
                 var opt_existsIn = document.createElement('option');
                 opt_existsIn.setAttribute('value', '1');
                 opt_existsIn.innerHTML = comboOpts.existsIn.text;
+
+                var opt_regExp = document.createElement('option');
+                opt_regExp.setAttribute('value', '2');
+                opt_regExp.innerHTML = comboOpts.regExp.text;
+
                 if (comboOpts.existsIn.selected === true) {
                     opt_existsIn.setAttribute('selected', 'selected');
+                } else if (comboOpts.regExp.selected === true) {
+                    opt_regExp.setAttribute('selected', 'selected');
                 } else {
                     opt_startsWith.setAttribute('selected', 'selected');
                 }
+
                 combo.appendChild(opt_startsWith);
                 combo.appendChild(opt_existsIn);
+                combo.appendChild(opt_regExp);
                 searchBoxHolder.appendChild(combo);
 
                 // Search box
@@ -463,28 +474,57 @@
                 popup.find('li').removeClass('sac-found-category sac-found-item');
                 popup.find('.sac-node-name').removeClass('sac-found-item');
 
-                var valLen = val.length;
-                if (valLen >= $that.opt.searchBox.minCharactersSearch) {
-                    popup.addClass('sac-searching');
-                    if ($that.opt.searchBox.hideNotFound === true) {
-                        popup.addClass('sac-searching-hide-not-found');
+                if (searchType == '2') {
+
+                    // RegExp
+                    var valLen = val.length;
+                    if (valLen > 0) {
+                        popup.addClass('sac-searching');
+                        if ($that.opt.searchBox.hideNotFound === true) {
+                            popup.addClass('sac-searching-hide-not-found');
+                        }
+    
+                        // Check for index
+                        popup.find('.sac-node-name').each(function () {
+                            var elem = $(this);                                                     
+                            var elemFound = new RegExp(val).test(elem.text());
+                            if (elemFound) {
+                                var fItem = elem.closest('li');
+                                fItem.addClass('sac-found-item');
+                                $that._foundParentNodes(elem);
+                            }
+                        });
+                    } else {
+                        popup.removeClass('sac-searching sac-searching-hide-not-found');
                     }
 
-                    // Check for index
-                    popup.find('.sac-node-name').each(function () {
-                        var elem = $(this);
-                        var elemIndex = elem.text().toLowerCase().indexOf(val.toLowerCase());
-                        //var elemFound = elemIndex != -1;
-                        var elemFound = (searchType == '0') ? elemIndex === 0 : elemIndex != -1;
-                        if (elemFound) {
-                            var fItem = elem.closest('li');
-                            fItem.addClass('sac-found-item');
-                            $that._foundParentNodes(elem);
-                        }
-                    });
                 } else {
-                    popup.removeClass('sac-searching sac-searching-hide-not-found');
+
+                    // Starts with / Exists in
+                    var valLen = val.length;
+                    if (valLen >= $that.opt.searchBox.minCharactersSearch) {
+                        popup.addClass('sac-searching');
+                        if ($that.opt.searchBox.hideNotFound === true) {
+                            popup.addClass('sac-searching-hide-not-found');
+                        }
+    
+                        // Check for index
+                        popup.find('.sac-node-name').each(function () {
+                            var elem = $(this);
+                            var elemIndex = elem.text().toLowerCase().indexOf(val.toLowerCase());                            
+                            var elemFound = (searchType == '0') ? elemIndex === 0 : elemIndex != -1;
+                            if (elemFound) {
+                                var fItem = elem.closest('li');
+                                fItem.addClass('sac-found-item');
+                                $that._foundParentNodes(elem);
+                            }
+                        });
+                    } else {
+                        popup.removeClass('sac-searching sac-searching-hide-not-found');
+                    }
+
                 }
+                
             }
         },
 
@@ -945,6 +985,10 @@
                 existsIn: {
                     text: 'Exists in',
                     selected: true
+                },
+                regExp: {
+                    text: 'Regular expression',
+                    selected: false
                 }
             }
         },
