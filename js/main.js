@@ -432,7 +432,23 @@ $(document).ready(function() {
         data: data,
         mainButton: {
             defaultText: 'Cars'
-        }
+        },
+        searchBox: {          
+          searchType: {
+              startsWith: {
+                  text: 'Starts with',
+                  selected: false
+              },
+              existsIn: {
+                  text: 'Exists in',
+                  selected: false
+              },
+              regExp: {
+                  text: 'Regular expression',
+                  selected: true
+              }
+          }
+      }
     });
 
     $('#btn2').searchAreaControl({        

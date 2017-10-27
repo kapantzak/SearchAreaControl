@@ -53,7 +53,8 @@ export interface ISearchBox {
 
 export interface ISearchTypeCollection {
     startsWith?: ISearchType,
-    existsIn?: ISearchType
+    existsIn?: ISearchType,
+    regExp?: ISearchType
 }
 
 export interface ISearchType {
