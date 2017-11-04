@@ -28,6 +28,9 @@ You can install SearchAreaControl via npm like this:
 
     npm install searchareacontrol
 
+### Typescript
+Typescript declaration file is included in the package and it will be automatically available after `npm install`.
+
 
 ## Initialization
 
@@ -140,15 +143,17 @@ If `true`, the items that do not match the searching criteria are going to be hi
 > - Deafult: `true`
 
 ### searchBox.searchType
-This option receives an object with two properties, `startsWith` and `existsIn`. These are the two different options that the user can select to perform the search functionality.
+This option receives an object with 3 properties, `startsWith`, `existsIn` and `regExp`. These are the 3 different options that the user can select to perform the search functionality.
 
 If `startsWith` is selected, the plugin will try to find only those items that their description **starts with** the search term.
 
 If `existsIn` is selected, the plugin will try to find any item that it's description **contains** the search term.
 
-Both of these options accept an object with two properties, `text` and `selected`.
+If `regExp` is selected, the plugin will try to match all the nodes with the provided **regular expression**.
 
-This is the **default object** the plugin will use unless user provides anything different.
+All these options accept an object with two properties, `text` and `selected`.
+
+This is the **default object** (`existsIn` is the default selected option) the plugin will use unless user provides anything different.
 
     searchType: {
 	    startsWith: {
@@ -158,6 +163,10 @@ This is the **default object** the plugin will use unless user provides anything
         existsIn: {
             text: 'Exists in',
             selected: true
+        },
+		regExp: {
+            text: 'Regular expression',
+            selected: false
         }
     }
 
@@ -187,6 +196,19 @@ Set the text of the `existsIn` option.
 If `true`, this option is loaded as the selected option.
 > - Type: `boolean`,
 > - Default: `true`
+
+#### searchBox.searchType.regExp
+This property sets the text and selected state of the `regExp` filter option
+
+##### searchBox.searchType.regExp.text
+Set the text of the `regExp` option.
+> - Type: `string`,
+> - Default: `'Regular expression'`
+
+##### searchBox.searchType.regExp.selected
+If `true`, this option is loaded as the selected option.
+> - Type: `boolean`,
+> - Default: `false`
 
 ### popupDimensions
 This option sets the modal element dimensions and accepts an array of objects with the following properties:
@@ -484,9 +506,10 @@ Gets raised on any popup button click. Returns an object with two properties:
 
 ### searchareacontrol.selectedNodesChanged
 
-Gets raised every time the selection gets changed. Returns an object with two properties:
+Gets raised every time the selection gets changed. Returns an object with 3 properties:
 
     {
        element: <the target element>,
-       selectedNodes: <the selected nodes object>
+       selectedAll: <boolean>,
+	   selectedNodes: <Array of nodes> 
     }

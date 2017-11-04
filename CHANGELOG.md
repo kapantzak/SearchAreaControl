@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [v1.5.1] - 2017-11-04
+
+### Changed
+- README (Added documentation)
+
 ## [v1.5.0] - 2017-11-04
 
 ### Added
@@ -82,6 +87,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v1.5.1]: https://github.com/kapantzak/SearchAreaControl/compare/v1.5.0...v1.5.1
 [v1.5.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.4.2...v1.5.0
 [v1.4.2]: https://github.com/kapantzak/SearchAreaControl/compare/v1.4.1...v1.4.2
 [v1.4.1]: https://github.com/kapantzak/SearchAreaControl/compare/v1.4.0...v1.4.1
