@@ -2,8 +2,13 @@
 
 ## [Unreleased]
 
+## [v1.5.0] - 2017-11-04
+
 ### Added
 - Regular expression search
+
+### Changed
+- `searchareacontrol.selectedNodesChanged` event returns object with 3 properties (`element`, `selectedAll`, `selectedNodes`)
 
 ## [v1.4.2] - 2017-10-23
 
@@ -77,6 +82,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v1.5.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.4.2...v1.5.0
 [v1.4.2]: https://github.com/kapantzak/SearchAreaControl/compare/v1.4.1...v1.4.2
 [v1.4.1]: https://github.com/kapantzak/SearchAreaControl/compare/v1.4.0...v1.4.1
 [v1.4.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.3.6...v1.4.0
