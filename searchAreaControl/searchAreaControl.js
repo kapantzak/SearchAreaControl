@@ -624,7 +624,7 @@
             if (this.opt.searchBox.showSelectedItemsBox === true) {
                 this._updateSelectedItemsNum();
             }
-            this.$el.trigger('searchareacontrol.selectedNodesChanged', [{ element: this.$el, selectedNodes: selectedNodes }]);
+            this.$el.trigger('searchareacontrol.selectedNodesChanged', [{ element: this.$el, selectedAll: selectedNodes.selectedAll,  selectedNodes: selectedNodes.selectedNodes }]);
         },
 
         /**
