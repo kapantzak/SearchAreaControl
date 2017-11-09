@@ -482,6 +482,24 @@ Gets raised before the popup window starts get built. Returns the target element
 
 Gets raised before the search area starts get built. Returns the target element as parameter.
 
+### searchareacontrol.popup.beforeshow
+
+Gets raised before the popup window strats to open. Returns an object with two properties:
+
+    {
+       element: <the target element>,
+       popup: <the popup window>
+    }
+
+### searchareacontrol.popup.beforehide
+
+Gets raised before the popup window strats to hide. Returns an object with two properties:
+
+    {
+       element: <the target element>,
+       popup: <the popup window>
+    }
+
 ### searchareacontrol.popup.shown
 
 Gets raised after the popup window is shown. Returns an object with two properties:
