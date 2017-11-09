@@ -31,6 +31,7 @@
             this._initSearchArea();
             
             this.$el.on('click', function () {
+                $that.$el.trigger('searchareacontrol.popup.beforeshow', [{ element: $that.$el }]);
                 $that._togglePopup(true);
             });
 
@@ -624,7 +625,7 @@
             if (this.opt.searchBox.showSelectedItemsBox === true) {
                 this._updateSelectedItemsNum();
             }
-            this.$el.trigger('searchareacontrol.selectedNodesChanged', [{ element: this.$el, selectedAll: selectedNodes.selectedAll,  selectedNodes: selectedNodes.selectedNodes }]);
+            this.$el.trigger('searchareacontrol.selectedNodesChanged', [{ element: this.$el, selectedNodes: selectedNodes }]);
         },
 
         /**
@@ -745,7 +746,8 @@
         /**
          * Close popup
          */
-        _closePopup: function () {
+        _closePopup: function () {     
+            this.$el.trigger('searchareacontrol.popup.beforehide', [{ element: this.$el }]);       
             this._togglePopup(false);
         },
 

@@ -547,3 +547,11 @@ $(document).on('searchareacontrol.button.click', function(e,data) {
 $(document).on('searchareacontrol.selectedNodesChanged', function(e,data) {
   console.log(data);
 });
+
+$(document).on('searchareacontrol.popup.beforeshow', function(e,data) {  
+  console.log('searchareacontrol.popup.beforeshow');
+});
+
+$(document).on('searchareacontrol.popup.beforehide', function(e,data) {  
+  console.log('searchareacontrol.popup.beforehide');
+});
