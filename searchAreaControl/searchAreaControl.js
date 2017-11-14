@@ -6,6 +6,7 @@
         this.el = element;
         this.$el = $(element);   
         this.opt = $.extend(true, {}, $.fn[pluginName].defaults, options);
+        this.locales = $.extend(true, {}, $.fn[pluginName].locales, this.opt.localeData);
         this.rootClassName = 'elem-searchAreaControl';
         this.popupID = null;
         this.init();
@@ -18,7 +19,7 @@
 
             this.$el.trigger('searchareacontrol.beforeinit', [{ element: this.$el }]);
 
-            this.$el.html(this.opt.mainButton.defaultText);
+            this.$el.html(this._localize(this.opt.mainButton.defaultText));
             this._setData_DataSource(this.opt.data);
 
             // Add class
@@ -147,7 +148,7 @@
          * Initialize searchArea functionality
          */
         _initSearchArea: function () {
-            if (this.opt.modallHeader.visible === true) {
+            if (this.opt.modalHeader.visible === true) {
                 this._buildHeader();
             }
             if (this.opt.searchBox.enabled === true) {
@@ -166,8 +167,8 @@
         _buildHeader: function () {
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0) {
-                var headerOpt = this.opt.modallHeader;
-                var headerMarkup = '<div class="sac-header-holder ' + headerOpt.className + '"><h1 class="sac-header-h1">' + headerOpt.text + '</h1></div>';
+                var headerOpt = this.opt.modalHeader;
+                var headerMarkup = '<div class="sac-header-holder ' + headerOpt.className + '"><h1 class="sac-header-h1">' + this._localize(headerOpt.text) + '</h1></div>';
                 var header = $(headerMarkup);
                 popup.append(header);
             }
@@ -190,15 +191,15 @@
 
                 var opt_startsWith = document.createElement('option');
                 opt_startsWith.setAttribute('value', '0');
-                opt_startsWith.innerHTML = comboOpts.startsWith.text;
+                opt_startsWith.innerHTML = this._localize(comboOpts.startsWith.text);
 
                 var opt_existsIn = document.createElement('option');
                 opt_existsIn.setAttribute('value', '1');
-                opt_existsIn.innerHTML = comboOpts.existsIn.text;
+                opt_existsIn.innerHTML = this._localize(comboOpts.existsIn.text);
 
                 var opt_regExp = document.createElement('option');
                 opt_regExp.setAttribute('value', '2');
-                opt_regExp.innerHTML = comboOpts.regExp.text;
+                opt_regExp.innerHTML = this._localize(comboOpts.regExp.text);
 
                 if (comboOpts.existsIn.selected === true) {
                     opt_existsIn.setAttribute('selected', 'selected');
@@ -225,7 +226,7 @@
                 // Selected nodes num
                 if (this.opt.searchBox.showSelectedItemsBox) {
                     var numSpan = $('<span class="sac-custom-numSpan"></span>');
-                    var numSpanTxt = $('<span class="sac-custom-numSpan-txt">' + this.opt.searchBox.selectedItemsLabelText + '</span>');
+                    var numSpanTxt = $('<span class="sac-custom-numSpan-txt">' + this._localize(this.opt.searchBox.selectedItemsLabelText) + '</span>');
                     var numSpanNum = $('<span class="sac-custom-numSpan-num">0</span>');
                     if (this.opt.searchBox.selectedItemsLabelVisible === true) {                        
                         numSpan.append(numSpanTxt);
@@ -560,7 +561,7 @@
             var button = null;
 
             if (this.opt.multiSelect === true || (this.opt.multiSelect === false && hiddenOnSingleSelection.indexOf(key) === -1)) {
-                button = $('<button id="btn_' + this.popupID + '_' + key + '" class="' + btn.className + '" type="button">' + btn.text + '</button>');
+                button = $('<button id="btn_' + this.popupID + '_' + key + '" class="' + btn.className + '" type="button">' + $that._localize(btn.text) + '</button>');
                 button.on('click', function () {
                     switch (key) {
                         case 'selectAll':
@@ -650,7 +651,7 @@
         _updateMainButton: function () {
             var selNodesData = this._getData_SelectedNodes();
             var selectedNodes = (selNodesData.hasOwnProperty('selectedNodes')) ? selNodesData.selectedNodes : [];
-            var mainBtnText = this.opt.mainButton.defaultText;
+            var mainBtnText = this._localize(this.opt.mainButton.defaultText);
             if (selectedNodes && Array.isArray(selectedNodes) && selectedNodes.length > 0) {
                 if (selectedNodes.length <= this.opt.mainButton.maxSelectedViewText) {
                     mainBtnText = selectedNodes.map(function (node) {
@@ -660,10 +661,10 @@
                     mainBtnText += ' (' + selectedNodes.length + ')';
                 }
                 if (this.opt.mainButton.showAllText === true && selNodesData.selectedAll === true) {
-                    mainBtnText = this.opt.mainButton.defaultAllText + ' ' + mainBtnText;
+                    mainBtnText = this._localize(this.opt.mainButton.defaultAllText) + ' ' + mainBtnText;
                 }
             } else {
-                mainBtnText += ' (' + this.opt.mainButton.defaultNoneText + ')';
+                mainBtnText += ' (' + this._localize(this.opt.mainButton.defaultNoneText) + ')';
             }
             this.$el.html(mainBtnText);
         },
@@ -749,6 +750,14 @@
         _closePopup: function () {     
             this.$el.trigger('searchareacontrol.popup.beforehide', [{ element: this.$el }]);       
             this._togglePopup(false);
+        },
+
+        /**
+         * Localize key
+         */
+        _localize: function (key) {
+            var locale = this.opt.locales;
+            return (this.locales.hasOwnProperty(locale)) ? ((this.locales[locale].hasOwnProperty(key)) ? this.locales[locale][key] : key) : key;
         },
 
         // SEARCH AREA (end) ================================================================ //
@@ -891,6 +900,17 @@
         },
 
         /**
+         * Set new locale and re-init plugin
+         */
+        setLocale: function (locale) {
+            if (locale && typeof locale === 'string' && locale.length > 0) {
+                this.destroy();
+                this.opt.locales = locale;
+                this.init();
+            }
+        },
+
+        /**
          * Destroy the plugin
          */
         destroy: function () {
@@ -947,6 +967,7 @@
         'setDisabledNodes',
         'enableAllNodes',
         'disableAllNodes',
+        'setLocale',
         'destroy'
     ];
 
@@ -960,8 +981,39 @@
         'getPopup'
     ];
 
+    $.fn[pluginName].locales = {
+        en: {
+            'Search': 'Search',
+            'Selected items': 'Selected items',
+            'Starts with': 'Starts with',
+            'Exists in': 'Exists in',
+            'Regular expression': 'Regular expression',
+            'Items': 'Items',
+            'None': 'None',
+            'All': 'All',
+            'Select all': 'Select all',
+            'Diselect all': 'Diselect all',
+            'Invert selection': 'Invert selection',
+            'Close': 'Close'
+        },
+        el: {
+            'Search': 'Αναζήτηση',
+            'Selected items': 'Επιλεγμένα αντικείμενα',
+            'Starts with': 'Ξεκινά με',
+            'Exists in': 'Περιέχει',
+            'Regular expression': 'Κανονική έκφραση',
+            'Items': 'Αντικείμενα',
+            'None': 'Κανένα',
+            'All': 'Όλα',
+            'Select all': 'Επιλογή όλων',
+            'Diselect all': 'Αποεπιλογή όλων',
+            'Invert selection': 'Αντιστροφή επιλογής',
+            'Close': 'Κλείσιμο'
+        }
+    };
+
     $.fn[pluginName].defaults = {
-        modallHeader: {
+        modalHeader: {
             text: 'Search',
             className: '',
             visible: true
@@ -970,6 +1022,8 @@
         multiSelect: true,
         columns: 2,
         selectionByAttribute: 'data-id',
+        locales: 'en',
+        localeData: null,
         searchBox: {
             enabled: true,
             minCharactersSearch: 2,

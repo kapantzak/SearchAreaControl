@@ -11,11 +11,13 @@ export interface SearchAreaControl {
 export as namespace SAC;
 
 export interface IOptions {
-    modallHeader?: IModalHeader,
+    modalHeader?: IModalHeader,
     data?: IData[],
     multiSelect?: boolean,
     columns?: number,
     selectionByAttribute?: string,
+    locales?: string,
+    localeData?: any,
     searchBox?: ISearchBox,
     popupDimensions?: IPopupDimensionsCollection,
     mainButton?: IMainButton,
@@ -170,6 +172,11 @@ declare global {
          * Update the datasource
          */
         searchAreaControl(method: 'updateDatasource', data: IData[]): void;
+
+        /**
+         * Set new locale and re-init plugin
+         */
+        searchAreaControl(method: 'setLocale', locale: string): void;
 
         /**
          * Destroy the plugin instance
