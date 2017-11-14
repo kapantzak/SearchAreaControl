@@ -79,67 +79,120 @@ Set to false if you want to be able to select only one item at time
 
 ### columns
 Set the number of columns that the data will be rendered.
-> - Type:`number`
+> - Type: `number`
 > - Default: `2`
 
 ### selectionByAttribute
 Set the attribute that you want to select upon. The plugin will search for this attribute to match with the provided search string to filter all the items of the `data` array.
-> - Type:`string`
+> - Type: `string`
 > - Deafult: `'data-id'`
+
+### locales
+Set the localization key to use in order to display localized text
+> - Type: `string`
+> - Default: `'en'`
+
+### localeData
+Provide additional localization keys to support other languages or to customize an existing one
+> - Type: `object` | `array`
+> - Default: `null`
+
+In order to customize the `'Search'` key for the English translation:
+
+    $('#myButton').searchAreaControl({
+		localeData: {
+           'el': {
+              'Search': 'Custom search text'
+           }
+        }
+    });
+
+This is the default localization object that currently supports only English (`en`) and Greek (`el`) languages:
+
+    {
+        en: {
+            'Search': 'Search',
+            'Selected items': 'Selected items',
+            'Starts with': 'Starts with',
+            'Exists in': 'Exists in',
+            'Regular expression': 'Regular expression',
+            'Items': 'Items',
+            'None': 'None',
+            'All': 'All',
+            'Select all': 'Select all',
+            'Diselect all': 'Diselect all',
+            'Invert selection': 'Invert selection',
+            'Close': 'Close'
+        },
+        el: {
+            'Search': 'Αναζήτηση',
+            'Selected items': 'Επιλεγμένα αντικείμενα',
+            'Starts with': 'Ξεκινά με',
+            'Exists in': 'Περιέχει',
+            'Regular expression': 'Κανονική έκφραση',
+            'Items': 'Αντικείμενα',
+            'None': 'Κανένα',
+            'All': 'Όλα',
+            'Select all': 'Επιλογή όλων',
+            'Diselect all': 'Αποεπιλογή όλων',
+            'Invert selection': 'Αντιστροφή επιλογής',
+            'Close': 'Κλείσιμο'
+        }
+    }
 
 ### modallHeader.text
 The text that is going to be displayed in the modal header.
-> - Type:`string`
+> - Type: `string`
 > - Deafult: `'Search'`
 
 ### modallHeader.className
 An optional custom class name for the modal header element.
-> - Type:`string`
+> - Type: `string`
 > - Deafult: `empty string`
 
 ### modallHeader.visible
 Show or hide the modal header element.
-> - Type:`boolean`
+> - Type: `boolean`
 > - Deafult: `true`
 
 ### searchBox.enabled
 Enable or disable the seacrbox functionality.
-> - Type:`boolean`
+> - Type: `boolean`
 > - Deafult: `true`
 
 ### searchBox.minCharactersSearch
 Set the minimum characters typed in the searchbox without start searching for matches.
-> - Type:`number`
+> - Type: `number`
 > - Deafult: `2`
 
 ### searchBox.searchBoxClass
 An optional custom class name for the searchbox element.
-> - Type:`string`
+> - Type: `string`
 > - Deafult: `empty string`
 
 ### searchBox.searchBoxPlaceholder
 The placeholder to be displayed in the searchbox.
-> - Type:`string`
+> - Type: `string`
 > - Deafult: `empty string`
 
 ### searchBox.showSelectedItemsBox
 Show the number of selected items. 
-> - Type:`boolean`
+> - Type: `boolean`
 > - Deafult: `true`
 
 ### searchBox.selectedItemsLabelVisible
 Show or hide the selected items number element.  
-> - Type:`boolean`
+> - Type: `boolean`
 > - Deafult: `true`
 
 ### searchBox.selectedItemsLabelText
 Set the label text to be displayed before the selected items number. (You have to set `searchBox.selectedItemsLabelVisible` to `true`)
-> - Type:`string`
+> - Type: `string`
 > - Deafult: `'Selected items'`
 
 ### searchBox.hideNotFound
 If `true`, the items that do not match the searching criteria are going to be hidden.  
-> - Type:`boolean`
+> - Type: `boolean`
 > - Deafult: `true`
 
 ### searchBox.searchType
@@ -437,6 +490,11 @@ Get the popup jQuery object
 ### updateDatasource(data)
 Update the datasource
 > - Parameters: `data [object]`
+> - Returns: `void`
+
+### setLocale(locale)
+Update the selected localization key and re-initialize the plugin
+> - Parameters: `locale [string]`
 > - Returns: `void`
 
 ### destroy()

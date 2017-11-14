@@ -433,6 +433,11 @@ $(document).ready(function() {
         mainButton: {
             defaultText: 'Cars'
         },
+        localeData: {
+          'en': {
+            'Search': 'Search custom'
+          }
+        },
         searchBox: {          
           searchType: {
               startsWith: {
@@ -554,4 +559,8 @@ $(document).on('searchareacontrol.popup.beforeshow', function(e,data) {
 
 $(document).on('searchareacontrol.popup.beforehide', function(e,data) {  
   console.log('searchareacontrol.popup.beforehide');
+});
+
+$(document).on('click', '#setLocale', function() {
+  $('#btn2').searchAreaControl('setLocale', 'el');
 });
