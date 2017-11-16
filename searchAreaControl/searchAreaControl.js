@@ -1010,7 +1010,7 @@
             'Invert selection': 'Αντιστροφή επιλογής',
             'Close': 'Κλείσιμο'
         },
-		ptbr: {
+	ptbr: {
             'Search': 'Busca',
             'Selected items': 'Itens Selecionados',
             'Starts with': 'Começa com',
