@@ -7,8 +7,8 @@
 ### Added
 - Localization functionality (English (`en`) and Greek (`el`))
 
-### Fixed
-- Typo (options: `modallHeader` to `modalHeader`)
+### BREAKING CHANGE
+- Name of option `modallHeader` has changed to `modalHeader`
 
 ## [v1.6.0] - 2017-11-09
 
