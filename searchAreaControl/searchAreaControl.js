@@ -1009,6 +1009,20 @@
             'Diselect all': 'Αποεπιλογή όλων',
             'Invert selection': 'Αντιστροφή επιλογής',
             'Close': 'Κλείσιμο'
+        },
+		ptbr: {
+            'Search': 'Busca',
+            'Selected items': 'Itens Selecionados',
+            'Starts with': 'Começa com',
+            'Exists in': 'Existe em',
+            'Regular expression': 'Expressão regular',
+            'Items': 'Itens',
+            'None': 'Nenhum',
+            'All': 'Tudo',
+            'Select all': 'Selecionar tudo',
+            'Diselect all': 'Deselecionar Tudo',
+            'Invert selection': 'Inverter Seleção',
+            'Close': 'Fechar'
         }
     };
 
