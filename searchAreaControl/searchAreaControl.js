@@ -10,6 +10,12 @@
         this.rootClassName = 'elem-searchAreaControl';
         this.popupID = null;
         this.init();
+
+        // Trigger 'searchareacontrol.afterinit' event
+        var thisEl = this.$el;
+        setTimeout(function() {
+            thisEl.trigger('searchareacontrol.afterinit', [{ element: this.$el }]);
+        },10);
     }
 
     Plugin.prototype = {
@@ -35,8 +41,6 @@
                 $that.$el.trigger('searchareacontrol.popup.beforeshow', [{ element: $that.$el }]);
                 $that._togglePopup(true);
             });
-
-            this.$el.trigger('searchareacontrol.afterinit', [{ element: this.$el }]);
         },
 
         /**
@@ -325,19 +329,24 @@
 
                 var li = document.createElement('li');
                 var liSpan = document.createElement('span');
-                liSpan.className = 'sac-node-name sac-noselect';
-
+                
                 // Set li's name
                 if (name) {
                     var liName = (code) ? code + '.' + name : name;
                     liSpan.innerHTML = liName;
                 }
                 // Set li's attributes
+                var itemSelected = false;
                 if (attributes) {
                     for (var key in attributes) {
+                        if (key == $that.opt.selectionByAttribute && $that.opt.selectedNodes.indexOf(attributes[key]) !== -1) {
+                            itemSelected = true;
+                        }
                         liSpan.setAttribute(key, attributes[key]);
                     }
                 }
+                var selClass = (itemSelected === true) ? 'sac-node-selected' : '';
+                liSpan.className = 'sac-node-name sac-noselect ' + selClass;
                 li.appendChild(liSpan);
 
                 // Get children
@@ -1010,7 +1019,7 @@
             'Invert selection': 'Αντιστροφή επιλογής',
             'Close': 'Κλείσιμο'
         },
-	ptbr: {
+	    ptbr: {
             'Search': 'Busca',
             'Selected items': 'Itens Selecionados',
             'Starts with': 'Começa com',
@@ -1036,6 +1045,7 @@
         multiSelect: true,
         columns: 2,
         selectionByAttribute: 'data-id',
+        selectedNodes: [],
         locales: 'en',
         localeData: null,
         searchBox: {
