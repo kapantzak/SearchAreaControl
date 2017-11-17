@@ -111,7 +111,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
-[v2.1.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.2.0...v2.1.0
+[v2.1.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.0.0...v2.1.0
 [v2.0.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.6.0...v2.0.0
 [v1.6.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.5.1...v1.6.0
 [v1.5.1]: https://github.com/kapantzak/SearchAreaControl/compare/v1.5.0...v1.5.1
