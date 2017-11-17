@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+## [v2.1.0] - 2017-11-17
+
+### Added
+- Localization for portuguese-brazilian (`ptbr`)
+- New option `selectedNodes` to pre-select one or more nodes
+
+### Changed
+- Event `searchareacontrol.afterinit` fires 10ms later
+
 ## [v2.0.0] - 2017-11-14
 
 ### Added
@@ -102,6 +111,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.1.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.0.0...v2.1.0
 [v2.0.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.6.0...v2.0.0
 [v1.6.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.5.1...v1.6.0
 [v1.5.1]: https://github.com/kapantzak/SearchAreaControl/compare/v1.5.0...v1.5.1

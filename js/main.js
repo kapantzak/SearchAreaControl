@@ -458,6 +458,7 @@ $(document).ready(function() {
 
     $('#btn2').searchAreaControl({        
         data: data2,
+        selectedNodes: ['11','121'],
         mainButton: {
             defaultText: 'Data 2'
         }
@@ -481,7 +482,6 @@ $(document).on('click', '#setDisabled', function() {
 $(document).on('click', '#setEnabled', function() {      
     $('#myButton5').searchAreaControl('setDisabled',false);
 });
-
 
 // TEST ================================================================================ //
 
