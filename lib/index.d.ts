@@ -16,7 +16,7 @@ export interface IOptions {
     multiSelect?: boolean,
     columns?: number,
     selectionByAttribute?: string,
-    selectedNodes: string[],
+    selectedNodes?: string[],
     locales?: string,
     localeData?: any,
     searchBox?: ISearchBox,
