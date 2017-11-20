@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Changed
+- README (table of contents / npm package version / languages supported by default)
+
 ## [v2.1.1] - 2017-11-17
 
 ### Fixed
