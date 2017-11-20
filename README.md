@@ -17,6 +17,7 @@ Visit the demo page **<a href="https://kapantzak.github.io/SearchAreaControl/">h
 - [Options](#options)
 - [Methods](#methods)
 - [Events](#events)
+- [Contributing](#contributing)
 
 
 ## Dependencies
@@ -580,3 +581,7 @@ Gets raised every time the selection gets changed. Returns an object with 3 prop
        selectedAll: <boolean>,
 	   selectedNodes: <Array of nodes> 
     }
+
+## Contributing
+
+If you would like to contribute, please check the **[CONTRIBUTING](https://github.com/kapantzak/SearchAreaControl/blob/master/docs/CONTRIBUTING.md "CONTRIBUTING")** file
