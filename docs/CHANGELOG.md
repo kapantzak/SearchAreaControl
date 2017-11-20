@@ -2,8 +2,14 @@
 
 ## [Unreleased]
 
+
+## [v2.1.2] - 2017-11-20
+### Added
+- CONTRIBUTING.md
+
 ### Changed
 - README (table of contents / npm package version / languages supported by default)
+- Moved CHANGELOG.md to `docs` folder
 
 ## [v2.1.1] - 2017-11-17
 
@@ -119,6 +125,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.1.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.1...v2.1.2
 [v2.1.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.0...v2.1.1
 [v2.1.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.0.0...v2.1.0
 [v2.0.0]: https://github.com/kapantzak/SearchAreaControl/compare/v1.6.0...v2.0.0
