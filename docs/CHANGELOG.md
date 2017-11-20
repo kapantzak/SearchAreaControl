@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [v2.1.3] - 2017-11-20
+### Changed
+- README (Contributing)
 
 ## [v2.1.2] - 2017-11-20
 ### Added
@@ -125,6 +128,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.1.3]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.2...v2.1.3
 [v2.1.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.1...v2.1.2
 [v2.1.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.0...v2.1.1
 [v2.1.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.0.0...v2.1.0
