@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/searchareacontrol.svg)](https://badge.fury.io/js/searchareacontrol)
 
 # SearchAreaControl
 
@@ -6,6 +7,17 @@ SearchAreaControl is a complete jQuery plugin that let's you **display**, **sear
 Github **<a href="https://github.com/kapantzak/SearchAreaControl">repo</a>**
 
 Visit the demo page **<a href="https://kapantzak.github.io/SearchAreaControl/">here</a>**
+
+#### Table Of Contents
+
+
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Initialization](#initialization)
+- [Options](#options)
+- [Methods](#methods)
+- [Events](#events)
+
 
 ## Dependencies
 
@@ -112,38 +124,12 @@ In order to customize the `'Search'` key for the English translation:
         }
     });
 
-This is the default localization object that currently supports only English (`en`) and Greek (`el`) languages:
+Currently, the plugin supports the following languages **by default**:
 
-    {
-        en: {
-            'Search': 'Search',
-            'Selected items': 'Selected items',
-            'Starts with': 'Starts with',
-            'Exists in': 'Exists in',
-            'Regular expression': 'Regular expression',
-            'Items': 'Items',
-            'None': 'None',
-            'All': 'All',
-            'Select all': 'Select all',
-            'Diselect all': 'Diselect all',
-            'Invert selection': 'Invert selection',
-            'Close': 'Close'
-        },
-        el: {
-            'Search': 'Αναζήτηση',
-            'Selected items': 'Επιλεγμένα αντικείμενα',
-            'Starts with': 'Ξεκινά με',
-            'Exists in': 'Περιέχει',
-            'Regular expression': 'Κανονική έκφραση',
-            'Items': 'Αντικείμενα',
-            'None': 'Κανένα',
-            'All': 'Όλα',
-            'Select all': 'Επιλογή όλων',
-            'Diselect all': 'Αποεπιλογή όλων',
-            'Invert selection': 'Αντιστροφή επιλογής',
-            'Close': 'Κλείσιμο'
-        }
-    }
+-  English (`en`)
+-  Greek (`el`)
+-  Portuguese-Brazillian (`ptbr`)
+
 
 ### modallHeader.text
 The text that is going to be displayed in the modal header.
