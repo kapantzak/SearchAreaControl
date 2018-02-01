@@ -77,6 +77,7 @@ export interface IPopupDimensions {
 
 export interface IMainButton {
     defaultText?: string,
+    className?: string,
     defaultNoneText?: string,
     defaultAllText?: string,
     showAllText?: boolean,
@@ -87,7 +88,8 @@ export interface IPopupButtonsCollection {
     selectAll?: IPopupButton,
     diselectAll?: IPopupButton,
     invertSelection?: IPopupButton,
-    close?: IPopupButton
+    close?: IPopupButton,
+    cancel?: IPopupButton
 }
 
 export interface IPopupButton {

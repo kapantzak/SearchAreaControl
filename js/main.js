@@ -431,8 +431,9 @@ $(document).ready(function() {
     $('#btn1').searchAreaControl({        
         data: data,
         mainButton: {
-            defaultText: 'Cars'
-        },
+            defaultText: 'Cars',
+            className: 'btn btn-success'
+        },        
         localeData: {
           'en': {
             'Search': 'Search custom'
@@ -453,6 +454,11 @@ $(document).ready(function() {
                   selected: true
               }
           }
+      },
+      popupButtons: {
+        cancel: {
+          visible: true
+        }
       }
     });
 

@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [v2.2.0] - 2018-02-01
+### Added
+- New option `mainButton.className` to provide custom class to main button
+- New popup button `cancel` (Closes the popup without applying selection)
+
 ## [v2.1.3] - 2017-11-20
 ### Changed
 - README (Contributing)
@@ -128,6 +133,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.2.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.3...v2.2.0
 [v2.1.3]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.2...v2.1.3
 [v2.1.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.1...v2.1.2
 [v2.1.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.0...v2.1.1

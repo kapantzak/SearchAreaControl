@@ -28,8 +28,14 @@
             this.$el.html(this._localize(this.opt.mainButton.defaultText));
             this._setData_DataSource(this.opt.data);
 
-            // Add class
+            // Add root class
             this.$el.addClass(this.rootClassName);
+
+            // Add main button class name, if provided
+            var mainButtonClassName = this.opt.mainButton.className;
+            if (mainButtonClassName.length > 0) {
+                this.$el.addClass(mainButtonClassName);
+            }
 
             this.$el.trigger('searchareacontrol.beforebuildpopup', [{ element: this.$el }]);
             this._buildPopup(pluginName);
@@ -125,6 +131,21 @@
             return (data) ? data : null;
         },
 
+        /**
+         * Store selected nodes object on popup show
+         */
+        _setData_SelectedNodesOnPopupShow: function (data) {
+            $.data(this, pluginName + '_selectedNodesOnPopupShow', data);
+        },
+
+        /**
+         * Get the selected nodes object when the popup was opened
+         */
+        _getData_SelectedNodesOnPopupShow: function () {
+            var data = $.data(this, pluginName + '_selectedNodesOnPopupShow');
+            return (data) ? data : null;
+        },
+
         // SEARCH AREA (start) ============================================================== //
 
         /**
@@ -139,6 +160,11 @@
                     overlay.show();
                     popup.addClass('sac-popup-visible');
                     this._setSearchBoxDimensions();
+                    
+                    // Update selected nodes on popup show object
+                    var selectedNodes = this._getSelectedNodes();
+                    this._setData_SelectedNodesOnPopupShow(selectedNodes);
+
                     this.$el.trigger('searchareacontrol.popup.shown', [{ element: this.$el, popup: popup }]);
                 } else {
                     overlay.hide();
@@ -588,6 +614,10 @@
                         case 'close':
                             $that._closePopup();
                             break;
+                        case 'cancel':
+                            $that._resetSelection();
+                            $that._closePopup();
+                            break;
                     }
                     if (btn.callback && typeof btn.callback === 'function') {
                         btn.callback();
@@ -759,6 +789,26 @@
         _closePopup: function () {     
             this.$el.trigger('searchareacontrol.popup.beforehide', [{ element: this.$el }]);       
             this._togglePopup(false);
+        },
+
+        /**
+         * Reset selected nodes (Set selection of nodes that were selected when the popup opened)
+         */
+        _resetSelection: function () {
+            var selectedNodesOnPopupShow = this._getData_SelectedNodesOnPopupShow();
+            this._diselectAll();
+            var allSelected = selectedNodesOnPopupShow.selectedAll;
+            var nodes = selectedNodesOnPopupShow.selectedNodes;
+            if (allSelected === true) {
+                this._selectAll();
+            } else if (nodes.length > 0) {
+                var popup = $('#' + this.popupID);
+                for (var n in nodes) {
+                    var thisNode = nodes[n];
+                    popup.find('.sac-node-name').filter('[' + this.opt.selectionByAttribute + '="' + thisNode.attributes[this.opt.selectionByAttribute] + '"]').addClass('sac-node-selected');
+                }
+            }
+            this._applySelection();
         },
 
         /**
@@ -1003,7 +1053,8 @@
             'Select all': 'Select all',
             'Diselect all': 'Diselect all',
             'Invert selection': 'Invert selection',
-            'Close': 'Close'
+            'Close': 'Close',
+            'Cancel': 'Cancel'
         },
         el: {
             'Search': 'Αναζήτηση',
@@ -1017,7 +1068,8 @@
             'Select all': 'Επιλογή όλων',
             'Diselect all': 'Αποεπιλογή όλων',
             'Invert selection': 'Αντιστροφή επιλογής',
-            'Close': 'Κλείσιμο'
+            'Close': 'Κλείσιμο',
+            'Cancel': 'Άκυρο'
         },
 	    ptbr: {
             'Search': 'Busca',
@@ -1031,7 +1083,8 @@
             'Select all': 'Selecionar tudo',
             'Diselect all': 'Deselecionar Tudo',
             'Invert selection': 'Inverter Seleção',
-            'Close': 'Fechar'
+            'Close': 'Fechar',
+            'Cancel': 'Cancelar'
         }
     };
 
@@ -1086,6 +1139,7 @@
         },
         mainButton: {
             defaultText: 'Items',
+            className: '',
             defaultNoneText: 'None',
             defaultAllText: 'All',
             showAllText: true,
@@ -1114,6 +1168,12 @@
                 text: 'Close',
                 className: 'btn btn-default',
                 visible: true,
+                callback: null
+            },
+            cancel: {
+                text: 'Cancel',
+                className: 'btn btn-default',
+                visible: false,
                 callback: null
             }
         }

@@ -299,6 +299,11 @@ Set the default button text.
 > - Type: `string`
 > - Default: `'Items'`
 
+#### mainButton.className
+Set custom class name to main button
+> - Type: `string`
+> - Default: `empty string`
+
 #### mainButton.defaultNoneText
 Set the default button text to be displayed when no item is selected.
 > - Type: `string`
@@ -392,7 +397,8 @@ Provide an optional function name to call on button `click`
 > - Default:`null`
 
 #### popupButtons.close
-Set options for `Invert selection` button.
+Set options for `Close` button.
+Apply new selection and close popup.
 
 ##### popupButtons.close.text
 Set the button text
@@ -410,6 +416,30 @@ Set the visibility of the button
 > - Default:`true`
 
 ##### popupButtons.close.callback
+Provide an optional function name to call on button `click`
+> - Type:`function'
+> - Default:`null`
+
+#### popupButtons.cancel
+Set options for `Cancel` button.
+Closes the popup without applying new selection.
+
+##### popupButtons.cancel.text
+Set the button text
+> - Type:`string`
+> - Default:`'Cancel'`
+
+##### popupButtons.cancel.className
+Set the button class name (Bootstrap classes by default)
+> - Type:`string`
+> - Default:`'btn btn-default'`
+
+##### popupButtons.cancel.visible
+Set the visibility of the button
+> - Type:`boolean`
+> - Default:`true`
+
+##### popupButtons.cancel.callback
 Provide an optional function name to call on button `click`
 > - Type:`function'
 > - Default:`null`
