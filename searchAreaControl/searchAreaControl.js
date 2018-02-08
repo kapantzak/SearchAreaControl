@@ -381,7 +381,7 @@
                 var selClass = (itemSelected === true) ? 'sac-node-selected' : '';                
                 liSpan.className = 'sac-node-name sac-noselect ' + selClass;
 
-                if (children && $that.opt.collapseNodes === true) {
+                if (children && Array.isArray(children) && children.length > 0 && $that.opt.collapseNodes === true) {
                     li.appendChild(arrow[0]);    
                 }                
                 li.appendChild(liSpan);
