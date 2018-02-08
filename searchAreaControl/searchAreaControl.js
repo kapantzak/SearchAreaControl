@@ -298,7 +298,8 @@
                 var chunk = parseInt(dataLen / optCols) + addition;
 
                 var colsHolder = document.createElement('div');
-                colsHolder.className = 'sac-cols-holder';
+                var collapseClass = (this.opt.collapseNodes === true) ? 'sac-nodes-collapse' : 'sac-nodes-fixed';
+                colsHolder.className = 'sac-cols-holder ' + collapseClass;
 
                 var i, counter;
                 for (i = 0, counter = 1; i < dataLen; i += chunk, counter++) {
@@ -351,11 +352,17 @@
                 var code = node.code;
                 var name = node.name;
                 var attributes = node.attributes;
+                var nodeExpanded = node.nodeExpanded;
                 var children = node.children;
 
-                var li = document.createElement('li');
+                var li = document.createElement('li');                
+                var arrow = $('<span class="toggleNodeCollapse"><i class="fa fa-caret-right"></i><i class="fa fa-caret-down"></i></span>');
                 var liSpan = document.createElement('span');
                 
+                if ($that.opt.collapseNodes === true && ($that.opt.allNodesExpanded === false || nodeExpanded === false)) {
+                    li.className = 'sac-node-collapsed';
+                }                
+
                 // Set li's name
                 if (name) {
                     var liName = (code) ? code + '.' + name : name;
@@ -371,8 +378,12 @@
                         liSpan.setAttribute(key, attributes[key]);
                     }
                 }
-                var selClass = (itemSelected === true) ? 'sac-node-selected' : '';
+                var selClass = (itemSelected === true) ? 'sac-node-selected' : '';                
                 liSpan.className = 'sac-node-name sac-noselect ' + selClass;
+
+                if (children && $that.opt.collapseNodes === true) {
+                    li.appendChild(arrow[0]);    
+                }                
                 li.appendChild(liSpan);
 
                 // Get children
@@ -469,6 +480,13 @@
                             }
                             $that._applySelection();
                         });
+                }
+
+                // Node collapse
+                if (this.opt.collapseNodes === true) {
+                    popup.find('.toggleNodeCollapse').on('click', function() {
+                        $(this).closest('li').toggleClass('sac-node-collapsed');
+                    });
                 }
             }
         },
@@ -1096,6 +1114,8 @@
         },
         data: [],
         multiSelect: true,
+        collapseNodes: false,
+        allNodesExpanded: true,
         columns: 2,
         selectionByAttribute: 'data-id',
         selectedNodes: [],

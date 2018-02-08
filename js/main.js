@@ -3,6 +3,7 @@ var data = [
   {
     "code": null,    
     "name": "Economy car",
+    "nodeExpanded": false,
     "attributes": {
       "data-id": "1"
     },
@@ -430,6 +431,8 @@ $(document).ready(function() {
 
     $('#btn1').searchAreaControl({        
         data: data,
+        collapseNodes: true,        
+        //allNodesExpanded: false,
         mainButton: {
             defaultText: 'Cars',
             className: 'btn btn-success'

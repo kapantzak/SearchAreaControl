@@ -73,21 +73,35 @@ Provides the data that are going to be displayed.
 > - Type: `array`
 > - Deafult: An empty array
 
-You have to pass an array of objects that have those properties.
+You have to pass an array of objects of type `IData`:
 
-    {
-		code: null,		// If provided, it will be appended before the node's name followed by a dot (code.name)	
-		name: 'Item name',	// The node's name
-		attributes: {
-			'data-id': 1,	// 'data-id' is the default attribute that the plugin searches in order to find the nodes
-			'data-custom-attribute': 'test',
-			...
-		},
-		children: [{...}]
-	}
+    interface IData {
+	    code?: string,
+	    name: string,
+	    attributes?: IDataAttributes,
+	    nodeExpanded?: true,
+	    children?: IData[]
+    }
+
+> - `code`: If provided, it will be appended before the node's name followed by a dot (code.name)
+> - `name`: The node's name
+> - `attributes`: An object of type `IDataAttributes` (`{ [key: string]: any }`)
+> - `nodeExpanded`: Set it to `false` if you want the specific node to be collapsed (hidden children)
+> - `children`: An array of objects of type `IData`
+
 
 ### multiSelect
-Set to false if you want to be able to select only one item at time
+Set to `false` if you want to be able to select only one item at time
+> - Type: `boolean`
+> - Default: `true`
+
+### collapseNodes
+Set to `true` if you want the user to be able to expand or collapse every node that has one or more children nodes
+> - Type: `boolean`
+> - Default: `false`
+
+### allNodesExpanded
+Set to `false` if you want the nodes to be collapsed on load (You have to set `collapseNodes: true` in order for this option to take effect)
 > - Type: `boolean`
 > - Default: `true`
 
