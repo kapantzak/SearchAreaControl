@@ -143,12 +143,12 @@ ul:not(.sac-ul-top) .sac-node-name.sa-selected-item:before,
     padding-right: 3px;
 }
 
-.toggleNodeCollapse > .fa-caret-down,
-.sac-node-collapsed > .toggleNodeCollapse > .fa-caret-right {
+.toggleNodeCollapse > .fa-caret-right,
+.sac-node-collapsed > .toggleNodeCollapse > .fa-caret-down {
     display: none;
 }
 
-.sac-node-collapsed > .toggleNodeCollapse > .fa-caret-down {
+.sac-node-collapsed > .toggleNodeCollapse > .fa-caret-right {
     display: inline-block;
 }
 
