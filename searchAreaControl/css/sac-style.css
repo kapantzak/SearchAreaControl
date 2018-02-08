@@ -119,12 +119,41 @@
 }
 
 ul:not(.sac-ul-top) .sac-node-name:hover { text-decoration:underline }
-ul:not(.sac-ul-top) .sac-node-name.sa-selected-item:before {
+
+ul:not(.sac-ul-top) .sac-node-name.sa-selected-item:before,
+.sac-node-selected:before {
     content: "\e013";
     font-family: 'Glyphicons Halflings';
-    position:absolute;
-    left:-10px;
+    position:absolute;    
     color:#13a562;
+}
+
+.sac-nodes-fixed ul:not(.sac-ul-top) .sac-node-name.sa-selected-item:before,
+.sac-nodes-fixed .sac-node-selected:before {    
+    left:-10px;    
+}
+
+.sac-nodes-collapse ul:not(.sac-ul-top) .sac-node-name.sa-selected-item:before,
+.sac-nodes-collapse .sac-node-selected:before {    
+    right:-10px;
+}
+
+.toggleNodeCollapse {
+    cursor: pointer;    
+    padding-right: 3px;
+}
+
+.toggleNodeCollapse > .fa-caret-down,
+.sac-node-collapsed > .toggleNodeCollapse > .fa-caret-right {
+    display: none;
+}
+
+.sac-node-collapsed > .toggleNodeCollapse > .fa-caret-down {
+    display: inline-block;
+}
+
+.sac-node-collapsed > .sac-ul {
+    display: none
 }
 
 .sac-custom-numSpan {
@@ -151,13 +180,13 @@ ul:not(.sac-ul-top) .sac-node-name.sa-selected-item:before {
 
 /* Selected node --------------------------------------------------------------- */
 
-.sac-node-selected:before {
+/* .sac-node-selected:before {
     content: "\e013";
     font-family: 'Glyphicons Halflings';
     position:absolute;
     left:-10px;
     color:#13a562;
-}
+} */
 
 /* Disabled node --------------------------------------------------------------- */
 

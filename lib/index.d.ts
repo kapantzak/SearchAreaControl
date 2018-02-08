@@ -14,6 +14,8 @@ export interface IOptions {
     modalHeader?: IModalHeader,
     data?: IData[],
     multiSelect?: boolean,
+    collapseNodes?: boolean,
+    allNodesExpanded?: boolean,
     columns?: number,
     selectionByAttribute?: string,
     selectedNodes?: string[],
@@ -35,6 +37,7 @@ export interface IData {
     code?: string,
     name: string,
     attributes?: IDataAttributes,
+    nodeExpanded?: true,
     children?: IData[]
 }
 
