@@ -83,11 +83,11 @@ You have to pass an array of objects of type `IData`:
 	    children?: IData[]
     }
 
-> - `code`: If provided, it will be appended before the node's name followed by a dot (code.name)
-> - `name`: The node's name
-> - `attributes`: An object of type `IDataAttributes` (`{ [key: string]: any }`)
-> - `nodeExpanded`: Set it to `false` if you want the specific node to be collapsed (hidden children)
-> - `children`: An array of objects of type `IData`
+- `code`: If provided, it will be appended before the node's name followed by a dot (code.name)
+- `name`: The node's name
+- `attributes`: An object of type `IDataAttributes` (`{ [key: string]: any }`)
+- `nodeExpanded`: Set it to `false` if you want the specific node to be collapsed (hidden children)
+- `children`: An array of objects of type `IData`
 
 
 ### multiSelect

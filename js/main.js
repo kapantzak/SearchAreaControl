@@ -14,7 +14,7 @@ var data = [
         "attributes": {
           "data-id": "11"
         },
-        "children": null
+        "children": []
       },
       {
         "code": null,        

@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+## [v2.3.1] - 2018-02-08
+### Fixed
+- When `collapseNodes: true`, nodes with empty array still got an expand/collapse arrow
+
+### Changed
+- README: Changed `data` option markup
+
 ## [v2.3.0] - 2018-02-08
 ### Added
 - New option `collapseNodes`
@@ -9,6 +16,7 @@
 
 ### Changed
 - Added new property `nodeExpanded` to `IData` interface
+- README: Added new options documentation and changed `data` option
 
 ## [v2.2.0] - 2018-02-01
 ### Added
@@ -141,6 +149,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.3.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.3.0...v2.3.1
 [v2.3.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.2.0...v2.3.0
 [v2.2.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.3...v2.2.0
 [v2.1.3]: https://github.com/kapantzak/SearchAreaControl/compare/v2.1.2...v2.1.3
