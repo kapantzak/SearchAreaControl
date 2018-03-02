@@ -417,6 +417,8 @@ Provide an optional function name to call on button `click`
 #### IPopupButton.index
 Provide an optional function name to call on button `click`
 
+***Note that, if you decide to change a button's index, you have to change other buttons' indexes too, in order not to end up with multiple buttons with the same index.***
+
 
 ## Methods
 
