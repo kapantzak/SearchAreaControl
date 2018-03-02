@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+## [v2.4.0] - 2018-03-02
+### Added
+- Property `index` in `IPopupButton`
+
+### Changed
+- README (`IPopupButto`n documentation)
+
 ## [v2.3.2] - 2018-02-08
 ### Changed
 - css style (collapse / expand arrows)
@@ -153,6 +160,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.4.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.3.2...v2.4.0
 [v2.3.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.3.1...v2.3.2
 [v2.3.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.3.0...v2.3.1
 [v2.3.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.2.0...v2.3.0

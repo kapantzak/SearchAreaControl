@@ -99,7 +99,8 @@ export interface IPopupButton {
     text?: string,
     className?: string,
     visible?: boolean,
-    callback?: any
+    callback?: any,
+    index?: number
 }
 
 export interface ISelectedNodesObject {

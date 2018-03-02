@@ -339,124 +339,84 @@ Each time the user selects an item, the plugin updates main button's text with t
 > - Default: `1`
 
 ### popupButtons
-This option controls the modal buttons appearance and behaviour.
+This option controls the modal buttons appearance and behaviour. It accepts an object of type `IPopupButtonsCollection` representing the popup buttons:
 
-#### popupButtons.selectAll
-Set options for `Select all` button.
+    interface IPopupButtonsCollection {
+        selectAll?: IPopupButton,
+        diselectAll?: IPopupButton,
+        invertSelection?: IPopupButton,
+        close?: IPopupButton,
+        cancel?: IPopupButton
+    }
 
-##### popupButtons.selectAll.text
+#### SelectAll button
+Selects all available nodes in the popup.
+> - Default text: `'Select all'`
+> - Default class: `'btn btn-success'`
+> - Visible by default: `true`
+> - Default callback: `null`,
+> - Default index: `0` 
+
+#### DiselectAll button
+Diselects all available nodes in the popup.
+> - Default text: `'Diselect all'`
+> - Default class: `'btn btn-default'`
+> - Visible by default: `true`
+> - Default callback: `null`,
+> - Default index: `1`
+
+#### InvertSelection button
+Inverts the current selection for each node in the popup.
+> - Default text: `'Invert selection'`
+> - Default class: `'btn btn-default'`
+> - Visible by default: `true`
+> - Default callback: `null`,
+> - Default index: `2`
+
+#### Close button
+Closes the popup applying the new selection.
+> - Default text: `'Close'`
+> - Default class: `'btn btn-default'`
+> - Visible by default: `true`
+> - Default callback: `null`,
+> - Default index: `3`
+
+#### Cancel button
+Closes the popup **without** applying the new selection.
+> - Default text: `'Cancel'`
+> - Default class: `'btn btn-default'`
+> - Visible by default: `false`
+> - Default callback: `null`,
+> - Default index: `4`
+
+Each button is an object of type `IPopupButton`
+
+	interface IPopupButton {
+	    text?: string,
+	    className?: string,
+	    visible?: boolean,
+	    callback?: any,
+	    index?: number
+	}
+
+#### IPopupButton.text
 Set the button text
 > - Type:`string`
-> - Default:`'Select all'`
 
-##### popupButtons.selectAll.className
+#### IPopupButton.className
 Set the button class name (Bootstrap classes by default)
-> - Type:`string`
-> - Default:`'btn btn-success'`
 
-##### popupButtons.selectAll.visible
+#### IPopupButton.visible
 Set the visibility of the button
 > - Type:`boolean`
-> - Default:`true`
 
-##### popupButtons.selectAll.callback
+#### IPopupButton.callback
 Provide an optional function name to call on button `click`
 > - Type:`function'
-> - Default:`null`
 
-#### popupButtons.diselectAll
-Set options for `Diselect all` button.
-
-##### popupButtons.diselectAll.text
-Set the button text
-> - Type:`string`
-> - Default:`'Diselect all'`
-
-##### popupButtons.diselectAll.className
-Set the button class name (Bootstrap classes by default)
-> - Type:`string`
-> - Default:`'btn btn-default'`
-
-##### popupButtons.diselectAll.visible
-Set the visibility of the button
-> - Type:`boolean`
-> - Default:`true`
-
-##### popupButtons.diselectAll.callback
+#### IPopupButton.index
 Provide an optional function name to call on button `click`
-> - Type:`function'
-> - Default:`null`
 
-#### popupButtons.invertSelection
-Set options for `Invert selection` button.
-
-##### popupButtons.invertSelection.text
-Set the button text
-> - Type:`string`
-> - Default:`'Invert selection'`
-
-##### popupButtons.invertSelection.className
-Set the button class name (Bootstrap classes by default)
-> - Type:`string`
-> - Default:`'btn btn-default'`
-
-##### popupButtons.invertSelection.visible
-Set the visibility of the button
-> - Type:`boolean`
-> - Default:`true`
-
-##### popupButtons.invertSelection.callback
-Provide an optional function name to call on button `click`
-> - Type:`function'
-> - Default:`null`
-
-#### popupButtons.close
-Set options for `Close` button.
-Apply new selection and close popup.
-
-##### popupButtons.close.text
-Set the button text
-> - Type:`string`
-> - Default:`'Close'`
-
-##### popupButtons.close.className
-Set the button class name (Bootstrap classes by default)
-> - Type:`string`
-> - Default:`'btn btn-default'`
-
-##### popupButtons.close.visible
-Set the visibility of the button
-> - Type:`boolean`
-> - Default:`true`
-
-##### popupButtons.close.callback
-Provide an optional function name to call on button `click`
-> - Type:`function'
-> - Default:`null`
-
-#### popupButtons.cancel
-Set options for `Cancel` button.
-Closes the popup without applying new selection.
-
-##### popupButtons.cancel.text
-Set the button text
-> - Type:`string`
-> - Default:`'Cancel'`
-
-##### popupButtons.cancel.className
-Set the button class name (Bootstrap classes by default)
-> - Type:`string`
-> - Default:`'btn btn-default'`
-
-##### popupButtons.cancel.visible
-Set the visibility of the button
-> - Type:`boolean`
-> - Default:`true`
-
-##### popupButtons.cancel.callback
-Provide an optional function name to call on button `click`
-> - Type:`function'
-> - Default:`null`
 
 ## Methods
 

@@ -430,10 +430,30 @@
         _appendDefaultButtons: function ($footer) {
             var $that = this;
             var buttons = this.opt.popupButtons;
+
+            var btnArr = [];
             for (var btn in buttons) {
                 if (buttons[btn].visible === true) {
-                    $footer.append($that._getDefaultButton(btn, buttons[btn]));
+                    var thisBtn = buttons[btn];
+                    var btnObj = {
+                        text: thisBtn.text,
+                        className: thisBtn.className,
+                        visible: thisBtn.visible,
+                        callback: thisBtn.callback,
+                        index: thisBtn.index,
+                        key: btn
+                    };    
+                    btnArr.push(btnObj);
                 }
+            }
+
+            var indexArr = btnArr.map(function(b) { return b.index; });
+            indexArr.sort();
+
+            for (var i in indexArr) {
+                var btnKey = btnArr.filter(function(b) { return b.index === indexArr[i]; })[0].key;  
+                var btnObj = buttons[btnKey];
+                $footer.append($that._getDefaultButton(btnKey, btnObj));
             }
         },
 
@@ -1170,31 +1190,36 @@
                 text: 'Select all',
                 className: 'btn btn-success',
                 visible: true,
-                callback: null
+                callback: null,
+                index: 0
             },
             diselectAll: {
                 text: 'Diselect all',
                 className: 'btn btn-default',
                 visible: true,
-                callback: null
+                callback: null,
+                index: 1
             },
             invertSelection: {
                 text: 'Invert selection',
                 className: 'btn btn-default',
                 visible: true,
-                callback: null
+                callback: null,
+                index: 2
             },
             close: {
                 text: 'Close',
                 className: 'btn btn-default',
                 visible: true,
-                callback: null
+                callback: null,
+                index: 3
             },
             cancel: {
                 text: 'Cancel',
                 className: 'btn btn-default',
                 visible: false,
-                callback: null
+                callback: null,
+                index: 4
             }
         }
     }
