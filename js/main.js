@@ -458,11 +458,26 @@ $(document).ready(function() {
               }
           }
       },
-      popupButtons: {
-        cancel: {
-          visible: true
-        }
-      }
+      // popupButtons: {        
+      //   selectAll: {
+      //     className: 'btn btn-default',
+      //     index: 1
+      //   },
+      //   diselectAll: {
+      //     index: 2
+      //   },
+      //   invertSelection: {
+      //     index: 3
+      //   },
+      //   close: {
+      //     className: 'btn btn-success',
+      //     index: 0
+      //   },
+      //   cancel: {
+      //     visible: true,
+      //     index: 4
+      //   },
+      // }
     });
 
     $('#btn2').searchAreaControl({        
