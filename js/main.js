@@ -155,6 +155,134 @@ var data = [
           "data-id": "44"
         },
         "children": null
+      },
+      {
+        "code": null,
+        "name": "Compact executive",
+        "attributes": {
+          "data-id": "45"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Executive / mid-luxury",
+        "attributes": {
+          "data-id": "46"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Full-size luxury / Grand saloon",
+        "attributes": {
+          "data-id": "47"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Estate cars / station wagons",
+        "attributes": {
+          "data-id": "48"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Compact executive",
+        "attributes": {
+          "data-id": "49"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Executive / mid-luxury",
+        "attributes": {
+          "data-id": "50"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Full-size luxury / Grand saloon",
+        "attributes": {
+          "data-id": "51"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Estate cars / station wagons",
+        "attributes": {
+          "data-id": "52"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Compact executive",
+        "attributes": {
+          "data-id": "53"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Executive / mid-luxury",
+        "attributes": {
+          "data-id": "54"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Full-size luxury / Grand saloon",
+        "attributes": {
+          "data-id": "55"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Estate cars / station wagons",
+        "attributes": {
+          "data-id": "56"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Compact executive",
+        "attributes": {
+          "data-id": "57"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Executive / mid-luxury",
+        "attributes": {
+          "data-id": "58"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Full-size luxury / Grand saloon",
+        "attributes": {
+          "data-id": "59"
+        },
+        "children": null
+      },
+      {
+        "code": null,
+        "name": "Estate cars / station wagons",
+        "attributes": {
+          "data-id": "60"
+        },
+        "children": null
       }
     ]
   },

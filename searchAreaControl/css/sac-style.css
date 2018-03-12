@@ -83,7 +83,7 @@
     float: left;
     overflow-y: auto;
     padding: 15px 5px;
-    max-height: 500px;
+    max-height: 50vh;
     border: 1px solid #d8d8d8;
     border-radius: 4px;
     box-sizing: border-box;
