@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [v2.5.0] - 2018-03-20
+### Added
+- New popup button `Select highlighted`
+
+### Changed
+- (Typescript declaration file) Added new `selectHighlighted` property to the `IPopupButtonsCollection` interface
+- README (`IPopupButton` documentation)
+
 ## [v2.4.1] - 2018-03-12
 ### Fixed
 - Small viewport css
@@ -11,7 +19,7 @@
 - Property `index` in `IPopupButton`
 
 ### Changed
-- README (`IPopupButto`n documentation)
+- README (`IPopupButton` documentation)
 
 ## [v2.3.2] - 2018-02-08
 ### Changed
@@ -164,6 +172,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.5.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.4.1...v2.5.0
 [v2.4.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.4.0...v2.4.1
 [v2.4.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.3.2...v2.4.0
 [v2.3.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.3.1...v2.3.2

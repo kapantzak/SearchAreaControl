@@ -165,6 +165,9 @@
                     var selectedNodes = this._getSelectedNodes();
                     this._setData_SelectedNodesOnPopupShow(selectedNodes);
 
+                    // Check for highlighted nodes on popup show
+                    this._checkForHighlightedNodes();
+
                     this.$el.trigger('searchareacontrol.popup.shown', [{ element: this.$el, popup: popup }]);
                 } else {
                     overlay.hide();
@@ -183,7 +186,7 @@
             }
             if (this.opt.searchBox.enabled === true) {
                 this._buildSearchBox();
-                this._addSearchBoxEventListeners();
+                this._addSearchBoxEventListeners();                
             }
             this._buildContent();
             this._buildPopupButtons();
@@ -523,7 +526,7 @@
 
                 // Search type combo
                 popup.find('.sac-seacrh-combo-type').on('change', function () {
-                    $that._searchNodes(input.val());
+                    $that._searchNodes(input.val());                    
                 });
 
                 // Search box input
@@ -599,7 +602,31 @@
                     }
 
                 }
-                
+                $that._checkForHighlightedNodes();
+            }
+        },
+
+        /**
+         * Check for hightlighted nodes and toogle button's visibility
+         */
+        _checkForHighlightedNodes: function() {
+            var nodes = this._getHighlightedNodes();
+            this._toggleSelectHighlightedButtonVisibility(nodes !== null && nodes.length > 0);
+        },
+
+        /**
+         * Toogle select highlighted button visibility
+         */
+        _toggleSelectHighlightedButtonVisibility: function(show) {
+            var $that = this;
+            var popup = $('#' + this.popupID);
+            if (popup && popup.length > 0) {
+                var btn = popup.find('.sac-btn-popup-selectHighlighted');
+                if (show === true) {
+                    btn.show();
+                } else {
+                    btn.hide();
+                }
             }
         },
 
@@ -634,7 +661,8 @@
             var button = null;
 
             if (this.opt.multiSelect === true || (this.opt.multiSelect === false && hiddenOnSingleSelection.indexOf(key) === -1)) {
-                button = $('<button id="btn_' + this.popupID + '_' + key + '" class="' + btn.className + '" type="button">' + $that._localize(btn.text) + '</button>');
+                var btnClass = 'sac-btn-popup-' + key;
+                button = $('<button id="btn_' + this.popupID + '_' + key + '" class="' + btn.className + ' ' + btnClass + '" type="button">' + $that._localize(btn.text) + '</button>');
                 button.on('click', function () {
                     switch (key) {
                         case 'selectAll':
@@ -647,7 +675,7 @@
                             break;
                         case 'invertSelection':
                             $that._invertSelection()
-                            $that._applySelection();;
+                            $that._applySelection();
                             break;
                         case 'close':
                             $that._closePopup();
@@ -655,6 +683,10 @@
                         case 'cancel':
                             $that._resetSelection();
                             $that._closePopup();
+                            break;
+                        case 'selectHighlighted':
+                            $that._selectHighlighted();
+                            $that._applySelection();
                             break;
                     }
                     if (btn.callback && typeof btn.callback === 'function') {
@@ -755,8 +787,19 @@
             if (popup && popup.length > 0 && nodes !== null) {
                 if (this.opt.multiSelect === true) {
                     nodes.not('.sac-node-disabled').addClass('sac-node-selected');
-                } else {
-                    console.warn('Unable to perform diselection due to multiSelect option set to false');
+                }
+            }
+        },
+
+        /**
+         * Select highlighted nodes
+         */
+        _selectHighlighted: function() {
+            var nodes = this._getHighlightedNodes();
+            var popup = $('#' + this.popupID);
+            if (popup && popup.length > 0 && nodes !== null) {
+                if (this.opt.multiSelect === true) {
+                    nodes.not('.sac-node-disabled').addClass('sac-node-selected');
                 }
             }
         },
@@ -817,6 +860,18 @@
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0) {
                 nodes = popup.find('.sac-ul').not('.sac-ul-top').children('li').find('.sac-node-name');
+            }
+            return nodes;
+        },
+
+        /**
+         * Get highlighted nodes
+         */
+        _getHighlightedNodes: function () {
+            var nodes = null;
+            var popup = $('#' + this.popupID);
+            if (popup && popup.length > 0) {
+                nodes = popup.find('.sac-ul').not('.sac-ul-top').children('li').filter('.sac-found-item').find('.sac-node-name');
             }
             return nodes;
         },
@@ -1092,7 +1147,8 @@
             'Diselect all': 'Diselect all',
             'Invert selection': 'Invert selection',
             'Close': 'Close',
-            'Cancel': 'Cancel'
+            'Cancel': 'Cancel',
+            'Select highlighted': 'Select highlighted'
         },
         el: {
             'Search': 'Αναζήτηση',
@@ -1107,7 +1163,8 @@
             'Diselect all': 'Αποεπιλογή όλων',
             'Invert selection': 'Αντιστροφή επιλογής',
             'Close': 'Κλείσιμο',
-            'Cancel': 'Άκυρο'
+            'Cancel': 'Άκυρο',
+            'Select highlighted': 'Επιλογή επισημασμένων'
         },
 	    ptbr: {
             'Search': 'Busca',
@@ -1122,7 +1179,8 @@
             'Diselect all': 'Deselecionar Tudo',
             'Invert selection': 'Inverter Seleção',
             'Close': 'Fechar',
-            'Cancel': 'Cancelar'
+            'Cancel': 'Cancelar',
+            'Select highlighted': 'Selecionar destacado'
         }
     };
 
@@ -1220,6 +1278,13 @@
                 visible: false,
                 callback: null,
                 index: 4
+            },
+            selectHighlighted: {
+                text: 'Select highlighted',
+                className: 'btn btn-default',
+                visible: false,
+                callback: null,
+                index: 5
             }
         }
     }

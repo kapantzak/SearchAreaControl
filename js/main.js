@@ -586,26 +586,11 @@ $(document).ready(function() {
               }
           }
       },
-      // popupButtons: {        
-      //   selectAll: {
-      //     className: 'btn btn-default',
-      //     index: 1
-      //   },
-      //   diselectAll: {
-      //     index: 2
-      //   },
-      //   invertSelection: {
-      //     index: 3
-      //   },
-      //   close: {
-      //     className: 'btn btn-success',
-      //     index: 0
-      //   },
-      //   cancel: {
-      //     visible: true,
-      //     index: 4
-      //   },
-      // }
+      popupButtons: {        
+        selectHighlighted: {
+          visible: true
+        }
+      }
     });
 
     $('#btn2').searchAreaControl({        

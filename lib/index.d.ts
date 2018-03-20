@@ -92,7 +92,8 @@ export interface IPopupButtonsCollection {
     diselectAll?: IPopupButton,
     invertSelection?: IPopupButton,
     close?: IPopupButton,
-    cancel?: IPopupButton
+    cancel?: IPopupButton,
+    selectHighlighted?: IPopupButton
 }
 
 export interface IPopupButton {
