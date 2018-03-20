@@ -389,6 +389,14 @@ Closes the popup **without** applying the new selection.
 > - Default callback: `null`,
 > - Default index: `4`
 
+#### Select highlighted button
+Selects all elements found after a search. If no element is found (highlighted), the button is not visible.
+> - Default text: `'Select highlighted'`
+> - Default class: `'btn btn-default'`
+> - Visible by default: `false`
+> - Default callback: `null`,
+> - Default index: `5`
+
 Each button is an object of type `IPopupButton`
 
 	interface IPopupButton {
