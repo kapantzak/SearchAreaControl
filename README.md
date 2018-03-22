@@ -79,7 +79,8 @@ You have to pass an array of objects of type `IData`:
 	    code?: string,
 	    name: string,
 	    attributes?: IDataAttributes,
-	    nodeExpanded?: true,
+	    nodeExpanded?: boolean,
+		nodeSelected?: boolean,
 	    children?: IData[]
     }
 
@@ -87,6 +88,7 @@ You have to pass an array of objects of type `IData`:
 - `name`: The node's name
 - `attributes`: An object of type `IDataAttributes` (`{ [key: string]: any }`)
 - `nodeExpanded`: Set it to `false` if you want the specific node to be collapsed (hidden children)
+- `nodeSelected`: Set it to `true` if you want to set this node as `selected` on load
 - `children`: An array of objects of type `IData`
 
 

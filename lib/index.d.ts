@@ -37,7 +37,8 @@ export interface IData {
     code?: string,
     name: string,
     attributes?: IDataAttributes,
-    nodeExpanded?: true,
+    nodeExpanded?: boolean,
+    nodeSelected?: boolean,
     children?: IData[]
 }
 
