@@ -11,6 +11,7 @@ var data = [
       {
         "code": null,        
         "name": "Microcar",
+        "nodeSelected": true,
         "attributes": {
           "data-id": "11"
         },
@@ -26,6 +27,7 @@ var data = [
           {
             "code": null,            
             "name": "Ultracompact car",
+            "nodeSelected": true,
             "attributes": {
               "data-id": "121"
             },
@@ -61,6 +63,7 @@ var data = [
       {
         "code": null,        
         "name": "Small family car/compact car",
+        "nodeSelected": true,
         "attributes": {
           "data-id": "21"
         },
@@ -600,6 +603,13 @@ $(document).ready(function() {
             defaultText: 'Data 2'
         }
     });
+
+    $('#btn3').searchAreaControl({        
+      data: data2,      
+      mainButton: {
+          defaultText: 'Data 2'
+      }
+  });
 });
 
 $(document).on('click', '#selectPony', function() {      
@@ -700,4 +710,8 @@ $(document).on('searchareacontrol.popup.beforehide', function(e,data) {
 
 $(document).on('click', '#setLocale', function() {
   $('#btn2').searchAreaControl('setLocale', 'el');
+});
+
+$(document).on('click', '#btnModal', function() {
+  $('#myModal').modal('show');
 });

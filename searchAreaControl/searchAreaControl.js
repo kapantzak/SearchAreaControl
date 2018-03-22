@@ -168,6 +168,9 @@
                     // Check for highlighted nodes on popup show
                     this._checkForHighlightedNodes();
 
+                    // Remove Bootstrap's custom event listener
+                    $(document).off('focusin.modal');
+
                     this.$el.trigger('searchareacontrol.popup.shown', [{ element: this.$el, popup: popup }]);
                 } else {
                     overlay.hide();
@@ -356,6 +359,7 @@
                 var name = node.name;
                 var attributes = node.attributes;
                 var nodeExpanded = node.nodeExpanded;
+                var nodeSelected = node.nodeSelected;
                 var children = node.children;
 
                 var li = document.createElement('li');                
@@ -381,7 +385,7 @@
                         liSpan.setAttribute(key, attributes[key]);
                     }
                 }
-                var selClass = (itemSelected === true) ? 'sac-node-selected' : '';                
+                var selClass = (itemSelected === true || nodeSelected === true) ? 'sac-node-selected' : '';
                 liSpan.className = 'sac-node-name sac-noselect ' + selClass;
 
                 if (children && Array.isArray(children) && children.length > 0 && $that.opt.collapseNodes === true) {
