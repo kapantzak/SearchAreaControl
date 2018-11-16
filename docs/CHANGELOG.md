@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [v2.5.2] - 2018-11-16
+### Changed
+- Searchbox method: [Starts with] and [Exists in] are **case insensitive**
+
 ## [v2.5.1] - 2018-03-22
 ### Fixed
 - Issue 68: Bootstrap modal ([https://github.com/kapantzak/SearchAreaControl/issues/68](https://github.com/kapantzak/SearchAreaControl/issues/68))
@@ -183,6 +187,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.5.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.1...v2.5.2
 [v2.5.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.0...v2.5.1
 [v2.5.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.4.1...v2.5.0
 [v2.4.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.4.0...v2.4.1
