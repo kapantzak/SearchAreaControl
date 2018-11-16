@@ -556,55 +556,31 @@
                 popup.find('li').removeClass('sac-found-category sac-found-item');
                 popup.find('.sac-node-name').removeClass('sac-found-item');
 
-                if (searchType == '2') {
-
-                    // RegExp
-                    var valLen = val.length;
-                    if (valLen > 0) {
-                        popup.addClass('sac-searching');
-                        if ($that.opt.searchBox.hideNotFound === true) {
-                            popup.addClass('sac-searching-hide-not-found');
-                        }
-    
-                        // Check for index
-                        popup.find('.sac-node-name').each(function () {
-                            var elem = $(this);                                                     
-                            var elemFound = new RegExp(val).test(elem.text());
-                            if (elemFound) {
-                                var fItem = elem.closest('li');
-                                fItem.addClass('sac-found-item');
-                                $that._foundParentNodes(elem);
-                            }
-                        });
-                    } else {
-                        popup.removeClass('sac-searching sac-searching-hide-not-found');
+                var valLen = val.length;
+                if (valLen > 0) {
+                    popup.addClass('sac-searching');
+                    if ($that.opt.searchBox.hideNotFound === true) {
+                        popup.addClass('sac-searching-hide-not-found');
                     }
 
+                    var regExp = new RegExp(val);
+                    if (searchType == '0') {
+                        var regVal = '^' + val;
+                        regExp = new RegExp(regVal, 'i');
+                    } else if (searchType == '1') {
+                        regExp = new RegExp(val, 'i');
+                    }
+                    popup.find('.sac-node-name').each(function () {
+                        var elem = $(this);                                                     
+                        var elemFound = regExp.test(elem.text());
+                        if (elemFound) {
+                            var fItem = elem.closest('li');
+                            fItem.addClass('sac-found-item');
+                            $that._foundParentNodes(elem);
+                        }
+                    });
                 } else {
-
-                    // Starts with / Exists in
-                    var valLen = val.length;
-                    if (valLen >= $that.opt.searchBox.minCharactersSearch) {
-                        popup.addClass('sac-searching');
-                        if ($that.opt.searchBox.hideNotFound === true) {
-                            popup.addClass('sac-searching-hide-not-found');
-                        }
-    
-                        // Check for index
-                        popup.find('.sac-node-name').each(function () {
-                            var elem = $(this);
-                            var elemIndex = elem.text().toLowerCase().indexOf(val.toLowerCase());                            
-                            var elemFound = (searchType == '0') ? elemIndex === 0 : elemIndex != -1;
-                            if (elemFound) {
-                                var fItem = elem.closest('li');
-                                fItem.addClass('sac-found-item');
-                                $that._foundParentNodes(elem);
-                            }
-                        });
-                    } else {
-                        popup.removeClass('sac-searching sac-searching-hide-not-found');
-                    }
-
+                    popup.removeClass('sac-searching sac-searching-hide-not-found');
                 }
                 $that._checkForHighlightedNodes();
             }

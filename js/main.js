@@ -408,7 +408,7 @@ var data2 = [
     "children": [
       {
         "code": null,
-        "name": "Test 11",
+        "name": "Αναστασόπουλος",
         "attributes": {
           "data-id": "11"
         },
