@@ -563,16 +563,18 @@
                         popup.addClass('sac-searching-hide-not-found');
                     }
 
-                    var regExp = new RegExp(val);
+                    var valWithoutAccents = $that._removeAccents(val);
+                    var regExp = new RegExp(valWithoutAccents);
                     if (searchType == '0') {
-                        var regVal = '^' + val;
+                        var regVal = '^' + valWithoutAccents;
                         regExp = new RegExp(regVal, 'i');
                     } else if (searchType == '1') {
-                        regExp = new RegExp(val, 'i');
+                        regExp = new RegExp(valWithoutAccents, 'i');
                     }
                     popup.find('.sac-node-name').each(function () {
-                        var elem = $(this);                                                     
-                        var elemFound = regExp.test(elem.text());
+                        var elem = $(this);
+                        var textWithoutAccents = $that._removeAccents(elem.text());
+                        var elemFound = regExp.test(textWithoutAccents);
                         if (elemFound) {
                             var fItem = elem.closest('li');
                             fItem.addClass('sac-found-item');
@@ -584,6 +586,23 @@
                 }
                 $that._checkForHighlightedNodes();
             }
+        },
+
+        _removeAccents: function(str) {
+            if (str && str.length > 0) {
+                var accents    = 'ΆάΈέΉήΊίΌόΎύΏώΪϊΫϋΐΰÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+                var accentsOut = "ΑαΕεΗηΙιΟοΥυΩωΙιΥυιυAAAAAAaaaaaaOOOOOOOooooooEEEEeeeeoCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
+                str = str.split('');
+                var strLen = str.length;
+                var i, x;
+                for (i = 0; i < strLen; i++) {
+                    if ((x = accents.indexOf(str[i])) != -1) {
+                    str[i] = accentsOut[x];
+                    }
+                }
+                return str.join('');
+            }
+            return str;
         },
 
         /**
