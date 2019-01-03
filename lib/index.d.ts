@@ -18,6 +18,7 @@ export interface IOptions {
     allNodesExpanded?: boolean,
     columns?: number,
     selectionByAttribute?: string,
+    allNodesSelected?: boolean,
     selectedNodes?: string[],
     locales?: string,
     localeData?: any,

@@ -598,7 +598,8 @@ $(document).ready(function() {
 
     $('#btn2').searchAreaControl({        
         data: data2,
-        selectedNodes: ['11','121'],
+        //selectedNodes: ['11','121'],      
+        allNodesSelected: true,  
         mainButton: {
             defaultText: 'Data 2'
         }

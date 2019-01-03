@@ -117,6 +117,11 @@ Set the attribute that you want to select upon. The plugin will search for this 
 > - Type: `string`
 > - Deafult: `'data-id'`
 
+### allNodesSelected
+Set all nodes to be selected on load. Nodes are not selected by default.
+> - Type: `boolean`
+> - Default: `false`
+
 ### selectedNodes
 Set pre-selected nodes providing array of attributes values. The plugin will try to select nodes found by attribute provided by `selectionByAttribute` option. So, if no `selectionByAttribute` option is provided, and the developer sets `selectedNodes: ['10']`, the plugin will try to find the node that has the default attribute `data-id` equal to `'10'` and select it.
 > - Type: `array`
