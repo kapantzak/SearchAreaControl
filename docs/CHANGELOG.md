@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [v2.6.0] - 2019-01-03
+### Added
+- New option (`IOptions`) property `allNodesSelected`
+
 ## [v2.5.3] - 2018-11-16
 ### Changed
 - Search method: **Ignore accents** on search
@@ -191,6 +195,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.6.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.3...v2.6.0
 [v2.5.3]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.2...v2.5.3
 [v2.5.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.1...v2.5.2
 [v2.5.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.0...v2.5.1

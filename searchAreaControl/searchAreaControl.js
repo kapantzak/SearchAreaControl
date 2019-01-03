@@ -379,7 +379,7 @@
                 var itemSelected = false;
                 if (attributes) {
                     for (var key in attributes) {
-                        if (key == $that.opt.selectionByAttribute && $that.opt.selectedNodes.indexOf(attributes[key]) !== -1) {
+                        if (key == $that.opt.selectionByAttribute && ($that.opt.allNodesSelected === true || $that.opt.selectedNodes.indexOf(attributes[key]) !== -1)) {
                             itemSelected = true;
                         }
                         liSpan.setAttribute(key, attributes[key]);
@@ -1195,6 +1195,7 @@
         allNodesExpanded: true,
         columns: 2,
         selectionByAttribute: 'data-id',
+        allNodesSelected: false,
         selectedNodes: [],
         locales: 'en',
         localeData: null,
