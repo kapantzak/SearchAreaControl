@@ -1180,6 +1180,22 @@
             'Close': 'Fechar',
             'Cancel': 'Cancelar',
             'Select highlighted': 'Selecionar destacado'
+        },
+        ru: {
+            'Search': 'Поиск',
+            'Selected items': 'Выбранные пункты',
+            'Starts with': 'Начинается с',
+            'Exists in': 'Содержится в',
+            'Regular expression': 'Регулярное выражение',
+            'Items': 'Пункты',
+            'None': 'Не выбрано',
+            'All': 'Все',
+            'Select all': 'Выбрать все',
+            'Diselect all': 'Снять выбор со всех',
+            'Invert selection': 'Инвертировать выбор',
+            'Close': 'Закрыть',
+            'Cancel': 'Отмена',
+            'Select highlighted': 'Выбрать выделенные'
         }
     };
 
