@@ -53,10 +53,11 @@
          * Build popup overlay and popup HTML markup
          */
         _buildPopup: function (pluginName) {
-            var thisPopupID = (this.popupID !== null) ? this.popupID : this._getNewPopupID(pluginName);
+            var thisPopupID = (this.popupID !== null) ? this.popupID : this._getNewPopupID(pluginName);            
             var dimensions = this._getPopupDimensions();
             var popup = $('<div id="' + thisPopupID + '_overlay" class="sac-popup-overlay" style="display:none;"><div id="' + thisPopupID + '" class="sac-popup" style="' + dimensions + '"></div></div>');
             $('body').append(popup);
+            this.$el.attr('data-popupid', thisPopupID);
         },
 
         /**
@@ -95,6 +96,15 @@
             var thisPopupID = pluginName + '_Popup_' + ($('body').find('.' + this.rootClassName).length + 1);
             this.popupID = thisPopupID;
             return this.popupID;
+        },
+
+        _toggleBodyScrolling: function(scroll) {
+            var body = $('body');
+            if (scroll === true) {                
+                body.removeClass('sac-noscroll');
+            } else {
+                body.addClass('sac-noscroll');
+            }
         },
 
         // Data: DataSource ----------------------------------------------------------------- //
@@ -156,6 +166,7 @@
             if (popup && popup.length > 0) {
                 var overlay = popup.closest('.sac-popup-overlay');
                 if (show === true) {
+                    this._toggleBodyScrolling(false);
                     this._updatePopupDimensions();
                     overlay.show();
                     popup.addClass('sac-popup-visible');
@@ -172,9 +183,10 @@
                     $(document).off('focusin.modal');
 
                     this.$el.trigger('searchareacontrol.popup.shown', [{ element: this.$el, popup: popup }]);
-                } else {
+                } else {                    
                     overlay.hide();
                     popup.removeClass('sac-popup-visible');
+                    this._toggleBodyScrolling(true);
                     this.$el.trigger('searchareacontrol.popup.hidden', [{ element: this.$el, popup: popup }]);
                 }
             }
