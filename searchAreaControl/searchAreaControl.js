@@ -98,6 +98,15 @@
             return this.popupID;
         },
 
+        _toggleBodyScrolling: function(scroll) {
+            var body = $('body');
+            if (scroll === true) {                
+                body.removeClass('sac-noscroll');
+            } else {
+                body.addClass('sac-noscroll');
+            }
+        },
+
         // Data: DataSource ----------------------------------------------------------------- //
 
         /**
@@ -157,6 +166,7 @@
             if (popup && popup.length > 0) {
                 var overlay = popup.closest('.sac-popup-overlay');
                 if (show === true) {
+                    this._toggleBodyScrolling(false);
                     this._updatePopupDimensions();
                     overlay.show();
                     popup.addClass('sac-popup-visible');
@@ -173,9 +183,10 @@
                     $(document).off('focusin.modal');
 
                     this.$el.trigger('searchareacontrol.popup.shown', [{ element: this.$el, popup: popup }]);
-                } else {
+                } else {                    
                     overlay.hide();
                     popup.removeClass('sac-popup-visible');
+                    this._toggleBodyScrolling(true);
                     this.$el.trigger('searchareacontrol.popup.hidden', [{ element: this.$el, popup: popup }]);
                 }
             }

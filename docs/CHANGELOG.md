@@ -3,7 +3,11 @@
 ## [Unreleased]
 
 ## [v2.8.0] - 2019-04-24
+### Added
+- Added popup id to button (data-popupid)
 
+### Fixed
+- Disable body scrolling when popup is visible
 
 ## [v2.7.0] - 2019-03-12
 ### Added
