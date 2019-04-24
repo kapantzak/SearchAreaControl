@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [v2.8.1] - 2019-04-24
+###Fixed
+- Fixed version number in `package.json`
+
 ## [v2.8.0] - 2019-04-24
 ### Added
 - Added popup id to button (data-popupid)
@@ -206,6 +210,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.8.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.0...v2.8.1
 [v2.8.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.7.0...v2.8.0
 [v2.7.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.6.0...v2.7.0
 [v2.6.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.3...v2.6.0
