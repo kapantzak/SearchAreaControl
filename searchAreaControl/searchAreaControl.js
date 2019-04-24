@@ -53,10 +53,11 @@
          * Build popup overlay and popup HTML markup
          */
         _buildPopup: function (pluginName) {
-            var thisPopupID = (this.popupID !== null) ? this.popupID : this._getNewPopupID(pluginName);
+            var thisPopupID = (this.popupID !== null) ? this.popupID : this._getNewPopupID(pluginName);            
             var dimensions = this._getPopupDimensions();
             var popup = $('<div id="' + thisPopupID + '_overlay" class="sac-popup-overlay" style="display:none;"><div id="' + thisPopupID + '" class="sac-popup" style="' + dimensions + '"></div></div>');
             $('body').append(popup);
+            this.$el.attr('data-popupid', thisPopupID);
         },
 
         /**
