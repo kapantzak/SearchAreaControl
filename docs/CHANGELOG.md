@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [v2.8.0] - 2019-04-24
+### Added
+- Added popup id to button (data-popupid)
+
+### Fixed
+- Disable body scrolling when popup is visible
+
+## [v2.7.0] - 2019-03-12
+### Added
+- Russian language
+
 ## [v2.6.0] - 2019-01-03
 ### Added
 - New option (`IOptions`) property `allNodesSelected`
@@ -195,6 +206,8 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.8.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.7.0...v2.8.0
+[v2.7.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.6.0...v2.7.0
 [v2.6.0]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.3...v2.6.0
 [v2.5.3]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.2...v2.5.3
 [v2.5.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.5.1...v2.5.2
