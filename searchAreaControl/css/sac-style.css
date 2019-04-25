@@ -1,3 +1,7 @@
+body.sac-noscroll {
+    overflow: hidden !important;
+}
+
 .sac-popup-overlay {
     position: fixed;        
     top:0;
