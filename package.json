@@ -1,6 +1,6 @@
 {
   "name": "searchareacontrol",
-  "version": "2.8.2",
+  "version": "2.8.3",
   "description": "A jQuery plugin used to display, search and select multiple items",
   "main": "searchAreaControl/searchAreaControl.js",
   "types": "lib/index.d.ts",
