@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [v2.8.4] - 2020-09-03
+### Fixed
+- Prevent diselecting selected item after closing popup (when `multiSelect === false`)
+
 ## [v2.8.3] - 2019-05-31
 ### Changed
 - Get popup id from new uuid
@@ -218,6 +222,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.8.4]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.3...v2.8.4
 [v2.8.3]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.2...v2.8.3
 [v2.8.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.1...v2.8.2
 [v2.8.1]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.0...v2.8.1
