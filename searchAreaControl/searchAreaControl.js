@@ -910,7 +910,7 @@
             this._diselectAll();
             var allSelected = selectedNodesOnPopupShow.selectedAll;
             var nodes = selectedNodesOnPopupShow.selectedNodes;
-            if (allSelected === true) {
+            if (allSelected === true && this.opt.multiSelect === true) {
                 this._selectAll();
             } else if (nodes.length > 0) {
                 var popup = $('#' + this.popupID);
