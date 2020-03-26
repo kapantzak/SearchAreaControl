@@ -2,7 +2,11 @@
 
 ## [Unreleased]
 
-## [v2.8.4] - 2020-09-03
+## [v2.8.5] - 2020-03-26
+### Fixed
+- Changes `_getListItem()` check for `selectedItems`
+
+## [v2.8.4] - 2020-03-09
 ### Fixed
 - Prevent diselecting selected item after closing popup (when `multiSelect === false`)
 
@@ -222,6 +226,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.8.5]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.4...v2.8.5
 [v2.8.4]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.3...v2.8.4
 [v2.8.3]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.2...v2.8.3
 [v2.8.2]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.1...v2.8.2

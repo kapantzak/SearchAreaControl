@@ -4,7 +4,7 @@
 
     function Plugin(element, options) {
         this.el = element;
-        this.$el = $(element);   
+        this.$el = $(element);
         this.opt = $.extend(true, {}, $.fn[pluginName].defaults, options);
         this.locales = $.extend(true, {}, $.fn[pluginName].locales, this.opt.localeData);
         this.rootClassName = 'elem-searchAreaControl';
@@ -13,9 +13,9 @@
 
         // Trigger 'searchareacontrol.afterinit' event
         var thisEl = this.$el;
-        setTimeout(function() {
+        setTimeout(function () {
             thisEl.trigger('searchareacontrol.afterinit', [{ element: this.$el }]);
-        },10);
+        }, 10);
     }
 
     Plugin.prototype = {
@@ -42,7 +42,7 @@
 
             this.$el.trigger('searchareacontrol.beforeinitsearcharea', [{ element: this.$el }]);
             this._initSearchArea();
-            
+
             this.$el.on('click', function () {
                 $that.$el.trigger('searchareacontrol.popup.beforeshow', [{ element: $that.$el }]);
                 $that._togglePopup(true);
@@ -53,7 +53,7 @@
          * Build popup overlay and popup HTML markup
          */
         _buildPopup: function (pluginName) {
-            var thisPopupID = (this.popupID !== null) ? this.popupID : this._getNewPopupID(pluginName);            
+            var thisPopupID = (this.popupID !== null) ? this.popupID : this._getNewPopupID(pluginName);
             var dimensions = this._getPopupDimensions();
             var popup = $('<div id="' + thisPopupID + '_overlay" class="sac-popup-overlay" style="display:none;"><div id="' + thisPopupID + '" class="sac-popup" style="' + dimensions + '"></div></div>');
             $('body').append(popup);
@@ -75,17 +75,17 @@
             var style = 'width:' + dimensionsObj.width + ';';
             style += 'left:' + dimensionsObj.left + ';';
             style += 'margin-left:' + dimensionsObj.marginLeft + ';';
-            return style;            
+            return style;
         },
 
         /**
          * Recalculate and update popup dimensions
          */
-        _updatePopupDimensions: function() {
+        _updatePopupDimensions: function () {
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0) {
                 var dimensions = this._getPopupDimensions();
-                popup.attr('style',dimensions);
+                popup.attr('style', dimensions);
             }
         },
 
@@ -98,16 +98,16 @@
             return this.popupID;
         },
 
-        _uuidv4: function() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        _uuidv4: function () {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
                 var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
             });
         },
 
-        _toggleBodyScrolling: function(scroll) {
+        _toggleBodyScrolling: function (scroll) {
             var body = $('body');
-            if (scroll === true) {                
+            if (scroll === true) {
                 body.removeClass('sac-noscroll');
             } else {
                 body.addClass('sac-noscroll');
@@ -178,7 +178,7 @@
                     overlay.show();
                     popup.addClass('sac-popup-visible');
                     this._setSearchBoxDimensions();
-                    
+
                     // Update selected nodes on popup show object
                     var selectedNodes = this._getSelectedNodes();
                     this._setData_SelectedNodesOnPopupShow(selectedNodes);
@@ -190,7 +190,7 @@
                     $(document).off('focusin.modal');
 
                     this.$el.trigger('searchareacontrol.popup.shown', [{ element: this.$el, popup: popup }]);
-                } else {                    
+                } else {
                     overlay.hide();
                     popup.removeClass('sac-popup-visible');
                     this._toggleBodyScrolling(true);
@@ -208,7 +208,7 @@
             }
             if (this.opt.searchBox.enabled === true) {
                 this._buildSearchBox();
-                this._addSearchBoxEventListeners();                
+                this._addSearchBoxEventListeners();
             }
             this._buildContent();
             this._buildPopupButtons();
@@ -240,7 +240,7 @@
                 searchBoxHolder.className = 'sac-input-holder';
 
                 // Search type
-                var comboOpts = this.opt.searchBox.searchType;                
+                var comboOpts = this.opt.searchBox.searchType;
                 var combo = document.createElement('select');
                 combo.className = 'sac-seacrh-combo-type';
 
@@ -283,10 +283,10 @@
                     var numSpan = $('<span class="sac-custom-numSpan"></span>');
                     var numSpanTxt = $('<span class="sac-custom-numSpan-txt">' + this._localize(this.opt.searchBox.selectedItemsLabelText) + '</span>');
                     var numSpanNum = $('<span class="sac-custom-numSpan-num">0</span>');
-                    if (this.opt.searchBox.selectedItemsLabelVisible === true) {                        
+                    if (this.opt.searchBox.selectedItemsLabelVisible === true) {
                         numSpan.append(numSpanTxt);
-                    }                    
-                    numSpan.append(numSpanNum);                    
+                    }
+                    numSpan.append(numSpanNum);
                     $(searchBoxHolder).append(numSpan);
                 }
                 popup.append($(searchBoxHolder));
@@ -381,13 +381,13 @@
                 var nodeSelected = node.nodeSelected;
                 var children = node.children;
 
-                var li = document.createElement('li');                
+                var li = document.createElement('li');
                 var arrow = $('<span class="toggleNodeCollapse"><i class="fa fa-caret-right"></i><i class="fa fa-caret-down"></i></span>');
                 var liSpan = document.createElement('span');
-                
+
                 if ($that.opt.collapseNodes === true && ($that.opt.allNodesExpanded === false || nodeExpanded === false)) {
                     li.className = 'sac-node-collapsed';
-                }                
+                }
 
                 // Set li's name
                 if (name) {
@@ -398,7 +398,13 @@
                 var itemSelected = false;
                 if (attributes) {
                     for (var key in attributes) {
-                        if (key == $that.opt.selectionByAttribute && ($that.opt.allNodesSelected === true || $that.opt.selectedNodes.indexOf(attributes[key]) !== -1)) {
+                        if (
+                            key == $that.opt.selectionByAttribute &&
+                            (
+                                $that.opt.allNodesSelected === true ||
+                                (($that.opt.selectedNodes || {}).selectedItems || []).indexOf(attributes[key]) !== -1
+                            )
+                        ) {
                             itemSelected = true;
                         }
                         liSpan.setAttribute(key, attributes[key]);
@@ -408,8 +414,8 @@
                 liSpan.className = 'sac-node-name sac-noselect ' + selClass;
 
                 if (children && Array.isArray(children) && children.length > 0 && $that.opt.collapseNodes === true) {
-                    li.appendChild(arrow[0]);    
-                }                
+                    li.appendChild(arrow[0]);
+                }
                 li.appendChild(liSpan);
 
                 // Get children
@@ -468,16 +474,16 @@
                         callback: thisBtn.callback,
                         index: thisBtn.index,
                         key: btn
-                    };    
+                    };
                     btnArr.push(btnObj);
                 }
             }
 
-            var indexArr = btnArr.map(function(b) { return b.index; });
+            var indexArr = btnArr.map(function (b) { return b.index; });
             indexArr.sort();
 
             for (var i in indexArr) {
-                var btnKey = btnArr.filter(function(b) { return b.index === indexArr[i]; })[0].key;  
+                var btnKey = btnArr.filter(function (b) { return b.index === indexArr[i]; })[0].key;
                 var btnObj = buttons[btnKey];
                 $footer.append($that._getDefaultButton(btnKey, btnObj));
             }
@@ -496,7 +502,7 @@
                     .not('.sac-ul-top')
                     .children('li')
                     .find('.sac-node-name')
-                    .on('click', function () {                        
+                    .on('click', function () {
                         var thisNode = $(this);
                         if (!thisNode.hasClass('sac-node-disabled')) {
                             if ($that.opt.multiSelect === false) {
@@ -511,8 +517,8 @@
                 if (this.opt.multiSelect === true) {
                     popup.find('.sac-ul.sac-ul-top')
                         .children('li')
-                        .children('.sac-node-name')                        
-                        .on('click', function () {                            
+                        .children('.sac-node-name')
+                        .on('click', function () {
                             var that = $(this);
                             var par = that.closest('li');
                             var parChildren = par.find('.sac-node-name').not(that).not('.sac-node-disabled');
@@ -530,7 +536,7 @@
 
                 // Node collapse
                 if (this.opt.collapseNodes === true) {
-                    popup.find('.toggleNodeCollapse').on('click', function() {
+                    popup.find('.toggleNodeCollapse').on('click', function () {
                         $(this).closest('li').toggleClass('sac-node-collapsed');
                     });
                 }
@@ -549,7 +555,7 @@
 
                 // Search type combo
                 popup.find('.sac-seacrh-combo-type').on('change', function () {
-                    $that._searchNodes(input.val());                    
+                    $that._searchNodes(input.val());
                 });
 
                 // Search box input
@@ -607,16 +613,16 @@
             }
         },
 
-        _removeAccents: function(str) {
+        _removeAccents: function (str) {
             if (str && str.length > 0) {
-                var accents    = 'ΆάΈέΉήΊίΌόΎύΏώΪϊΫϋΐΰÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+                var accents = 'ΆάΈέΉήΊίΌόΎύΏώΪϊΫϋΐΰÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
                 var accentsOut = "ΑαΕεΗηΙιΟοΥυΩωΙιΥυιυAAAAAAaaaaaaOOOOOOOooooooEEEEeeeeoCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
                 str = str.split('');
                 var strLen = str.length;
                 var i, x;
                 for (i = 0; i < strLen; i++) {
                     if ((x = accents.indexOf(str[i])) != -1) {
-                    str[i] = accentsOut[x];
+                        str[i] = accentsOut[x];
                     }
                 }
                 return str.join('');
@@ -627,7 +633,7 @@
         /**
          * Check for hightlighted nodes and toogle button's visibility
          */
-        _checkForHighlightedNodes: function() {
+        _checkForHighlightedNodes: function () {
             var nodes = this._getHighlightedNodes();
             this._toggleSelectHighlightedButtonVisibility(nodes !== null && nodes.length > 0);
         },
@@ -635,7 +641,7 @@
         /**
          * Toogle select highlighted button visibility
          */
-        _toggleSelectHighlightedButtonVisibility: function(show) {
+        _toggleSelectHighlightedButtonVisibility: function (show) {
             var $that = this;
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0) {
@@ -723,7 +729,7 @@
             var selectedNodes = [];
             var popup = $('#' + this.popupID);
             var allNodes = this._getAllNodes();
-            if (popup && popup.length > 0 && allNodes !== null) {                
+            if (popup && popup.length > 0 && allNodes !== null) {
                 allNodes.filter('.sac-node-selected').each(function () {
                     var node = $(this);
                     var attributes = {};
@@ -812,7 +818,7 @@
         /**
          * Select highlighted nodes
          */
-        _selectHighlighted: function() {
+        _selectHighlighted: function () {
             var nodes = this._getHighlightedNodes();
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0 && nodes !== null) {
@@ -829,7 +835,7 @@
             var nodes = this._getAllNodes();
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0 && nodes !== null) {
-                nodes.removeClass('sac-node-selected');                
+                nodes.removeClass('sac-node-selected');
             }
         },
 
@@ -855,7 +861,7 @@
             var nodes = this._getAllNodes();
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0 && nodes !== null) {
-                nodes.removeClass('sac-node-disabled');                
+                nodes.removeClass('sac-node-disabled');
             }
         },
 
@@ -866,7 +872,7 @@
             var nodes = this._getAllNodes();
             var popup = $('#' + this.popupID);
             if (popup && popup.length > 0 && nodes !== null) {
-                nodes.addClass('sac-node-disabled');                
+                nodes.addClass('sac-node-disabled');
             }
         },
 
@@ -897,8 +903,8 @@
         /**
          * Close popup
          */
-        _closePopup: function () {     
-            this.$el.trigger('searchareacontrol.popup.beforehide', [{ element: this.$el }]);       
+        _closePopup: function () {
+            this.$el.trigger('searchareacontrol.popup.beforehide', [{ element: this.$el }]);
             this._togglePopup(false);
         },
 
@@ -951,7 +957,7 @@
             var popup = $('#' + this.popupID);
             var selectByAttribute = (byAttribute) ? byAttribute : this.opt.selectionByAttribute;
             var allNodes = this._getAllNodes();
-            if (popup && popup.length > 0 && allNodes !== null) {                
+            if (popup && popup.length > 0 && allNodes !== null) {
                 if (allSelected === true) {
                     allNodes.addClass('sac-node-selected');
                 } else if (collection && Array.isArray(collection) && collection.length > 0) {
@@ -977,7 +983,7 @@
             var popup = $('#' + this.popupID);
             var selectByAttribute = (byAttribute) ? byAttribute : this.opt.selectionByAttribute;
             var allNodes = this._getAllNodes();
-            if (popup && popup.length > 0 && allNodes !== null) {                
+            if (popup && popup.length > 0 && allNodes !== null) {
                 if (collection && Array.isArray(collection) && collection.length > 0) {
                     // Enable all
                     this._enableAll();
@@ -1036,7 +1042,7 @@
         /**
          * Get disabled state of main button
          */
-        getDisabled: function () {            
+        getDisabled: function () {
             return this.$el.is(':disabled');
         },
 
@@ -1184,7 +1190,7 @@
             'Cancel': 'Άκυρο',
             'Select highlighted': 'Επιλογή επισημασμένων'
         },
-	    ptbr: {
+        ptbr: {
             'Search': 'Busca',
             'Selected items': 'Itens Selecionados',
             'Starts with': 'Começa com',
@@ -1252,7 +1258,7 @@
                 width: '700px',
                 left: '50%',
                 marginLeft: '-350px'
-            }            
+            }
         },
         mainButton: {
             defaultText: 'Items',
