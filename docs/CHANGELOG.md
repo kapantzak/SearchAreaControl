@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [v2.8.6] - 2020-05-05
+### Fixed
+- Changes `_getListItem()` check for `selectedItems`
+
 ## [v2.8.5] - 2020-03-26
 ### Fixed
 - Changes `_getListItem()` check for `selectedItems`
@@ -226,6 +230,7 @@
 
 
 [Unreleased]: https://github.com/kapantzak/SearchAreaControl/compare/master...develop
+[v2.8.6]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.5...v2.8.6
 [v2.8.5]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.4...v2.8.5
 [v2.8.4]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.3...v2.8.4
 [v2.8.3]: https://github.com/kapantzak/SearchAreaControl/compare/v2.8.2...v2.8.3

@@ -402,6 +402,7 @@
                             key == $that.opt.selectionByAttribute &&
                             (
                                 $that.opt.allNodesSelected === true ||
+                                ($that.opt.selectedNodes || []).indexOf(attributes[key]) !== -1 ||
                                 (($that.opt.selectedNodes || {}).selectedItems || []).indexOf(attributes[key]) !== -1
                             )
                         ) {
